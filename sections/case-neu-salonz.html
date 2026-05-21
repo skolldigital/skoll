@@ -145,6 +145,8 @@
       .skoll-cs-stats { grid-template-columns: 1fr; }
     }
     .skoll-cs-stat {
+      position: relative;
+      overflow: hidden;
       padding: 40px 28px;
       min-height: 220px;
       background: var(--cs-glass-bg);
@@ -155,11 +157,30 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: border-color 0.4s ease, transform 0.4s ease;
+      transition: transform 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+    }
+    .skoll-cs-stat::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 44px;
+      height: 44px;
+      background-color: var(--cs-gold);
+      -webkit-mask: url('assets/images/claw.png') no-repeat center / contain;
+              mask: url('assets/images/claw.png') no-repeat center / contain;
+      opacity: 0.12;
+      pointer-events: none;
+      transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .skoll-cs-stat:hover {
-      border-color: rgba(201, 168, 76, 0.35);
       transform: translateY(-4px);
+      border-color: rgba(201, 168, 76, 0.6);
+      background: rgba(201, 168, 76, 0.04);
+    }
+    .skoll-cs-stat:hover::after {
+      opacity: 0.35;
+      transform: scale(1.1) rotate(6deg);
     }
     .skoll-cs-stat-number {
       font-family: 'Instrument Serif', Georgia, serif;
@@ -193,13 +214,16 @@
       margin-bottom: 80px;
     }
     .skoll-cs-section-label {
-      font-family: 'Söhne', 'Sohne', 'Inter', system-ui, sans-serif;
-      font-size: 0.75rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
+      display: block;
+      text-align: center;
+      margin-bottom: 40px;
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-style: italic;
       color: var(--cs-gold);
-      margin: 0 0 24px;
-      font-weight: 500;
+      font-size: clamp(1.25rem, 2vw, 1.625rem);
+      text-transform: none;
+      letter-spacing: normal;
+      font-weight: 400;
     }
     .skoll-cs-brief-body {
       font-family: 'Instrument Serif', Georgia, serif;
@@ -378,6 +402,64 @@
         gap: 16px;
       }
     }
+
+    /* ===== GALLERY / CREATIVES (What We Put Into The Wild) ===== */
+    .skoll-cs-wrapper .skoll-cs-gallery-section {
+      margin-bottom: 100px;
+    }
+    .skoll-cs-wrapper .skoll-cs-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .skoll-cs-wrapper .skoll-cs-gallery-item {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      background: rgba(240, 238, 233, 0.02);
+      border: 1px solid rgba(240, 238, 233, 0.05);
+      aspect-ratio: 4 / 5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.4s ease, transform 0.4s ease;
+    }
+    .skoll-cs-wrapper .skoll-cs-gallery-item:hover {
+      border-color: rgba(201, 168, 76, 0.4);
+      transform: translateY(-4px);
+    }
+    .skoll-cs-wrapper .skoll-cs-gallery-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .skoll-cs-wrapper .skoll-cs-gallery-item:hover .skoll-cs-gallery-img {
+      transform: scale(1.04);
+    }
+    .skoll-cs-wrapper .skoll-cs-gallery-placeholder {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-size: 0.8125rem;
+      color: #888888;
+      text-align: center;
+      padding: 24px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @media (max-width: 900px) {
+      .skoll-cs-wrapper .skoll-cs-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .skoll-cs-wrapper .skoll-cs-gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 
   <div class="skoll-cs-inner">
@@ -428,7 +510,7 @@
 
     <!-- 3. THE BRIEF -->
     <div class="skoll-cs-brief skoll-cs-anim">
-      <p class="skoll-cs-section-label">The Brief</p>
+      <span class="skoll-cs-label">The Brief</span>
       <p class="skoll-cs-brief-body">NEU Salonz ran six branches across Gurgaon. We started as their agency. After one Valentine&rsquo;s campaign, they poached us in-house as Marketing Head. Then we built campaigns that became legends &mdash; and templates other salon brands tried to replicate.</p>
     </div>
 
@@ -481,6 +563,34 @@
           </div>
         </article>
 
+      </div>
+    </div>
+
+    <!-- 5b. CREATIVES (What We Put Into The Wild) -->
+    <div class="skoll-cs-gallery-section">
+      <span class="skoll-cs-section-label skoll-cs-anim">What We Put Into The Wild</span>
+      <div class="skoll-cs-gallery-grid skoll-cs-anim">
+        <div class="skoll-cs-gallery-item">
+          <img class="skoll-cs-gallery-img" src="assets/casestudy/neu-salonz/Screenshot%202026-05-21%20185217.png" alt="Game of Tones Campaign" 
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="skoll-cs-gallery-placeholder" style="display: none;">
+            <span>Game of Tones</span>
+          </div>
+        </div>
+        <div class="skoll-cs-gallery-item">
+          <img class="skoll-cs-gallery-img" src="assets/casestudy/neu-salonz/Screenshot%202026-05-21%20185156.png" alt="15 Years of Artistry" 
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="skoll-cs-gallery-placeholder" style="display: none;">
+            <span>15 Years of Artistry</span>
+          </div>
+        </div>
+        <div class="skoll-cs-gallery-item">
+          <img class="skoll-cs-gallery-img" src="assets/casestudy/neu-salonz/Screenshot%202026-05-21%20182343.png" alt="imNEU Membership Card" 
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="skoll-cs-gallery-placeholder" style="display: none;">
+            <span>imNEU Membership</span>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -614,6 +724,23 @@
             }
           });
         });
+
+        // Gallery/creatives section
+        var galleryEls = root.querySelectorAll('.skoll-cs-gallery-section .skoll-cs-anim');
+        if (galleryEls.length > 0) {
+          gsap.to(galleryEls, {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: 'power3.out',
+            stagger: 0.15,
+            scrollTrigger: {
+              trigger: root.querySelector('.skoll-cs-gallery-section'),
+              start: 'top 85%',
+              toggleActions: 'play none none none'
+            }
+          });
+        }
 
         // Closing quote
         var closing = root.querySelector('.skoll-cs-closing .skoll-cs-anim');

@@ -106,6 +106,8 @@
       margin-bottom: 120px;
     }
     .skoll-cs-wrapper .skoll-cs-stat {
+      position: relative;
+      overflow: hidden;
       padding: 40px 28px;
       border-radius: 20px;
       background: rgba(240, 238, 233, 0.03);
@@ -118,10 +120,28 @@
       justify-content: space-between;
       transition: transform 0.4s ease, border-color 0.4s ease, background 0.4s ease;
     }
+    .skoll-cs-wrapper .skoll-cs-stat::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 44px;
+      height: 44px;
+      background-color: #C9A84C;
+      -webkit-mask: url('assets/images/claw.png') no-repeat center / contain;
+              mask: url('assets/images/claw.png') no-repeat center / contain;
+      opacity: 0.12;
+      pointer-events: none;
+      transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
     .skoll-cs-wrapper .skoll-cs-stat:hover {
       transform: translateY(-4px);
       border-color: rgba(201, 168, 76, 0.6);
       background: rgba(201, 168, 76, 0.04);
+    }
+    .skoll-cs-wrapper .skoll-cs-stat:hover::after {
+      opacity: 0.35;
+      transform: scale(1.1) rotate(6deg);
     }
     .skoll-cs-wrapper .skoll-cs-stat-num {
       font-family: 'Instrument Serif', Georgia, serif;
@@ -181,6 +201,13 @@
       display: block;
       text-align: center;
       margin-bottom: 40px;
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-style: italic;
+      color: #C9A84C;
+      font-size: clamp(1.25rem, 2vw, 1.625rem);
+      text-transform: none;
+      letter-spacing: normal;
+      font-weight: 400;
     }
     .skoll-cs-wrapper .skoll-cs-did-grid {
       display: grid;
@@ -324,6 +351,215 @@
       transform: translateX(6px);
     }
 
+    /* ---------- 5b. CREATIVES & PERFORMANCE ---------- */
+    .skoll-cs-wrapper .skoll-cs-gallery-section {
+      margin-bottom: 100px;
+    }
+    .skoll-cs-wrapper .skoll-cs-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .skoll-cs-wrapper .skoll-cs-gallery-grid--2col {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .skoll-cs-wrapper .skoll-cs-gallery-item {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      background: rgba(240, 238, 233, 0.02);
+      border: 1px solid rgba(240, 238, 233, 0.05);
+      aspect-ratio: 4 / 5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.4s ease, transform 0.4s ease;
+    }
+    .skoll-cs-wrapper .skoll-cs-gallery-item--perf {
+      aspect-ratio: 16 / 10;
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #0D0D0D;
+      border: 1px solid rgba(240, 238, 233, 0.08);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      transform-style: preserve-3d;
+      perspective: 1200px;
+    }
+    .skoll-cs-wrapper .skoll-cs-gallery-item:hover {
+      border-color: rgba(201, 168, 76, 0.4);
+      transform: translateY(-4px);
+    }
+    .skoll-cs-wrapper .skoll-cs-gallery-item--perf:hover {
+      transform: translateZ(24px) translateY(-12px) rotateX(6deg) rotateY(-3deg);
+      border-color: #C9A84C;
+      box-shadow: 
+        0 40px 80px rgba(0, 0, 0, 0.95), 
+        0 0 50px rgba(201, 168, 76, 0.22);
+    }
+    
+    /* Stark Monolith Slider Styles */
+    .skoll-cs-wrapper .skoll-cs-slider-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 40px auto 0;
+      perspective: 1200px;
+      width: 100%;
+    }
+    .skoll-cs-wrapper .skoll-cs-slider-viewport {
+      width: 100%;
+      aspect-ratio: 16 / 7.5;
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #0D0D0D;
+      border: 1px solid rgba(240, 238, 233, 0.08);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      transform-style: preserve-3d;
+    }
+    .skoll-cs-wrapper .skoll-cs-slider-viewport:hover {
+      transform: translateZ(24px) translateY(-12px) rotateX(4deg) rotateY(-2deg);
+      border-color: #C9A84C;
+      box-shadow: 
+        0 40px 80px rgba(0, 0, 0, 0.95), 
+        0 0 50px rgba(201, 168, 76, 0.22);
+    }
+    .skoll-cs-wrapper .skoll-cs-slides {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    .skoll-cs-wrapper .skoll-cs-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .skoll-cs-wrapper .skoll-cs-slide.skoll-cs-slide--active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .skoll-cs-wrapper .skoll-cs-slide-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .skoll-cs-wrapper .skoll-cs-slider-viewport:hover .skoll-cs-slide-img {
+      transform: scale(1.02);
+    }
+    .skoll-cs-wrapper .skoll-cs-slide-placeholder {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    /* Sleek Navigation Arrows */
+    .skoll-cs-wrapper .skoll-cs-slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      background: rgba(13, 13, 13, 0.7);
+      border: 1px solid rgba(240, 238, 233, 0.15);
+      color: #FAFAFA;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.3s ease;
+      border-radius: 50%; /* Smooth circular arrows */
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .skoll-cs-wrapper .skoll-cs-slider-arrow:hover {
+      background: #C9A84C;
+      border-color: #C9A84C;
+      color: #0A0A0A;
+      box-shadow: 0 0 20px rgba(201, 168, 76, 0.5);
+    }
+    .skoll-cs-wrapper .skoll-cs-slider-arrow--prev {
+      left: -80px;
+    }
+    .skoll-cs-wrapper .skoll-cs-slider-arrow--next {
+      right: -80px;
+    }
+    
+    @media (max-width: 1100px) {
+      .skoll-cs-wrapper .skoll-cs-slider-container {
+        margin-bottom: 76px;
+      }
+      .skoll-cs-wrapper .skoll-cs-slider-arrow {
+        top: auto;
+        bottom: -68px;
+        transform: none;
+      }
+      .skoll-cs-wrapper .skoll-cs-slider-arrow--prev {
+        left: calc(50% - 60px);
+      }
+      .skoll-cs-wrapper .skoll-cs-slider-arrow--next {
+        right: calc(50% - 60px);
+      }
+    }
+    .skoll-cs-wrapper .skoll-cs-gallery-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+      transition: transform 0.6s ease;
+    }
+    .skoll-cs-wrapper .skoll-cs-gallery-item:hover .skoll-cs-gallery-img {
+      transform: scale(1.04);
+    }
+    .skoll-cs-wrapper .skoll-cs-gallery-item--perf .skoll-cs-gallery-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .skoll-cs-wrapper .skoll-cs-gallery-item--perf:hover .skoll-cs-gallery-img {
+      transform: scale(1.03);
+    }
+    .skoll-cs-wrapper .skoll-cs-gallery-placeholder {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-size: 0.8125rem;
+      color: #888888;
+      text-align: center;
+      padding: 24px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (max-width: 900px) {
+      .skoll-cs-wrapper .skoll-cs-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .skoll-cs-wrapper .skoll-cs-gallery-grid,
+      .skoll-cs-wrapper .skoll-cs-gallery-grid--2col {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* ---------- RESPONSIVE ---------- */
     @media (max-width: 1024px) {
       .skoll-cs-wrapper .skoll-cs-stats {
@@ -462,6 +698,30 @@
       </div>
     </div>
 
+    <!-- 5b. PERFORMANCE (Behind The Scale Slider) -->
+    <div class="skoll-cs-gallery-section">
+      <span class="skoll-cs-label skoll-cs-section-label skoll-cs-anim">Behind The Scale</span>
+      
+      <div class="skoll-cs-slider-container skoll-cs-anim" id="bella-babe-perf-slider">
+        <div class="skoll-cs-slider-arrow skoll-cs-slider-arrow--prev" aria-label="Previous Performance Screenshot">&larr;</div>
+        <div class="skoll-cs-slider-arrow skoll-cs-slider-arrow--next" aria-label="Next Performance Screenshot">&rarr;</div>
+        
+        <div class="skoll-cs-slider-viewport">
+          <div class="skoll-cs-slides">
+            <div class="skoll-cs-slide skoll-cs-slide--active">
+              <img class="skoll-cs-slide-img" src="assets/casestudy/bella-babe/performance/Screenshot%202026-05-21%20181641.png" alt="Performance Screenshot 1">
+            </div>
+            <div class="skoll-cs-slide">
+              <img class="skoll-cs-slide-img" src="assets/casestudy/bella-babe/performance/Screenshot%202026-05-21%20181715.png" alt="Performance Screenshot 2">
+            </div>
+            <div class="skoll-cs-slide">
+              <img class="skoll-cs-slide-img" src="assets/casestudy/bella-babe/performance/Screenshot%202026-05-21%20181738.png" alt="Performance Screenshot 3">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- 6. PULL QUOTE -->
     <blockquote class="skoll-cs-quote skoll-cs-anim">
       This wasn't a one-time spike. This was engineered, compounding growth &mdash; the kind that survives the next campaign cycle.
@@ -535,6 +795,66 @@
         var iv = setInterval(function () {
           tries++;
           if (initSkollCsAnim() || tries > 40) {
+            clearInterval(iv);
+          }
+        }, 100);
+      }
+    })();
+
+    // Slider Script Controller
+    (function () {
+      function initSlider(containerId) {
+        var container = document.getElementById(containerId);
+        if (!container) return false;
+        if (container.dataset.sliderInit === '1') return true;
+        container.dataset.sliderInit = '1';
+        
+        var slides = container.querySelectorAll('.skoll-cs-slide');
+        var prevBtn = container.querySelector('.skoll-cs-slider-arrow--prev');
+        var nextBtn = container.querySelector('.skoll-cs-slider-arrow--next');
+        if (!slides.length) return true;
+        
+        var currentIndex = 0;
+        
+        function showSlide(index) {
+          slides.forEach(function (slide, i) {
+            if (i === index) {
+              slide.classList.add('skoll-cs-slide--active');
+            } else {
+              slide.classList.remove('skoll-cs-slide--active');
+            }
+          });
+        }
+        
+        if (prevBtn) {
+          prevBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            showSlide(currentIndex);
+          });
+        }
+        
+        if (nextBtn) {
+          nextBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+          });
+        }
+        
+        return true;
+      }
+      
+      function runSliderInit() {
+        if (initSlider('bella-babe-perf-slider')) return true;
+        return false;
+      }
+      
+      if (!runSliderInit()) {
+        var tries = 0;
+        var iv = setInterval(function () {
+          tries++;
+          if (runSliderInit() || tries > 40) {
             clearInterval(iv);
           }
         }, 100);

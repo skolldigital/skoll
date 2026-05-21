@@ -164,17 +164,21 @@
       margin-top: 40px;
     }
     .skoll-foot-giant {
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-size: 24vw;
-      font-weight: 400;
-      line-height: 0.75;
-      color: var(--foot-text);
-      white-space: nowrap;
       text-align: center;
       width: 100%;
       overflow: hidden;
       position: relative;
       pointer-events: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 24px;
+    }
+    .skoll-foot-giant-img {
+      display: block;
+      width: 100%;
+      max-width: 1200px;
+      height: auto;
     }
     /* Social links row right below SKOLL */
     .skoll-foot-socials {
@@ -308,7 +312,9 @@
     <div class="skoll-foot-email-row" id="skoll-foot-email-row">
       <a href="mailto:hello@skolldigital.com" class="skoll-foot-email">hello@skolldigital.com</a>
     </div>
-    <div class="skoll-foot-giant" id="skoll-foot-giant">SKOLL</div>
+    <div class="skoll-foot-giant" id="skoll-foot-giant">
+      <img src="brand/PNG%20LOGO/logo_main.png" alt="Skoll" class="skoll-foot-giant-img">
+    </div>
     <div class="skoll-foot-socials" id="skoll-foot-socials">
       <a href="https://www.linkedin.com/company/skol-digital-media/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://www.instagram.com/skolldigital" target="_blank" rel="noopener">Instagram</a>

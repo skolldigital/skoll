@@ -43,7 +43,7 @@
   function loadSection(containerId, path, basePath) {
     var container = document.getElementById(containerId);
     if (!container) return Promise.resolve(false);
-    var url = basePath + path;
+    var url = basePath + path + '?t=' + Date.now();
     return fetch(url)
       .then(function (res) { if (res.ok) return res.text(); throw new Error(path); })
       .then(function (html) { container.innerHTML = html; runScriptsInContainer(container); return true; })
