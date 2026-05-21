@@ -138,6 +138,7 @@
     var barEl = document.getElementById('skoll-preloader-bar');
     var wordEl = document.getElementById('skoll-preloader-word');
     var gsap = window.gsap;
+    var logoImg = wordEl ? wordEl.querySelector('img') : null;
     var letters = wordEl ? wordEl.querySelectorAll('span') : [];
 
     function setBar(pct) { if (barEl) barEl.style.width = (pct * 100) + '%'; }
@@ -166,9 +167,17 @@
     loadAllWithProgress(setBar).then(function (anyLoaded) {
       setBar(1);
 
-      if (gsap && letters.length) {
-        gsap.to(letters, { opacity: 1, y: 0, duration: 0.5, stagger: 0.06, ease: 'power2.out', delay: 0.1 });
+      if (gsap) {
+        if (logoImg) {
+          gsap.to(logoImg, { opacity: 1, scale: 1, duration: 0.8, ease: 'power2.out', delay: 0.1 });
+        } else if (letters.length) {
+          gsap.to(letters, { opacity: 1, y: 0, duration: 0.5, stagger: 0.06, ease: 'power2.out', delay: 0.1 });
+        }
       } else {
+        if (logoImg) {
+          logoImg.style.opacity = 1;
+          logoImg.style.transform = 'none';
+        }
         letters.forEach(function (s) { s.style.opacity = 1; s.style.transform = 'none'; });
       }
 
