@@ -1,0 +1,2085 @@
+<!-- Skoll Digital – Award-Winning Stealth Creative Experience & Strategy Lab Redesign -->
+<section class="skoll-creative-experience" data-section="test-creative" id="test-creative">
+  
+  <!-- Premium Google Fonts imported directly for editorial feel -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Share+Tech+Mono&display=swap');
+    
+    /* ===== THE AETHERIUM SYSTEM DESIGN TOKENS ===== */
+    .skoll-creative-experience {
+      --x-bg: #050508;
+      --x-text: #FAFAFA;
+      --x-muted: #8E8E9F;
+      --x-gold: #C9A84C;
+      --x-purple: #9333EA;
+      --x-cyan: #06B6D4;
+      --x-crimson: #DC2626;
+      --x-glass-bg: rgba(8, 8, 12, 0.45);
+      --x-glass-border: rgba(255, 255, 255, 0.04);
+      --x-divider: rgba(255, 255, 255, 0.06);
+
+      /* Theme Variables (Morphing Dynamically) */
+      --thm-bg: #0D0D10;
+      --thm-primary: #C9A84C;
+      --thm-accent: #E5C158;
+      --thm-text: #FAFAFA;
+      --thm-card: rgba(255, 255, 255, 0.015);
+      --thm-glow: rgba(201, 168, 76, 0.15);
+
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background: var(--x-bg);
+      color: var(--x-text);
+      padding: 160px 24px 140px;
+      position: relative;
+      overflow: hidden;
+      perspective: 1500px;
+    }
+
+    /* Ambient Spatial Light Rig */
+    .skoll-creative-experience .x-ambient-light {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(120px);
+      z-index: 0;
+      opacity: 0.7;
+      will-change: transform, left, top;
+      transition: transform 0.8s cubic-bezier(0.1, 0.8, 0.2, 1);
+    }
+    .skoll-creative-experience .light-purple {
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(147, 51, 234, 0.1) 0%, transparent 70%);
+      top: -10%;
+      left: 10%;
+    }
+    .skoll-creative-experience .light-cyan {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.08) 0%, transparent 70%);
+      bottom: 20%;
+      right: 5%;
+    }
+    .skoll-creative-experience .light-gold {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(201, 168, 76, 0.06) 0%, transparent 70%);
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* Interactive Vector Coordinate Grid Backdrop */
+    .skoll-creative-experience .x-coordinate-grid {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+      background-size: 60px 60px;
+      background-position: center center;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.85;
+    }
+    .skoll-creative-experience .x-coordinate-grid::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, transparent 30%, #050508 95%);
+    }
+
+    /* Subtle Film Grain Noise Overlay */
+    .skoll-creative-experience .x-noise-overlay {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3联%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .x-experience-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* System Status Console Floaters */
+    .x-status-floating-label {
+      position: absolute;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.6875rem;
+      letter-spacing: 0.18em;
+      color: rgba(201, 168, 76, 0.45);
+      pointer-events: none;
+      text-transform: uppercase;
+    }
+    .status-left-top { top: 40px; left: 0; }
+    .status-right-top { top: 40px; right: 0; }
+
+    /* ===== HERO INTRO (AWARDS BRANDING STYLE) ===== */
+    .x-hero {
+      text-align: center;
+      margin-bottom: 140px;
+      position: relative;
+      transform-style: preserve-3d;
+    }
+    .x-eyebrow {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.8125rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--x-gold);
+      margin: 0 0 24px;
+      font-weight: 500;
+      opacity: 0.95;
+    }
+    .x-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(3.2rem, 7.5vw, 7rem);
+      line-height: 0.95;
+      color: var(--x-text);
+      margin: 0 auto 36px;
+      letter-spacing: -0.03em;
+      max-width: 1000px;
+    }
+    .x-title em {
+      font-style: italic;
+      color: var(--x-gold);
+      position: relative;
+      font-weight: 400;
+    }
+    .x-title em::after {
+      content: '';
+      position: absolute;
+      bottom: 12%;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 5%, var(--x-gold) 50%, transparent 95%);
+    }
+    .x-desc {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      color: var(--x-muted);
+      font-size: clamp(1rem, 1.8vw, 1.25rem);
+      margin: 0 auto;
+      line-height: 1.65;
+      max-width: 720px;
+      font-weight: 300;
+      letter-spacing: -0.01em;
+    }
+
+    /* ===== AWARDS-LEVEL SECTION CARD ===== */
+    .x-section-card {
+      background: var(--x-glass-bg);
+      border: 1px solid var(--x-glass-border);
+      border-radius: 36px;
+      padding: 80px 72px;
+      backdrop-filter: blur(40px);
+      -webkit-backdrop-filter: blur(40px);
+      margin-bottom: 120px;
+      position: relative;
+      overflow: hidden;
+      transform-style: preserve-3d;
+      transition: border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @media (max-width: 768px) {
+      .x-section-card { padding: 48px 24px; }
+    }
+    .x-section-card:hover {
+      border-color: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 45px 120px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(255, 255, 255, 0.06);
+    }
+    .x-section-head {
+      margin-bottom: 72px;
+      position: relative;
+      z-index: 2;
+    }
+    .x-section-num {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.8125rem;
+      color: var(--x-gold);
+      display: block;
+      margin-bottom: 16px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+    .x-section-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+      font-weight: 400;
+      margin: 0 0 20px;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+    }
+    .x-section-desc {
+      color: var(--x-muted);
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      max-width: 680px;
+      margin: 0;
+      font-weight: 300;
+    }
+
+    /* ===== INTUITIVE FEATURE 1: GRAVITATIONAL PLANETARIUM ===== */
+    .x-planetarium-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 64px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    @media (max-width: 991px) {
+      .x-planetarium-grid { grid-template-columns: 1fr; gap: 48px; }
+    }
+
+    /* Orbit Interactive Canvas Area */
+    .x-orbit-stage {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1;
+      max-width: 480px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px dashed rgba(255, 255, 255, 0.02);
+      border-radius: 50%;
+    }
+    .x-orbit-nucleus {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #FAFAFA 0%, var(--x-gold) 65%, #000 100%);
+      box-shadow: 0 0 45px rgba(201, 168, 76, 0.55), inset 2px 2px 6px rgba(255, 255, 255, 0.5);
+      position: relative;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .x-orbit-nucleus:hover {
+      transform: scale(1.1);
+    }
+    .x-orbit-nucleus-ring {
+      position: absolute;
+      inset: -16px;
+      border-radius: 50%;
+      border: 1px dashed rgba(201, 168, 76, 0.45);
+      animation: x-spin 25s linear infinite;
+    }
+    .x-orbit-ring {
+      position: absolute;
+      border: 1px solid rgba(255, 255, 255, 0.025);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .x-orbit-ring-1 { width: 55%; height: 55%; }
+    .x-orbit-ring-2 { width: 82%; height: 82%; }
+
+    /* Gravitational Floating Nodes */
+    .x-orbit-sphere {
+      position: absolute;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: #050508;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 5;
+      user-select: none;
+    }
+    .x-orbit-sphere::after {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      border: 1.5px solid transparent;
+      transition: border-color 0.4s ease;
+    }
+    .x-orbit-sphere:hover {
+      transform: scale(1.25);
+      box-shadow: 0 15px 35px rgba(255, 255, 255, 0.08);
+      z-index: 12;
+    }
+    .x-orbit-sphere.active::after {
+      border-color: var(--x-gold);
+    }
+    .sphere-tactical {
+      background: radial-gradient(circle at 35% 35%, #FAFAFA 0%, #8E8E9F 70%, #101014 100%);
+      top: 15%;
+      left: 12%;
+    }
+    .sphere-brand {
+      background: radial-gradient(circle at 35% 35%, #FAFAFA 0%, var(--x-gold) 70%, #201800 100%);
+      bottom: 22%;
+      right: 8%;
+    }
+    .sphere-hype {
+      background: radial-gradient(circle at 35% 35%, #FAFAFA 0%, var(--x-purple) 70%, #150025 100%);
+      top: 12%;
+      right: 15%;
+    }
+
+    /* Elastic Connective Web Network Layer */
+    .x-orbit-connections {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 3;
+    }
+    .x-orbit-connection-path {
+      fill: none;
+      stroke-width: 1.25;
+      stroke-dasharray: 4 2;
+      transition: stroke 0.5s ease;
+    }
+
+    /* Cyber Diagnostics HUD Panel */
+    .x-diag-console {
+      background: rgba(6, 6, 9, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: 28px;
+      padding: 44px;
+      box-shadow: inset 0 2px 25px rgba(0, 0, 0, 0.95), 0 25px 60px rgba(0, 0, 0, 0.6);
+      position: relative;
+      overflow: hidden;
+      min-height: 480px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      backdrop-filter: blur(20px);
+    }
+    .x-diag-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding-bottom: 20px;
+      margin-bottom: 28px;
+    }
+    .x-diag-label {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--x-gold);
+    }
+    .x-diag-pulse-glow {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--x-gold);
+      box-shadow: 0 0 15px var(--x-gold);
+      animation: x-pulse 1.8s infinite;
+    }
+    .x-diag-body {
+      flex-grow: 1;
+      transition: opacity 0.4s ease;
+    }
+    .x-diag-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.25rem;
+      margin: 0 0 16px;
+      color: var(--x-text);
+      letter-spacing: -0.01em;
+    }
+    .x-diag-desc {
+      font-size: 0.9375rem;
+      line-height: 1.65;
+      color: var(--x-muted);
+      margin: 0 0 24px;
+      font-weight: 300;
+    }
+
+    /* Morphing HUD Vector Chart */
+    .x-hud-chart-box {
+      width: 100%;
+      height: 110px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      background: rgba(255, 255, 255, 0.005);
+      border-radius: 12px;
+      padding: 12px;
+      position: relative;
+    }
+    .x-hud-chart-box svg {
+      width: 100%;
+      height: 100%;
+    }
+    .chart-gridline {
+      stroke: rgba(255, 255, 255, 0.03);
+      stroke-width: 0.5;
+    }
+    .chart-primary-path {
+      fill: none;
+      stroke: var(--x-gold);
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: d 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .chart-ambient-area {
+      fill: url(#chart-gradient);
+      opacity: 0.08;
+      transition: d 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .x-diag-metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.04);
+      padding-top: 24px;
+    }
+    .x-diag-metric-val {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 2rem;
+      color: var(--x-gold);
+      margin: 0 0 6px;
+      line-height: 1;
+    }
+    .x-diag-metric-lbl {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--x-muted);
+      margin: 0;
+      font-weight: 500;
+    }
+    .x-diag-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 24px;
+      margin-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .x-diag-price-lbl {
+      font-size: 0.75rem;
+      color: var(--x-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 500;
+    }
+    .x-diag-price-val {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.75rem;
+      color: var(--x-text);
+      font-style: italic;
+    }
+
+    /* ===== FEATURE 2: CHROMATIC ALCHEMIST ===== */
+    .x-chroma-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 64px;
+      align-items: center;
+    }
+    @media (max-width: 991px) {
+      .x-chroma-grid { grid-template-columns: 1fr; gap: 48px; }
+    }
+
+    .x-chroma-selectors {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .x-palette-card {
+      background: rgba(255, 255, 255, 0.003);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      border-radius: 20px;
+      padding: 24px 28px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+    .x-palette-card::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.04), transparent);
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.3;
+    }
+    .x-palette-card:hover {
+      border-color: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.015);
+      transform: translateY(-2px);
+    }
+    .x-palette-card.active {
+      border-color: var(--x-gold);
+      background: rgba(201, 168, 76, 0.012);
+    }
+    .x-palette-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .x-palette-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      margin: 0;
+    }
+    .x-palette-tag {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.6875rem;
+      color: var(--x-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-weight: 500;
+    }
+    .x-palette-dots {
+      display: flex;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    .x-dot {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      position: relative;
+      cursor: help;
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .x-dot:hover {
+      transform: scale(1.22) translateY(-2px);
+      z-index: 10;
+    }
+
+    /* Generative 3D phone canvas mockup stage */
+    .x-hologram-stage {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform-style: preserve-3d;
+      perspective: 1200px;
+    }
+    .x-hologram-card {
+      width: 100%;
+      max-width: 380px;
+      background: var(--thm-bg);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 36px;
+      padding: 24px;
+      box-shadow: 0 45px 90px rgba(0, 0, 0, 0.8), 0 0 50px var(--thm-glow);
+      transition: background 0.8s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      transform-style: preserve-3d;
+      will-change: transform;
+      position: relative;
+      overflow: hidden;
+    }
+    .x-color-swell {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0%;
+      height: 0%;
+      background: radial-gradient(circle, var(--thm-primary) 0%, transparent 60%);
+      opacity: 0;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .x-hologram-notch {
+      width: 110px;
+      height: 20px;
+      background: #050508;
+      margin: -25px auto 16px;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.02);
+      border-top: none;
+      position: relative;
+      z-index: 5;
+    }
+
+    /* Interactive Generative SVG Canvas */
+    .x-hologram-generative-box {
+      width: 100%;
+      aspect-ratio: 1.15;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      border-radius: 20px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      position: relative;
+      z-index: 2;
+    }
+    .x-generative-art-canvas {
+      width: 100%;
+      height: 100%;
+      transition: all 0.5s ease;
+    }
+    .gen-shape {
+      transform-origin: center center;
+      transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), fill 0.8s ease, stroke 0.8s ease, r 0.8s ease;
+    }
+    .x-hologram-container {
+      position: relative;
+      z-index: 2;
+      transform: translateZ(25px);
+    }
+    .x-hologram-content {
+      background: var(--thm-card);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 20px;
+      transition: background 0.5s ease;
+    }
+    .x-hologram-badge {
+      display: inline-block;
+      padding: 6px 14px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 99px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.6875rem;
+      color: var(--thm-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-weight: 500;
+      margin-bottom: 12px;
+      transition: color 0.4s ease;
+    }
+    .x-hologram-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.25rem;
+      font-style: italic;
+      line-height: 1.1;
+      margin: 0 0 10px;
+      color: var(--thm-text);
+      transition: color 0.4s ease;
+    }
+    .x-hologram-desc {
+      font-size: 0.875rem;
+      line-height: 1.5;
+      color: var(--thm-text);
+      opacity: 0.65;
+      margin: 0 0 16px;
+      transition: color 0.4s ease;
+      font-weight: 300;
+    }
+    .x-contrast-compliance {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.6875rem;
+      color: var(--thm-accent);
+      border: 1px solid rgba(255, 255, 255, 0.02);
+      transition: color 0.4s ease;
+    }
+    .x-hologram-btn {
+      width: 100%;
+      padding: 16px;
+      background: var(--thm-primary);
+      border: none;
+      border-radius: 14px;
+      color: #050508;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 0.875rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .x-hologram-btn:hover {
+      background: var(--thm-accent);
+      transform: translateY(-2px) translateZ(15px);
+      box-shadow: 0 15px 30px var(--thm-glow);
+    }
+    
+    .x-swatch-tip {
+      position: absolute;
+      bottom: 135%;
+      left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      background: #060609;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 0.75rem;
+      color: var(--x-text);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.85);
+      pointer-events: none;
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap;
+      z-index: 100;
+      font-family: 'Share Tech Mono', monospace;
+    }
+    .x-dot:hover .x-swatch-tip {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+    .x-swatch-tip-hex {
+      font-weight: 700;
+      color: var(--x-gold);
+    }
+
+    /* ===== FEATURE 3: MECHANICAL SCENIC BLUEPRINT SCANNER ===== */
+    .x-pipeline-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    @media (max-width: 991px) {
+      .x-pipeline-grid { grid-template-columns: 1fr; gap: 48px; }
+    }
+    
+    .x-pipeline-selector {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .x-pipeline-row {
+      background: rgba(255, 255, 255, 0.003);
+      border: 1px solid rgba(255, 255, 255, 0.025);
+      border-radius: 20px;
+      padding: 24px 32px;
+      cursor: pointer;
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .x-pipeline-row:hover {
+      border-color: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.015);
+    }
+    .x-pipeline-row.active {
+      border-color: var(--x-gold);
+      background: rgba(201, 168, 76, 0.015);
+    }
+    .x-pipeline-num {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.25rem;
+      font-style: italic;
+      color: var(--x-gold);
+      line-height: 1;
+      width: 45px;
+      flex-shrink: 0;
+    }
+    .x-pipeline-info {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .x-pipeline-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0;
+    }
+    .x-pipeline-desc {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--x-muted);
+      margin: 0;
+      font-weight: 300;
+    }
+
+    /* Master Interactive Viewport Box */
+    .x-xray-viewport {
+      position: relative;
+      width: 100%;
+      height: 520px;
+      background: #040406;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 45px 90px rgba(0, 0, 0, 0.7);
+      cursor: crosshair;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    /* Laser Guide scanner alignment crosshairs */
+    .x-scanner-laser-h, .x-scanner-laser-v {
+      position: absolute;
+      background: rgba(201, 168, 76, 0.15);
+      pointer-events: none;
+      z-index: 18;
+      display: none;
+    }
+    .x-xray-viewport:hover .x-scanner-laser-h,
+    .x-xray-viewport:hover .x-scanner-laser-v {
+      display: block;
+    }
+    .x-scanner-laser-h {
+      width: 100%;
+      height: 1px;
+      left: 0;
+      will-change: top;
+    }
+    .x-scanner-laser-v {
+      width: 1px;
+      height: 100%;
+      top: 0;
+      will-change: left;
+    }
+
+    /* Crosshair Scanner Lens overlay with coordinates */
+    .x-scanner-cursor {
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      border: 1.5px dashed var(--x-gold);
+      background: transparent;
+      pointer-events: none;
+      z-index: 20;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 50%;
+      box-shadow: 0 0 35px rgba(201, 168, 76, 0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      will-change: left, top;
+    }
+    .x-xray-viewport:hover .x-scanner-cursor {
+      opacity: 1;
+    }
+    .x-scanner-hud-text {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.6875rem;
+      letter-spacing: 0.1em;
+      color: var(--x-gold);
+      background: rgba(5, 5, 8, 0.95);
+      padding: 4px 8px;
+      border: 1.5px solid var(--x-gold);
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+    .x-scanner-crosshair {
+      width: 16px;
+      height: 16px;
+      position: relative;
+    }
+    .x-scanner-crosshair::before, .x-scanner-crosshair::after {
+      content: '';
+      position: absolute;
+      background: var(--x-gold);
+    }
+    .x-scanner-crosshair::before { width: 100%; height: 1.5px; top: 7px; left: 0; }
+    .x-scanner-crosshair::after { width: 1.5px; height: 100%; left: 7px; top: 0; }
+
+    /* Interactive Radar SVG Pulse Ring layer */
+    .x-scanner-pulse-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 19;
+    }
+
+    .x-stage-layer {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .x-stage-layer.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Polish artwork overlay & sketch underlay layers */
+    .x-layer-final {
+      position: absolute;
+      inset: 0;
+      background: #09090C;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      color: var(--x-text);
+      z-index: 1;
+    }
+    .x-layer-sketch {
+      position: absolute;
+      inset: 0;
+      background: #040406;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      z-index: 2;
+      clip-path: circle(95px at var(--scanner-x, 50%) var(--scanner-y, 50%));
+      -webkit-clip-path: circle(95px at var(--scanner-x, 50%) var(--scanner-y, 50%));
+    }
+    .x-sketch-blueprint {
+      width: 100%;
+      height: 100%;
+      max-width: 320px;
+      opacity: 0.55;
+      stroke: var(--x-gold);
+      stroke-width: 1.25;
+      fill: none;
+      transition: stroke 0.5s ease;
+    }
+    .x-final-rendering {
+      width: 100%;
+      height: 100%;
+      max-width: 320px;
+      filter: drop-shadow(0 15px 40px rgba(201, 168, 76, 0.12));
+      transition: filter 0.8s ease;
+    }
+    .x-viewport-badge {
+      position: absolute;
+      top: 24px;
+      padding: 8px 16px;
+      background: rgba(4, 4, 6, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.6875rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 500;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 10;
+    }
+    .x-viewport-badge.badge-left {
+      left: 24px;
+      color: var(--x-muted);
+    }
+    .x-viewport-badge.badge-right {
+      right: 24px;
+      color: var(--x-gold);
+      animation: x-pulse 1.8s infinite;
+    }
+
+    /* ===== OUT-OF-THE-BOX KINETIC VELOCITY MARQUEE ===== */
+    .x-kinetic-marquee-section {
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      margin-bottom: 120px;
+      position: relative;
+      overflow: hidden;
+      background: #030305;
+      border-top: 1px solid rgba(255, 255, 255, 0.02);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+      padding: 60px 0;
+    }
+    .x-marquee-row {
+      display: flex;
+      white-space: nowrap;
+      width: 100%;
+      margin-bottom: 28px;
+      will-change: transform;
+    }
+    .x-marquee-row:last-child { margin-bottom: 0; }
+    .x-marquee-track {
+      display: flex;
+      animation: x-marquee-scroll 35s linear infinite;
+      will-change: transform;
+    }
+    .row-reverse .x-marquee-track {
+      animation-direction: reverse;
+    }
+    .x-marquee-text {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 6.5vw, 6rem);
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      color: rgba(250, 250, 250, 0.9);
+      padding: 0 40px;
+      text-transform: uppercase;
+      will-change: transform;
+      transition: transform 0.25s ease-out;
+    }
+    .x-marquee-text em {
+      font-style: italic;
+      color: var(--x-gold);
+      font-weight: 400;
+    }
+    .x-marquee-text span {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: clamp(1rem, 2.5vw, 2.5rem);
+      color: rgba(255, 255, 255, 0.1);
+      margin: 0 30px;
+      vertical-align: middle;
+    }
+
+    /* ===== AWARDS KEYFRAMES ===== */
+    @keyframes x-spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes x-pulse {
+      0%, 100% { opacity: 0.95; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(0.96); }
+    }
+    @keyframes x-marquee-scroll {
+      0% { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(-50%, 0, 0); }
+    }
+
+    .skoll-creative-experience .x-anim {
+      opacity: 0;
+      transform: translateY(35px);
+      will-change: transform, opacity;
+    }
+
+  </style>
+
+  <!-- Interactive Dynamic Grids & Cinematic Background Overlays -->
+  <div class="x-noise-overlay"></div>
+  <div class="x-coordinate-grid"></div>
+
+  <!-- Dynamic Ambient Lights -->
+  <div class="x-ambient-light light-purple" id="amb-p"></div>
+  <div class="x-ambient-light light-cyan" id="amb-c"></div>
+  <div class="x-ambient-light light-gold" id="amb-g"></div>
+
+  <div class="x-experience-inner">
+    
+    <!-- SYSTEM FLOATING SPECS -->
+    <div class="x-status-floating-label status-left-top">[SKOLL SYSTEM VERSION 4.2 // LAB ACCESS]</div>
+    <div class="x-status-floating-label status-right-top">[ATMOSPHERE DECK: SECURE]</div>
+
+    <!-- HEADER (3D EDITORIAL INTERACTIVE STYLE) -->
+    <header class="x-hero lab-anim" id="experience-hero">
+      <p class="x-eyebrow x-anim">Creative Director Portal</p>
+      <h1 class="x-title x-anim">Where Imagination Meets <em>Precision</em></h1>
+      <p class="x-desc x-anim">An immersive environment exploring the physical math behind planning, dynamic color synesthesia, and skeletal concept scanning.</p>
+    </header>
+
+    <!-- SECTION 1: THE GRAVITATIONAL PLANETARIUM (How We Create Plans) -->
+    <div class="x-section-card x-anim">
+      <div class="x-section-head">
+        <span class="x-section-num">01 / Strategic Planetarium</span>
+        <h2 class="x-section-title">How We Create Plans</h2>
+        <p class="x-section-desc">Strategy is orbit. Select a floating tactical body to pull it into our orbital diagnostics deck and morph calculation waves dynamically.</p>
+      </div>
+
+      <div class="x-planetarium-grid">
+        <!-- Cosmic Gravitational Orbit Stage -->
+        <div class="x-orbit-stage" id="x-gravity-stage">
+          
+          <!-- Connective SVG Web Network -->
+          <svg class="x-orbit-connections" id="x-web-network">
+            <defs>
+              <linearGradient id="conn-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#C9A84C" stop-opacity="0.6"></stop>
+                <stop offset="100%" stop-color="#9333EA" stop-opacity="0.3"></stop>
+              </linearGradient>
+            </defs>
+            <path class="x-orbit-connection-path" id="conn-tct" stroke="url(#conn-gradient)"></path>
+            <path class="x-orbit-connection-path" id="conn-bnd" stroke="url(#conn-gradient)"></path>
+            <path class="x-orbit-connection-path" id="conn-hyp" stroke="url(#conn-gradient)"></path>
+          </svg>
+
+          <!-- Central Nucleus -->
+          <div class="x-orbit-nucleus" id="gravity-core">
+            <div class="x-orbit-nucleus-ring"></div>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#050508" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle></svg>
+          </div>
+          
+          <div class="x-orbit-ring x-orbit-ring-1"></div>
+          <div class="x-orbit-ring x-orbit-ring-2"></div>
+          
+          <!-- Orbit Planets with dynamic coords -->
+          <div class="x-orbit-sphere sphere-tactical active" data-pillar="tactical" id="sphere-tct">TCT</div>
+          <div class="x-orbit-sphere sphere-brand" data-pillar="brand" id="sphere-bnd">BND</div>
+          <div class="x-orbit-sphere sphere-hype" data-pillar="hype" id="sphere-hyp">HYP</div>
+        </div>
+
+        <!-- HUD Console HUD Panel -->
+        <div class="x-diag-console" id="x-hud-console">
+          <div class="x-diag-head">
+            <span class="x-diag-label">Plan Orbit Diagnostics</span>
+            <div class="x-diag-pulse-glow"></div>
+          </div>
+          
+          <div class="x-diag-body" id="x-hud-content">
+            <h4 class="x-diag-title" id="x-hud-title">The Tactical Blueprint</h4>
+            <p class="x-diag-desc" id="x-hud-desc">Constructed to drive immediate performance. Focuses on agile, fast variant testing, conversion styling, and dynamic optimization of visual assets across social channels.</p>
+            
+            <!-- Morphing HUD SVG Line Chart -->
+            <div class="x-hud-chart-box">
+              <svg viewBox="0 0 100 40" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="chart-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#C9A84C" stop-opacity="0.3"></stop>
+                    <stop offset="100%" stop-color="#C9A84C" stop-opacity="0"></stop>
+                  </linearGradient>
+                </defs>
+                <!-- Grid Lines -->
+                <line x1="0" y1="10" x2="100" y2="10" class="chart-gridline"></line>
+                <line x1="0" y1="20" x2="100" y2="20" class="chart-gridline"></line>
+                <line x1="0" y1="30" x2="100" y2="30" class="chart-gridline"></line>
+                
+                <!-- Morphing wave area and path -->
+                <path d="M 0 35 Q 20 15 40 25 T 80 10 T 100 20 L 100 40 L 0 40 Z" class="chart-ambient-area" id="hud-chart-area"></path>
+                <path d="M 0 35 Q 20 15 40 25 T 80 10 T 100 20" class="chart-primary-path" id="hud-chart-path"></path>
+              </svg>
+            </div>
+
+            <div class="x-diag-metrics">
+              <div class="x-diag-metric-item">
+                <p class="x-diag-metric-val" id="x-hud-timeline">14 Days</p>
+                <p class="x-diag-metric-lbl">Timeline Target</p>
+              </div>
+              <div class="x-diag-metric-item">
+                <p class="x-diag-metric-val" id="x-hud-kpi">+157%</p>
+                <p class="x-diag-metric-lbl">Expected Conversion</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="x-diag-footer">
+            <span class="x-diag-price-lbl">Engine Cost</span>
+            <span class="x-diag-price-val" id="x-hud-price">Rs.2.5L/m</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: CHROMATIC ALCHEMIST (How We Choose Colors) -->
+    <div class="x-section-card x-anim" id="x-color-card">
+      <div class="x-section-head">
+        <span class="x-section-num">02 / Chromatic Synesthesia</span>
+        <h2 class="x-section-title">How We Choose Colors</h2>
+        <p class="x-section-desc">Colors speak to the sub-conscious. Interact with our crafted coordinate palettes to watch the central hologram UI and generative vector artwork mutate dynamically.</p>
+      </div>
+
+      <div class="x-chroma-grid">
+        <!-- Palette Selectors -->
+        <div class="x-chroma-selectors">
+          
+          <!-- Palette 1: Nouveau Gold -->
+          <div class="x-palette-card active" data-palette="nouveau">
+            <div class="x-palette-head">
+              <h3 class="x-palette-name">Nouveau Gold</h3>
+              <span class="x-palette-tag">Imperial Luxury</span>
+            </div>
+            <div class="x-palette-dots">
+              <div class="x-dot" style="background-color: #0D0D10;">
+                <div class="x-swatch-tip">Obsidian Base: <span class="x-swatch-tip-hex">#0D0D10</span><br>Value: HSL(240, 10%, 6%)</div>
+              </div>
+              <div class="x-dot" style="background-color: #C9A84C;">
+                <div class="x-swatch-tip">Nouveau Gold: <span class="x-swatch-tip-hex">#C9A84C</span><br>Value: HSL(44, 52%, 54%)</div>
+              </div>
+              <div class="x-dot" style="background-color: #E5C158;">
+                <div class="x-swatch-tip">Liquid Sun: <span class="x-swatch-tip-hex">#E5C158</span><br>Value: HSL(45, 75%, 62%)</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Palette 2: Electric Cyberpunk -->
+          <div class="x-palette-card" data-palette="cyber">
+            <div class="x-palette-head">
+              <h3 class="x-palette-name">Cyberpunk Hype</h3>
+              <span class="x-palette-tag">Adrenaline Hype</span>
+            </div>
+            <div class="x-palette-dots">
+              <div class="x-dot" style="background-color: #06050C;">
+                <div class="x-swatch-tip">Void Base: <span class="x-swatch-tip-hex">#06050C</span><br>Value: HSL(248, 50%, 3%)</div>
+              </div>
+              <div class="x-dot" style="background-color: #9333EA;">
+                <div class="x-swatch-tip">Cyber Purple: <span class="x-swatch-tip-hex">#9333EA</span><br>Value: HSL(270, 84%, 56%)</div>
+              </div>
+              <div class="x-dot" style="background-color: #06B6D4;">
+                <div class="x-swatch-tip">Electric Cyan: <span class="x-swatch-tip-hex">#06B6D4</span><br>Value: HSL(190, 90%, 43%)</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Palette 3: Crimson Performance -->
+          <div class="x-palette-card" data-palette="crimson">
+            <div class="x-palette-head">
+              <h3 class="x-palette-name">Crimson Performance</h3>
+              <span class="x-palette-tag">Pure Domination</span>
+            </div>
+            <div class="x-palette-dots">
+              <div class="x-dot" style="background-color: #121215;">
+                <div class="x-swatch-tip">Carbon Base: <span class="x-swatch-tip-hex">#121215</span><br>Value: HSL(240, 8%, 8%)</div>
+              </div>
+              <div class="x-dot" style="background-color: #DC2626;">
+                <div class="x-swatch-tip">Apex Red: <span class="x-swatch-tip-hex">#DC2626</span><br>Value: HSL(0, 72%, 50%)</div>
+              </div>
+              <div class="x-dot" style="background-color: #F87171;">
+                <div class="x-swatch-tip">Ember Fire: <span class="x-swatch-tip-hex">#F87171</span><br>Value: HSL(0, 90%, 70%)</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 3D Hologram Phone Mockup -->
+        <div class="x-hologram-stage" id="x-3d-hologram-container">
+          <div class="x-hologram-card" id="x-3d-card">
+            <div class="x-color-swell" id="x-swell-wave"></div>
+            <div class="x-hologram-notch"></div>
+            
+            <!-- Generative Art Vector Box -->
+            <div class="x-hologram-generative-box">
+              <svg class="x-generative-art-canvas" id="gen-art-canvas" viewBox="0 0 100 80">
+                <defs>
+                  <linearGradient id="art-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="var(--thm-primary)"></stop>
+                    <stop offset="100%" stop-color="var(--thm-accent)"></stop>
+                  </linearGradient>
+                </defs>
+                <rect width="100" height="80" fill="rgba(0,0,0,0.4)"></rect>
+                <g id="gen-shapes-group">
+                  <!-- Vector circles and rings animated programmatically -->
+                  <circle cx="50" cy="40" r="28" stroke="url(#art-gradient)" stroke-width="1" fill="none" class="gen-shape" id="gen-ring-1"></circle>
+                  <circle cx="50" cy="40" r="18" stroke="rgba(255,255,255,0.03)" stroke-width="0.5" fill="none"></circle>
+                  <circle cx="50" cy="40" r="10" fill="url(#art-gradient)" class="gen-shape" id="gen-core" opacity="0.8"></circle>
+                  <!-- Rotating polygon mesh lines -->
+                  <line x1="50" y1="12" x2="50" y2="68" stroke="rgba(255,255,255,0.05)" stroke-width="0.75" class="gen-shape" id="gen-axis-y"></line>
+                  <line x1="22" y1="40" x2="78" y2="40" stroke="rgba(255,255,255,0.05)" stroke-width="0.75" class="gen-shape" id="gen-axis-x"></line>
+                  <!-- Custom modern geometric coordinates elements -->
+                  <polygon points="50,22 55,40 50,45 45,40" fill="rgba(255,255,255,0.2)" class="gen-shape" id="gen-poly-1"></polygon>
+                  <rect x="25" y="15" width="6" height="6" stroke="var(--thm-accent)" stroke-width="0.5" fill="none" class="gen-shape" id="gen-rect-1"></rect>
+                  <rect x="69" y="59" width="6" height="6" stroke="var(--thm-primary)" stroke-width="0.5" fill="none" class="gen-shape" id="gen-rect-2"></rect>
+                </g>
+              </svg>
+            </div>
+
+            <div class="x-hologram-container">
+              <div class="x-hologram-content">
+                <span class="x-hologram-badge" id="holo-badge">Active Nouveau</span>
+                <h4 class="x-hologram-title" id="holo-title">Game of <em>Tones</em></h4>
+                <p class="x-hologram-desc" id="holo-desc">Our award-winning custom campaign blueprint, transforming standard performance ads into deep cinematic lore.</p>
+                
+                <div class="x-contrast-compliance" id="holo-compliance">
+                  <span>WCAG COMPLIANT: 4.5:1</span>
+                  <span>[AA PASS]</span>
+                </div>
+              </div>
+
+              <button class="x-hologram-btn">
+                <span>Deploy Synthesis</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- VELOCITY SCROLL SKEW MARQUEE -->
+    <div class="x-kinetic-marquee-section">
+      <div class="x-marquee-row" id="marquee-row-1">
+        <div class="x-marquee-track">
+          <div class="x-marquee-text">Creative Strategy <em>Lab</em> <span>//</span></div>
+          <div class="x-marquee-text">Out of the <em>Box</em> Systems <span>//</span></div>
+          <div class="x-marquee-text">Awwwards <em>Aesthetic</em> Synthesis <span>//</span></div>
+          <div class="x-marquee-text">Physical <em>Creative</em> Direction <span>//</span></div>
+          <!-- Repeated for infinite scroll -->
+          <div class="x-marquee-text">Creative Strategy <em>Lab</em> <span>//</span></div>
+          <div class="x-marquee-text">Out of the <em>Box</em> Systems <span>//</span></div>
+          <div class="x-marquee-text">Awwwards <em>Aesthetic</em> Synthesis <span>//</span></div>
+          <div class="x-marquee-text">Physical <em>Creative</em> Direction <span>//</span></div>
+        </div>
+      </div>
+      <div class="x-marquee-row row-reverse" id="marquee-row-2">
+        <div class="x-marquee-track">
+          <div class="x-marquee-text">Skoll <em>Digital</em> Syndicate <span>//</span></div>
+          <div class="x-marquee-text">Holographic <em>Interface</em> <span>//</span></div>
+          <div class="x-marquee-text">Contrast <em>Alchemist</em> <span>//</span></div>
+          <div class="x-marquee-text">Decrypted <em>Blueprints</em> <span>//</span></div>
+          <!-- Repeated for infinite scroll -->
+          <div class="x-marquee-text">Skoll <em>Digital</em> Syndicate <span>//</span></div>
+          <div class="x-marquee-text">Holographic <em>Interface</em> <span>//</span></div>
+          <div class="x-marquee-text">Contrast <em>Alchemist</em> <span>//</span></div>
+          <div class="x-marquee-text">Decrypted <em>Blueprints</em> <span>//</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 3: THE X-RAY CROSSHAIR PIPELINE (How We Do Things) -->
+    <div class="x-section-card x-anim" style="margin-bottom: 0;">
+      <div class="x-section-head">
+        <span class="x-section-num">03 / Holographic Scanner</span>
+        <h2 class="x-section-title">How We Do Things</h2>
+        <p class="x-section-desc">Trace the lifecycle of a Skoll digital asset. Move your cursor over the rendering grid to activate the custom target X-Ray scope, exposure coordinates, and industrial schematics underneath.</p>
+      </div>
+
+      <div class="x-pipeline-grid">
+        <!-- Interactive Phase Selectors -->
+        <div class="x-pipeline-selector">
+          <div class="x-pipeline-row active" data-stage="concept">
+            <span class="x-pipeline-num">01</span>
+            <div class="x-pipeline-info">
+              <h3 class="x-pipeline-name">The Tactical Skeleton</h3>
+              <p class="x-pipeline-desc">Mining brand parameters, plotting contrast grids, and layout alignment matrices.</p>
+            </div>
+          </div>
+          <div class="x-pipeline-row" data-stage="layout">
+            <span class="x-pipeline-num">02</span>
+            <div class="x-pipeline-info">
+              <h3 class="x-pipeline-name">Structural Anatomy</h3>
+              <p class="x-pipeline-desc">Fleshing out typographical hierarchies, contrast ratios, and element alignment logic.</p>
+            </div>
+          </div>
+          <div class="x-pipeline-row" data-stage="polish">
+            <span class="x-pipeline-num">03</span>
+            <div class="x-pipeline-info">
+              <h3 class="x-pipeline-name">High-Fidelity Finish</h3>
+              <p class="x-pipeline-desc">Applying cinema-grade coloring, custom vector highlights, and optimal variants.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Custom X-Ray target crosshair screen -->
+        <div class="x-xray-viewport" id="x-scanner-stage">
+          <span class="x-viewport-badge badge-left">Master rendering</span>
+          <span class="x-viewport-badge badge-right">X-Ray Scope Active</span>
+          
+          <!-- Laser Alignment Guides -->
+          <div class="x-scanner-laser-h" id="laser-h"></div>
+          <div class="x-scanner-laser-v" id="laser-v"></div>
+
+          <!-- Crosshair target circle following mouse with active coords HUD -->
+          <div class="x-scanner-cursor" id="x-scanner-lens">
+            <div class="x-scanner-hud-text" id="x-scanner-coords">X: 0PX | Y: 0PX</div>
+            <div class="x-scanner-crosshair"></div>
+          </div>
+
+          <!-- Interactive Active SVG Sonar Pulse Ring Layer -->
+          <svg class="x-scanner-pulse-svg" id="x-pulse-canvas"></svg>
+
+          <!-- STAGE: CONCEPT -->
+          <div class="x-stage-layer" id="x-stage-concept">
+            <div class="x-layer-final">
+              <div class="x-final-rendering">
+                <svg viewBox="0 0 100 100" style="width:100%; height:100%;">
+                  <defs>
+                    <linearGradient id="final-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#C9A84C"></stop>
+                      <stop offset="100%" stop-color="#E5C158"></stop>
+                    </linearGradient>
+                    <filter id="f-glow-gold" x="-20%" y="-20%" width="140%" height="140%">
+                      <feGaussianBlur stdDeviation="5" result="blur"></feGaussianBlur>
+                      <feComposite in="SourceGraphic" in2="blur" operator="over"></feComposite>
+                    </filter>
+                  </defs>
+                  <circle cx="50" cy="50" r="35" fill="rgba(201, 168, 76, 0.02)" stroke="url(#final-gold)" stroke-width="1.5" filter="url(#f-glow-gold)"></circle>
+                  <circle cx="50" cy="50" r="27" fill="rgba(255,255,255,0.01)" stroke="#C9A84C" stroke-width="0.5"></circle>
+                  <path d="M 50 18 L 59 44 L 86 44 L 64 60 L 72 86 L 50 70 L 28 86 L 36 60 L 14 44 L 41 44 Z" fill="url(#final-gold)" filter="url(#f-glow-gold)" opacity="0.9"></path>
+                  <text x="50" y="93" font-size="5" font-family="'Share Tech Mono', monospace" text-anchor="middle" fill="#FAFAFA" letter-spacing="0.1em">CONCEPT DESIGN COMPLETED</text>
+                </svg>
+              </div>
+            </div>
+            <div class="x-layer-sketch" id="x-sketch-concept">
+              <svg class="x-sketch-blueprint" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="35" stroke-dasharray="3 3"></circle>
+                <line x1="15" y1="50" x2="85" y2="50"></line>
+                <line x1="50" y1="15" x2="50" y2="85"></line>
+                <rect x="25" y="25" width="50" height="50" stroke-dasharray="2 2"></rect>
+                <text x="50" y="46" font-size="5" text-anchor="middle" fill="#C9A84C" font-family="'Share Tech Mono', monospace">[SKELETAL MATRIX]</text>
+                <text x="50" y="56" font-size="4" text-anchor="middle" fill="#888" font-family="'Share Tech Mono', monospace">STRUCT: 01 MINING</text>
+              </svg>
+            </div>
+          </div>
+
+          <!-- STAGE: LAYOUT -->
+          <div class="x-stage-layer hidden" id="x-stage-layout">
+            <div class="x-layer-final">
+              <div class="x-final-rendering">
+                <svg viewBox="0 0 100 100" style="width:100%; height:100%;">
+                  <defs>
+                    <linearGradient id="final-cyber" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#9333EA"></stop>
+                      <stop offset="100%" stop-color="#06B6D4"></stop>
+                    </linearGradient>
+                    <filter id="f-glow-cyber" x="-20%" y="-20%" width="140%" height="140%">
+                      <feGaussianBlur stdDeviation="4" result="blur"></feGaussianBlur>
+                      <feComposite in="SourceGraphic" in2="blur" operator="over"></feComposite>
+                    </filter>
+                  </defs>
+                  <rect x="18" y="10" width="64" height="80" rx="12" fill="rgba(255,255,255,0.01)" stroke="url(#final-cyber)" stroke-width="1.8" filter="url(#f-glow-cyber)"></rect>
+                  <line x1="18" y1="32" x2="82" y2="32" stroke="url(#final-cyber)" opacity="0.3"></line>
+                  <rect x="26" y="42" width="48" height="18" rx="6" fill="rgba(6, 182, 212, 0.06)" stroke="#06B6D4" stroke-width="1" filter="url(#f-glow-cyber)"></rect>
+                  <circle cx="50" cy="51" r="4.5" fill="#06B6D4" filter="url(#f-glow-cyber)"></circle>
+                  <text x="50" y="24" font-size="5" text-anchor="middle" fill="#FAFAFA" font-family="'Share Tech Mono', monospace" letter-spacing="0.08em">GRID SYSTEM INTEGRITY</text>
+                  <text x="50" y="78" font-size="4" text-anchor="middle" fill="#888" font-family="'Share Tech Mono', monospace">STRUCT: 02 LAYOUT</text>
+                </svg>
+              </div>
+            </div>
+            <div class="x-layer-sketch" id="x-sketch-layout">
+              <svg class="x-sketch-blueprint" viewBox="0 0 100 100">
+                <rect x="18" y="10" width="64" height="80" stroke-dasharray="3 3"></rect>
+                <line x1="18" y1="32" x2="82" y2="32"></line>
+                <line x1="18" y1="65" x2="82" y2="65"></line>
+                <rect x="26" y="42" width="48" height="18" stroke-dasharray="2 2"></rect>
+                <text x="50" y="52" font-size="5" text-anchor="middle" fill="#C9A84C" font-family="'Share Tech Mono', monospace">[GRID ALIGN GUIDES]</text>
+                <text x="50" y="76" font-size="4" text-anchor="middle" fill="#888" font-family="'Share Tech Mono', monospace">WIDTH: 64% | HP: 100%</text>
+              </svg>
+            </div>
+          </div>
+
+          <!-- STAGE: POLISH -->
+          <div class="x-stage-layer hidden" id="x-stage-polish">
+            <div class="x-layer-final">
+              <div class="x-final-rendering">
+                <svg viewBox="0 0 100 100" style="width:100%; height:100%;">
+                  <defs>
+                    <linearGradient id="final-crimson" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#DC2626"></stop>
+                      <stop offset="100%" stop-color="#F87171"></stop>
+                    </linearGradient>
+                    <filter id="f-glow-crimson" x="-20%" y="-20%" width="140%" height="140%">
+                      <feGaussianBlur stdDeviation="5" result="blur"></feGaussianBlur>
+                      <feComposite in="SourceGraphic" in2="blur" operator="over"></feComposite>
+                    </filter>
+                  </defs>
+                  <polygon points="50,13 87,78 13,78" fill="rgba(255,255,255,0.01)" stroke="url(#final-crimson)" stroke-width="1.8" filter="url(#f-glow-crimson)"></polygon>
+                  <circle cx="50" cy="54" r="16" fill="rgba(220, 38, 38, 0.08)" stroke="#DC2626" stroke-width="1.2" filter="url(#f-glow-crimson)"></circle>
+                  <text x="50" y="57" font-size="5" text-anchor="middle" fill="#FAFAFA" font-weight="700" font-family="'Share Tech Mono', monospace">OPTIMIZED</text>
+                  <text x="50" y="93" font-size="5" font-family="'Share Tech Mono', monospace" text-anchor="middle" fill="#FAFAFA" letter-spacing="0.1em">SYNAPSE ACTIVE COMPILER</text>
+                </svg>
+              </div>
+            </div>
+            <div class="x-layer-sketch" id="x-sketch-polish">
+              <svg class="x-sketch-blueprint" viewBox="0 0 100 100">
+                <polygon points="50,13 87,78 13,78" stroke-dasharray="3 3"></polygon>
+                <circle cx="50" cy="54" r="16" stroke-dasharray="2 2"></circle>
+                <text x="50" y="56" font-size="5" text-anchor="middle" fill="#C9A84C" font-family="'Share Tech Mono', monospace">[POLISH SHADER SCAN]</text>
+                <text x="50" y="71" font-size="4" text-anchor="middle" fill="#888" font-family="'Share Tech Mono', monospace">ACCESSIBILITY: AAA PASS</text>
+              </svg>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    (function () {
+      var root = document.currentScript && document.currentScript.closest('.skoll-creative-experience');
+      if (!root) {
+        var nodes = document.querySelectorAll('.skoll-creative-experience[data-section="test-creative"]');
+        root = nodes[nodes.length - 1];
+      }
+      if (!root || root.__skollXInit) return;
+      root.__skollXInit = true;
+
+      // 1. BESPOKE ATMOSPHERIC MOVEMENT (Auras follow cursor with inert smooth lag)
+      var ambP = root.querySelector('#amb-p');
+      var ambC = root.querySelector('#amb-c');
+      var ambG = root.querySelector('#amb-g');
+      
+      var targetMX = 0, targetMY = 0;
+      var curMX = 0, curMY = 0;
+      
+      window.addEventListener('mousemove', function (e) {
+        targetMX = e.clientX;
+        targetMY = e.clientY;
+      });
+
+      function updateLights() {
+        curMX += (targetMX - curMX) * 0.05;
+        curMY += (targetMY - curMY) * 0.05;
+
+        if (ambP) {
+          ambP.style.transform = 'translate(' + (curMX * 0.1 - 200) + 'px, ' + (curMY * 0.1 - 200) + 'px)';
+        }
+        if (ambC) {
+          ambC.style.transform = 'translate(' + (curMX * -0.08 + 150) + 'px, ' + (curMY * -0.08 + 100) + 'px)';
+        }
+        if (ambG) {
+          ambG.style.transform = 'translate(' + (curMX * 0.05 - 100) + 'px, ' + (curMY * 0.05 - 100) + 'px)';
+        }
+        requestAnimationFrame(updateLights);
+      }
+      updateLights();
+
+      // 2. DYNAMIC COLOR SWAP & GENERATIVE MUTATIONS
+      var palettes = {
+        nouveau: {
+          bg: '#0D0D10',
+          primary: '#C9A84C',
+          accent: '#E5C158',
+          text: '#FAFAFA',
+          glow: 'rgba(201, 168, 76, 0.18)',
+          badge: 'Active Nouveau',
+          title: 'Game of <em>Tones</em>',
+          desc: 'Our award-winning custom campaign blueprint, transforming standard performance ads into deep cinematic lore.',
+          compliance: 'WCAG COMPLIANT: 4.5:1 [AA PASS]',
+          polyPts: '50,22 55,40 50,45 45,40',
+          ringR: 28,
+          coreR: 10
+        },
+        cyber: {
+          bg: '#050409',
+          primary: '#9333EA',
+          accent: '#06B6D4',
+          text: '#E2E8F0',
+          glow: 'rgba(147, 51, 234, 0.22)',
+          badge: 'Active Cyberpunk',
+          title: 'Neon <em>Synapse</em>',
+          desc: 'High-octane launch interfaces constructed to convert audiences via immersive futuristic layouts and grids.',
+          compliance: 'WCAG COMPLIANT: 7.2:1 [AAA PASS]',
+          polyPts: '50,15 62,40 50,60 38,40',
+          ringR: 32,
+          coreR: 6
+        },
+        crimson: {
+          bg: '#0C0A0A',
+          primary: '#DC2626',
+          accent: '#F87171',
+          text: '#FAFAFA',
+          glow: 'rgba(220, 38, 38, 0.18)',
+          badge: 'Active Crimson',
+          title: 'Apex <em>Variant</em>',
+          desc: 'Minimalistic performance design framework engineered for maximum conversion velocity and structural dominance.',
+          compliance: 'WCAG COMPLIANT: 5.1:1 [AA PASS]',
+          polyPts: '50,26 53,40 50,43 47,40',
+          ringR: 24,
+          coreR: 14
+        }
+      };
+
+      var paletteCards = root.querySelectorAll('.x-palette-card');
+      var hologramCard = root.querySelector('#x-3d-card');
+      var swellWave = root.querySelector('#x-swell-wave');
+      var holoBadge = root.querySelector('#holo-badge');
+      var holoTitle = root.querySelector('#holo-title');
+      var holoDesc = root.querySelector('#holo-desc');
+      var holoCompliance = root.querySelector('#holo-compliance');
+
+      // Generative vector elements
+      var genRing1 = root.querySelector('#gen-ring-1');
+      var genCore = root.querySelector('#gen-core');
+      var genPoly = root.querySelector('#gen-poly-1');
+      var genRect1 = root.querySelector('#gen-rect-1');
+      var genRect2 = root.querySelector('#gen-rect-2');
+
+      paletteCards.forEach(function (card) {
+        card.addEventListener('click', function () {
+          paletteCards.forEach(function (c) { c.classList.remove('active'); });
+          card.classList.add('active');
+
+          var key = card.getAttribute('data-palette');
+          var theme = palettes[key];
+          if (theme && hologramCard && swellWave) {
+            // Ripple Swell wave
+            swellWave.style.transition = 'none';
+            swellWave.style.width = '0%';
+            swellWave.style.height = '0%';
+            swellWave.style.opacity = '0.4';
+            
+            setTimeout(function () {
+              swellWave.style.transition = 'width 0.85s ease-out, height 0.85s ease-out, opacity 0.85s ease-out';
+              swellWave.style.width = '260%';
+              swellWave.style.height = '260%';
+              swellWave.style.opacity = '0';
+            }, 10);
+
+            // CSS Theme swap
+            hologramCard.style.setProperty('--thm-bg', theme.bg);
+            hologramCard.style.setProperty('--thm-primary', theme.primary);
+            hologramCard.style.setProperty('--thm-accent', theme.accent);
+            hologramCard.style.setProperty('--thm-text', theme.text);
+            hologramCard.style.setProperty('--thm-glow', theme.glow);
+
+            // Content Swap
+            holoBadge.textContent = theme.badge;
+            holoTitle.innerHTML = theme.title;
+            holoDesc.textContent = theme.desc;
+            holoCompliance.textContent = theme.compliance;
+
+            // Morph Generative SVG Artwork shapes
+            if (genRing1) genRing1.setAttribute('r', theme.ringR);
+            if (genCore) genCore.setAttribute('r', theme.coreR);
+            if (genPoly) genPoly.setAttribute('points', theme.polyPts);
+            
+            if (genRect1) {
+              var scaleVal = key === 'cyber' ? 'scale(1.5) rotate(45deg)' : 'scale(1) rotate(0deg)';
+              genRect1.style.transform = scaleVal;
+            }
+            if (genRect2) {
+              var scaleVal2 = key === 'crimson' ? 'scale(1.8) rotate(-20deg)' : 'scale(1) rotate(0deg)';
+              genRect2.style.transform = scaleVal2;
+            }
+          }
+        });
+      });
+
+      // 3. 3D CARD PARALLAX TILT PHYSICS
+      var hologramStage = root.querySelector('#x-3d-hologram-container');
+      if (hologramStage && hologramCard) {
+        hologramStage.addEventListener('mousemove', function (e) {
+          var rect = hologramStage.getBoundingClientRect();
+          var x = e.clientX - rect.left;
+          var y = e.clientY - rect.top;
+          
+          var centerX = rect.width / 2;
+          var centerY = rect.height / 2;
+          
+          var rotateX = ((centerY - y) / centerY) * 16;
+          var rotateY = ((x - centerX) / centerX) * 16;
+          
+          hologramCard.style.transform = 'rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateZ(12px)';
+        });
+
+        hologramStage.addEventListener('mouseleave', function () {
+          hologramCard.style.transform = 'rotateX(0deg) rotateY(0deg) translateZ(0)';
+        });
+      }
+
+      // 4. GRAVITATIONAL NETWORK CONNECTOR PATHS
+      var gravityStage = root.querySelector('#x-gravity-stage');
+      var webNetwork = root.querySelector('#x-web-network');
+      var gravityCore = root.querySelector('#gravity-core');
+      var sphereTct = root.querySelector('#sphere-tct');
+      var sphereBnd = root.querySelector('#sphere-bnd');
+      var sphereHyp = root.querySelector('#sphere-hyp');
+
+      var pathTct = root.querySelector('#conn-tct');
+      var pathBnd = root.querySelector('#conn-bnd');
+      var pathHyp = root.querySelector('#conn-hyp');
+
+      var mouseX = 0, mouseY = 0;
+      if (gravityStage) {
+        gravityStage.addEventListener('mousemove', function (e) {
+          var rect = gravityStage.getBoundingClientRect();
+          mouseX = e.clientX - rect.left;
+          mouseY = e.clientY - rect.top;
+        });
+      }
+
+      function drawElasticWeb() {
+        if (!gravityStage || !gravityCore || !sphereTct || !sphereBnd || !sphereHyp || !webNetwork) return;
+
+        var width = gravityStage.clientWidth;
+        var height = gravityStage.clientHeight;
+        
+        webNetwork.setAttribute('viewBox', '0 0 ' + width + ' ' + height);
+
+        // Core Center Position
+        var cX = gravityCore.offsetLeft + gravityCore.clientWidth / 2;
+        var cY = gravityCore.offsetTop + gravityCore.clientHeight / 2;
+
+        // Spheres Center Position
+        var s1X = sphereTct.offsetLeft + sphereTct.clientWidth / 2;
+        var s1Y = sphereTct.offsetTop + sphereTct.clientHeight / 2;
+
+        var s2X = sphereBnd.offsetLeft + sphereBnd.clientWidth / 2;
+        var s2Y = sphereBnd.offsetTop + sphereBnd.clientHeight / 2;
+
+        var s3X = sphereHyp.offsetLeft + sphereHyp.clientWidth / 2;
+        var s3Y = sphereHyp.offsetTop + sphereHyp.clientHeight / 2;
+
+        // Calculate bend curves with mouse magnetic pull
+        function getPathData(startX, startY, endX, endY) {
+          var midX = (startX + endX) / 2;
+          var midY = (startY + endY) / 2;
+
+          // Pull mid point towards cursor if cursor is close
+          var dx = mouseX - midX;
+          var dy = mouseY - midY;
+          var dist = Math.sqrt(dx*dx + dy*dy);
+          var pullFactor = 0;
+          
+          if (dist < 150) {
+            pullFactor = (1 - (dist / 150)) * 0.45; // Max 45% pull
+          }
+
+          var bendX = midX + dx * pullFactor;
+          var bendY = midY + dy * pullFactor;
+
+          return 'M ' + startX + ' ' + startY + ' Q ' + bendX + ' ' + bendY + ' ' + endX + ' ' + endY;
+        }
+
+        if (pathTct) pathTct.setAttribute('d', getPathData(cX, cY, s1X, s1Y));
+        if (pathBnd) pathBnd.setAttribute('d', getPathData(cX, cY, s2X, s2Y));
+        if (pathHyp) pathHyp.setAttribute('d', getPathData(cX, cY, s3X, s3Y));
+
+        requestAnimationFrame(drawElasticWeb);
+      }
+      requestAnimationFrame(drawElasticWeb);
+
+      // Continuous Slow Node Orbit Drift Animation
+      var angle1 = 0, angle2 = 120, angle3 = 240;
+      function driftNodes() {
+        angle1 += 0.0035;
+        angle2 += 0.0035;
+        angle3 += 0.0035;
+
+        var radius1 = 130; // Ring 1
+        var radius2 = 195; // Ring 2
+
+        if (sphereTct) {
+          sphereTct.style.left = 'calc(50% + ' + (Math.cos(angle1) * radius1 - 29) + 'px)';
+          sphereTct.style.top = 'calc(50% + ' + (Math.sin(angle1) * radius1 - 29) + 'px)';
+        }
+        if (sphereBnd) {
+          sphereBnd.style.left = 'calc(50% + ' + (Math.cos(angle2) * radius2 - 29) + 'px)';
+          sphereBnd.style.top = 'calc(50% + ' + (Math.sin(angle2) * radius2 - 29) + 'px)';
+        }
+        if (sphereHyp) {
+          sphereHyp.style.left = 'calc(50% + ' + (Math.cos(angle3) * radius2 - 29) + 'px)';
+          sphereHyp.style.top = 'calc(50% + ' + (Math.sin(angle3) * radius2 - 29) + 'px)';
+        }
+
+        requestAnimationFrame(driftNodes);
+      }
+      requestAnimationFrame(driftNodes);
+
+      // 5. DIAGNOSTICS HUD MORPHING VECTOR CHARTS
+      var chartWaves = {
+        tactical: {
+          path: "M 0 35 Q 20 15 40 25 T 80 10 T 100 20",
+          area: "M 0 35 Q 20 15 40 25 T 80 10 T 100 20 L 100 40 L 0 40 Z"
+        },
+        brand: {
+          path: "M 0 38 C 15 10, 35 38, 50 15 C 65 5, 80 30, 100 5",
+          area: "M 0 38 C 15 10, 35 38, 50 15 C 65 5, 80 30, 100 5 L 100 40 L 0 40 Z"
+        },
+        hype: {
+          path: "M 0 38 L 15 38 L 30 10 L 45 35 L 60 5 L 75 38 L 90 20 L 100 20",
+          area: "M 0 38 L 15 38 L 30 10 L 45 35 L 60 5 L 75 38 L 90 20 L 100 20 L 100 40 L 0 40 Z"
+        }
+      };
+
+      var pillars = {
+        tactical: {
+          title: 'The Tactical Blueprint',
+          desc: 'Constructed to drive immediate performance. Focuses on agile, fast variant testing, conversion styling, and dynamic optimization of visual assets across social channels.',
+          timeline: '14 Days',
+          kpi: 157,
+          kpiSuffix: '%',
+          price: 'Rs.2.5L/m'
+        },
+        brand: {
+          title: 'The Brand Epopea',
+          desc: 'Our flagship narrative system. We build cinematic video campaigns, immersive website concepts, and strategic identity playbooks designed to position your brand as a market legend.',
+          timeline: '45 Days',
+          kpi: 10,
+          kpiSuffix: '/10',
+          price: 'Rs.6.0L/m'
+        },
+        hype: {
+          title: 'The Hype Machine',
+          desc: 'High-octane product launch systems. Combines influencer advocacy, real-time campaign assets, custom unboxing packages, and dynamic landing page funnels.',
+          timeline: '21 Days',
+          kpi: 21,
+          kpiSuffix: 'L',
+          price: 'Rs.4.0L/m'
+        }
+      };
+
+      var spheres = root.querySelectorAll('.x-orbit-sphere');
+      var hudContent = root.querySelector('#x-hud-content');
+      var hudTitle = root.querySelector('#x-hud-title');
+      var hudDesc = root.querySelector('#x-hud-desc');
+      var hudTimeline = root.querySelector('#x-hud-timeline');
+      var hudKpi = root.querySelector('#x-hud-kpi');
+      var hudPrice = root.querySelector('#x-hud-price');
+
+      var hudPath = root.querySelector('#hud-chart-path');
+      var hudArea = root.querySelector('#hud-chart-area');
+
+      function animateValue(obj, start, end, duration, suffix) {
+        var startTimestamp = null;
+        var step = function (timestamp) {
+          if (!startTimestamp) startTimestamp = timestamp;
+          var progress = Math.min((timestamp - startTimestamp) / duration, 1);
+          obj.innerHTML = (suffix === 'L' ? 'Rs.' : (suffix === '/10' ? '' : '+')) + Math.floor(progress * (end - start) + start) + suffix;
+          if (progress < 1) {
+            window.requestAnimationFrame(step);
+          }
+        };
+        window.requestAnimationFrame(step);
+      }
+
+      spheres.forEach(function (sphere) {
+        sphere.addEventListener('click', function () {
+          spheres.forEach(function (s) { s.classList.remove('active'); });
+          sphere.classList.add('active');
+
+          var key = sphere.getAttribute('data-pillar');
+          var data = pillars[key];
+          var wave = chartWaves[key];
+
+          if (data && hudContent) {
+            hudContent.style.opacity = '0';
+            setTimeout(function () {
+              hudTitle.textContent = data.title;
+              hudDesc.textContent = data.desc;
+              hudTimeline.textContent = data.timeline;
+              hudPrice.textContent = data.price;
+              
+              if (hudPath && wave) hudPath.setAttribute('d', wave.path);
+              if (hudArea && wave) hudArea.setAttribute('d', wave.area);
+              
+              hudContent.style.opacity = '1';
+              animateValue(hudKpi, 0, data.kpi, 750, data.kpiSuffix);
+            }, 200);
+          }
+        });
+      });
+
+      // 6. PIPELINE ACTIVE STEP & X-RAY LENS CROSSHAIR TRACKER
+      var pipelineRows = root.querySelectorAll('.x-pipeline-row');
+      var scannerStage = root.querySelector('#x-scanner-stage');
+      var scannerLens = root.querySelector('#x-scanner-lens');
+      var scannerCoords = root.querySelector('#x-scanner-coords');
+      var laserH = root.querySelector('#laser-h');
+      var laserV = root.querySelector('#laser-v');
+      var pulseCanvas = root.querySelector('#x-pulse-canvas');
+
+      // Click step changer
+      pipelineRows.forEach(function (row) {
+        row.addEventListener('click', function () {
+          pipelineRows.forEach(function (r) { r.classList.remove('active'); });
+          row.classList.add('active');
+
+          var key = row.getAttribute('data-stage');
+          root.querySelectorAll('.x-stage-layer').forEach(function (layer) {
+            layer.classList.add('hidden');
+          });
+          var activeLayer = root.querySelector('#x-stage-' + key);
+          if (activeLayer) activeLayer.classList.remove('hidden');
+        });
+      });
+
+      // X-Ray Reticle Crosshair & Sonar Pulse Script
+      if (scannerStage && scannerLens) {
+        var lastPulseTime = 0;
+
+        scannerStage.addEventListener('mousemove', function (e) {
+          var rect = scannerStage.getBoundingClientRect();
+          var x = e.clientX - rect.left;
+          var y = e.clientY - rect.top;
+          
+          var xPercent = (x / rect.width) * 100;
+          var yPercent = (y / rect.height) * 100;
+
+          // Align lens coordinates & lasers
+          scannerLens.style.left = x + 'px';
+          scannerLens.style.top = y + 'px';
+          
+          if (laserH) laserH.style.top = y + 'px';
+          if (laserV) laserV.style.left = x + 'px';
+
+          if (scannerCoords) {
+            scannerCoords.textContent = 'X: ' + Math.floor(x) + 'PX | Y: ' + Math.floor(y) + 'PX';
+          }
+
+          var activeLayer = root.querySelector('.x-stage-layer:not(.hidden)');
+          if (activeLayer) {
+            var sketchLayer = activeLayer.querySelector('.x-layer-sketch');
+            if (sketchLayer) {
+              sketchLayer.style.setProperty('--scanner-x', xPercent + '%');
+              sketchLayer.style.setProperty('--scanner-y', yPercent + '%');
+            }
+          }
+
+          // Emit tactical Sonar ripples
+          var now = Date.now();
+          if (now - lastPulseTime > 120 && pulseCanvas) {
+            lastPulseTime = now;
+            var w = pulseCanvas.clientWidth;
+            var h = pulseCanvas.clientHeight;
+            pulseCanvas.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
+
+            var circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            circle.setAttribute('cx', x);
+            circle.setAttribute('cy', y);
+            circle.setAttribute('r', 10);
+            circle.setAttribute('fill', 'none');
+            circle.setAttribute('stroke', '#C9A84C');
+            circle.setAttribute('stroke-width', '1.5');
+            circle.setAttribute('opacity', '0.65');
+            circle.style.transition = 'all 0.9s cubic-bezier(0.1, 0.8, 0.2, 1)';
+            
+            pulseCanvas.appendChild(circle);
+
+            // Animate ripple size and fade in next frame
+            setTimeout(function () {
+              circle.setAttribute('r', 110);
+              circle.setAttribute('opacity', '0');
+            }, 10);
+
+            // Clean up old elements
+            setTimeout(function () {
+              if (circle && circle.parentNode) circle.parentNode.removeChild(circle);
+            }, 950);
+          }
+        });
+      }
+
+      // 7. PERSPECTIVE TILT ON SECTION CARDS (AWWWARDS DETAIL)
+      var sectionCards = root.querySelectorAll('.x-section-card');
+      sectionCards.forEach(function (card) {
+        card.addEventListener('mousemove', function (e) {
+          var rect = card.getBoundingClientRect();
+          var x = e.clientX - rect.left;
+          var y = e.clientY - rect.top;
+          
+          var centerX = rect.width / 2;
+          var centerY = rect.height / 2;
+          
+          var rX = ((centerY - y) / centerY) * 4;
+          var rY = ((x - centerX) / centerX) * 4;
+          
+          card.style.transform = 'rotateX(' + rX + 'deg) rotateY(' + rY + 'deg) translateZ(8px)';
+        });
+
+        card.addEventListener('mouseleave', function () {
+          card.style.transform = 'none';
+        });
+      });
+
+      // 8. SCROLL VELOCITY KINETIC WARP LISTENER
+      var marqueeRow1 = root.querySelector('#marquee-row-1');
+      var marqueeRow2 = root.querySelector('#marquee-row-2');
+      
+      var lastScrollY = window.scrollY;
+      var curVelocity = 0;
+      var dampVelocity = 0;
+
+      window.addEventListener('scroll', function () {
+        var currentY = window.scrollY;
+        curVelocity = (currentY - lastScrollY) * 0.18; // Velocity factor
+        lastScrollY = currentY;
+      });
+
+      function applyWarpTransforms() {
+        dampVelocity += (curVelocity - dampVelocity) * 0.085; // Damping
+        curVelocity *= 0.88; // Deceleration friction
+
+        var skewValue = Math.min(Math.max(dampVelocity, -12), 12);
+        var scaleYValue = 1 - Math.min(Math.abs(dampVelocity) * 0.035, 0.25);
+
+        if (marqueeRow1 && marqueeRow2) {
+          var text1 = marqueeRow1.querySelectorAll('.x-marquee-text');
+          var text2 = marqueeRow2.querySelectorAll('.x-marquee-text');
+          
+          var transformString = 'skewX(' + skewValue + 'deg) scaleY(' + scaleYValue + ')';
+          
+          text1.forEach(function (t) { t.style.transform = transformString; });
+          text2.forEach(function (t) { t.style.transform = 'skewX(' + (-skewValue) + 'deg) scaleY(' + scaleYValue + ')'; });
+        }
+
+        requestAnimationFrame(applyWarpTransforms);
+      }
+      requestAnimationFrame(applyWarpTransforms);
+
+      // 9. GSAP REVEALS & LENIS INTEGRATION
+      function runGSAP() {
+        if (typeof window.gsap === 'undefined') {
+          root.querySelectorAll('.x-anim').forEach(function (el) {
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+          });
+          return;
+        }
+        var gsap = window.gsap;
+        if (window.ScrollTrigger && gsap.registerPlugin) {
+          gsap.registerPlugin(window.ScrollTrigger);
+        }
+
+        // Hero Intro Revealer
+        var heroEls = root.querySelectorAll('#experience-hero .x-anim');
+        gsap.to(heroEls, {
+          opacity: 1,
+          y: 0,
+          duration: 1.35,
+          ease: 'power4.out',
+          stagger: 0.16,
+          scrollTrigger: {
+            trigger: root.querySelector('#experience-hero'),
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          }
+        });
+
+        // Cards Stagger
+        var cards = root.querySelectorAll('.x-section-card');
+        cards.forEach(function (card) {
+          gsap.to(card, {
+            opacity: 1,
+            y: 0,
+            duration: 1.25,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 82%',
+              toggleActions: 'play none none none'
+            }
+          });
+        });
+      }
+
+      function whenReady(fn) {
+        if (typeof window.gsap !== 'undefined') return fn();
+        var tries = 0;
+        var iv = setInterval(function () {
+          tries++;
+          if (typeof window.gsap !== 'undefined' || tries > 40) {
+            clearInterval(iv);
+            fn();
+          }
+        }, 100);
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function () { whenReady(runGSAP); });
+      } else {
+        whenReady(runGSAP);
+      }
+
+    })();
+  </script>
+</section>
