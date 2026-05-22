@@ -409,7 +409,7 @@
     }
     .skoll-cs-wrapper .skoll-cs-gallery-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 24px;
       margin-top: 40px;
     }
@@ -419,7 +419,7 @@
       overflow: hidden;
       background: rgba(240, 238, 233, 0.02);
       border: 1px solid rgba(240, 238, 233, 0.05);
-      aspect-ratio: 4 / 5;
+      aspect-ratio: 1 / 1.55;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -432,7 +432,8 @@
     .skoll-cs-wrapper .skoll-cs-gallery-img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      background: #0A0A0A;
       transition: transform 0.6s ease;
     }
     .skoll-cs-wrapper .skoll-cs-gallery-item:hover .skoll-cs-gallery-img {
@@ -450,7 +451,7 @@
       align-items: center;
       justify-content: center;
     }
-    @media (max-width: 900px) {
+    @media (max-width: 1024px) {
       .skoll-cs-wrapper .skoll-cs-gallery-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -575,6 +576,13 @@
                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
           <div class="skoll-cs-gallery-placeholder" style="display: none;">
             <span>Game of Tones</span>
+          </div>
+        </div>
+        <div class="skoll-cs-gallery-item" style="background-color: #2B2A2B;">
+          <img class="skoll-cs-gallery-img" style="background-color: #2B2A2B;" src="assets/casestudy/neu-salonz/ChatGPT%20Image%20May%2022,%202026,%2006_05_13%20PM.png" alt="Game of Tones Menu" 
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="skoll-cs-gallery-placeholder" style="display: none;">
+            <span>Game of Tones Menu</span>
           </div>
         </div>
         <div class="skoll-cs-gallery-item">
