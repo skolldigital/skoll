@@ -1,5 +1,5 @@
 <!-- Skoll Digital – Award-Winning Stealth Creative Experience & Strategy Lab Redesign -->
-<section class="skoll-creative-experience" data-section="test-creative" id="test-creative">
+<section class="skoll-creative-experience" data-section="proof-of-work" id="proof-of-work">
   
   <!-- Premium Google Fonts imported directly for editorial feel -->
   <style>
@@ -1071,6 +1071,325 @@
       will-change: transform, opacity;
     }
 
+    /* Compact overrides for Planetarium Card */
+    .x-planetarium-card {
+      padding: 48px 56px !important;
+      margin-bottom: 80px !important;
+    }
+    .x-planetarium-card .x-section-head {
+      margin-bottom: 36px !important;
+    }
+    .x-planetarium-card .x-planetarium-grid {
+      gap: 36px !important;
+    }
+    .x-planetarium-card .x-orbit-stage {
+      max-width: 380px !important;
+    }
+    .x-planetarium-card .x-diag-console {
+      min-height: 380px !important;
+      padding: 32px !important;
+    }
+    .x-planetarium-card .x-diag-head {
+      margin-bottom: 18px !important;
+      padding-bottom: 14px !important;
+    }
+    .x-planetarium-card .x-diag-title {
+      font-size: 1.75rem !important;
+      margin-bottom: 10px !important;
+    }
+    .x-planetarium-card .x-diag-desc {
+      font-size: 0.875rem !important;
+      margin-bottom: 16px !important;
+    }
+    .x-planetarium-card .x-hud-chart-box {
+      height: 85px !important;
+      margin-bottom: 16px !important;
+    }
+    .x-planetarium-card .x-diag-metrics {
+      padding-top: 16px !important;
+      gap: 12px !important;
+    }
+    .x-planetarium-card .x-diag-metric-val {
+      font-size: 1.5rem !important;
+      margin-bottom: 2px !important;
+    }
+    .x-planetarium-card .x-diag-footer {
+      padding-top: 16px !important;
+      margin-top: 16px !important;
+    }
+    .x-planetarium-card .x-diag-price-val {
+      font-size: 1.35rem !important;
+    }
+
+    /* Compact overrides for Chromatic Card */
+    #x-color-card {
+      padding: 48px 56px !important;
+      margin-bottom: 80px !important;
+    }
+    #x-color-card .x-section-head {
+      margin-bottom: 36px !important;
+    }
+    #x-color-card .x-chroma-grid {
+      gap: 36px !important;
+    }
+    #x-color-card .x-chroma-selectors {
+      gap: 16px !important;
+    }
+    #x-color-card .x-palette-card {
+      padding: 16px 20px !important;
+      gap: 12px !important;
+    }
+    #x-color-card .x-palette-name {
+      font-size: 1.15rem !important;
+    }
+    #x-color-card .x-dot {
+      width: 26px !important;
+      height: 26px !important;
+    }
+    #x-color-card .x-hologram-card {
+      max-width: 310px !important;
+      padding: 18px !important;
+      border-radius: 28px !important;
+    }
+    #x-color-card .x-hologram-notch {
+      width: 90px !important;
+      height: 16px !important;
+      margin: -19px auto 12px !important;
+    }
+    #x-color-card .x-hologram-generative-box {
+      margin-bottom: 12px !important;
+      border-radius: 14px !important;
+    }
+    #x-color-card .x-hologram-content {
+      padding: 16px !important;
+      margin-bottom: 12px !important;
+      border-radius: 14px !important;
+    }
+    #x-color-card .x-hologram-title {
+      font-size: 1.75rem !important;
+    }
+    #x-color-card .x-hologram-desc {
+      font-size: 0.8rem !important;
+      margin-bottom: 12px !important;
+    }
+    #x-color-card .x-contrast-compliance {
+      padding: 6px 10px !important;
+      font-size: 0.625rem !important;
+    }
+    #x-color-card .x-hologram-btn {
+      padding: 12px !important;
+      font-size: 0.8rem !important;
+      border-radius: 10px !important;
+    }
+
+    /* ===== CURATED DELIVERABLES SHOWCASE CARD ===== */
+    .x-showcase-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 48px;
+      position: relative;
+      z-index: 5;
+    }
+    
+    .x-filter-btn {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      color: var(--x-muted);
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      padding: 10px 18px;
+      border-radius: 99px;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .x-filter-btn:hover {
+      border-color: rgba(255, 255, 255, 0.15);
+      color: var(--x-text);
+      background: rgba(255, 255, 255, 0.01);
+    }
+    
+    .x-filter-btn.active {
+      border-color: var(--x-gold);
+      color: var(--x-gold);
+      background: rgba(201, 168, 76, 0.05);
+      box-shadow: 0 0 20px rgba(201, 168, 76, 0.08);
+    }
+    
+    .x-showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 32px;
+      position: relative;
+      z-index: 5;
+    }
+    
+    .x-showcase-item {
+      background: rgba(8, 8, 12, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      border-radius: 24px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform, opacity;
+    }
+    
+    .x-showcase-item:hover {
+      border-color: rgba(255, 255, 255, 0.07);
+      background: rgba(12, 12, 18, 0.85);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.04);
+      transform: translateY(-8px);
+    }
+    
+    .x-item-media {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1.5;
+      overflow: hidden;
+      background: #000;
+    }
+    
+    .x-item-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .x-showcase-item:hover .x-item-media img {
+      transform: scale(1.08);
+    }
+    
+    .x-item-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(5, 5, 8, 0.9) 0%, rgba(5, 5, 8, 0) 50%);
+      opacity: 0.85;
+      transition: opacity 0.6s ease;
+    }
+    
+    .x-showcase-item:hover .x-item-overlay {
+      opacity: 0.95;
+    }
+    
+    .x-item-hud-overlay {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      right: 16px;
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none;
+      z-index: 2;
+    }
+    
+    .x-hud-spec {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.625rem;
+      letter-spacing: 0.1em;
+      color: rgba(201, 168, 76, 0.85);
+      background: rgba(8, 8, 12, 0.8);
+      padding: 4px 8px;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    
+    .x-item-details {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    
+    .x-item-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    
+    .x-item-num {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.6875rem;
+      letter-spacing: 0.15em;
+      color: var(--x-gold);
+    }
+    
+    .x-item-tech {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.625rem;
+      letter-spacing: 0.1em;
+      color: var(--x-muted);
+    }
+    
+    .x-item-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin: 0 0 12px;
+      color: var(--x-text);
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+    
+    .x-item-title em {
+      font-style: italic;
+      color: var(--x-gold);
+    }
+    
+    .x-item-desc {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: var(--x-muted);
+      margin: 0 0 24px;
+      font-weight: 300;
+      flex-grow: 1;
+    }
+    
+    .x-item-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.04);
+      padding-top: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .x-item-tag {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--x-text);
+      opacity: 0.85;
+    }
+    
+    .x-item-link-arrow {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.01);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--x-muted);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .x-showcase-item:hover .x-item-link-arrow {
+      background: var(--x-gold);
+      border-color: var(--x-gold);
+      color: #050508;
+      transform: rotate(-45deg);
+      box-shadow: 0 0 15px rgba(201, 168, 76, 0.4);
+    }
+
   </style>
 
   <!-- Interactive Dynamic Grids & Cinematic Background Overlays -->
@@ -1084,21 +1403,170 @@
 
   <div class="x-experience-inner">
     
-    <!-- SYSTEM FLOATING SPECS -->
-    <div class="x-status-floating-label status-left-top">[SKOLL SYSTEM VERSION 4.2 // LAB ACCESS]</div>
-    <div class="x-status-floating-label status-right-top">[ATMOSPHERE DECK: SECURE]</div>
-
     <!-- HEADER (3D EDITORIAL INTERACTIVE STYLE) -->
     <header class="x-hero lab-anim" id="experience-hero">
-      <p class="x-eyebrow x-anim">Creative Director Portal</p>
       <h1 class="x-title x-anim">Where Imagination Meets <em>Precision</em></h1>
       <p class="x-desc x-anim">An immersive environment exploring the physical math behind planning, dynamic color synesthesia, and skeletal concept scanning.</p>
     </header>
 
-    <!-- SECTION 1: THE GRAVITATIONAL PLANETARIUM (How We Create Plans) -->
-    <div class="x-section-card x-anim">
+    <!-- SECTION 1: THE CURATED DELIVERABLES SHOWCASE (Proof of Work Showcase) -->
+    <div class="x-section-card x-anim" id="x-showcase-card">
       <div class="x-section-head">
-        <span class="x-section-num">01 / Strategic Planetarium</span>
+        <span class="x-section-num">01 / Physical Deliverables</span>
+        <h2 class="x-section-title">The Curated Showcase</h2>
+        <p class="x-section-desc">Explore a selection of our premium artifacts. Filter through our design playbooks, interactive high-performance web products, luxury dining suites, and geometric brand marks.</p>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="x-showcase-filters">
+        <button class="x-filter-btn active" data-filter="all">[ ALL ]</button>
+        <button class="x-filter-btn" data-filter="playbook">[ BRAND PLAYBOOKS ]</button>
+        <button class="x-filter-btn" data-filter="website">[ PERFORMANCE WEBSITES ]</button>
+        <button class="x-filter-btn" data-filter="campaign">[ MARKET CAMPAIGNS ]</button>
+        <button class="x-filter-btn" data-filter="menu">[ MENU DESIGNS ]</button>
+        <button class="x-filter-btn" data-filter="logo">[ BRAND LOGOS ]</button>
+      </div>
+
+      <!-- Showcase Cards Grid -->
+      <div class="x-showcase-grid">
+        
+        <!-- Card 1: Brand Playbooks -->
+        <div class="x-showcase-item" data-category="playbook">
+          <div class="x-item-media">
+            <img src="assets/images/brand_playbook.png" alt="The Obsidian Codex Brand Playbook" loading="lazy">
+            <div class="x-item-overlay"></div>
+            <div class="x-item-hud-overlay">
+              <span class="x-hud-spec">[ GRID: 12-COL ]</span>
+              <span class="x-hud-spec">[ WEIGHT: EDITORIAL ]</span>
+            </div>
+          </div>
+          <div class="x-item-details">
+            <div class="x-item-meta">
+              <span class="x-item-num">01 / PLAYBOOK</span>
+              <span class="x-item-tech">COAL & MATTE GOLD</span>
+            </div>
+            <h3 class="x-item-title">The Obsidian <em>Codex</em></h3>
+            <p class="x-item-desc">A 140-page master identity and design system playbook crafted for high-end boutique hospitality. Establishes core typographic rules and alignment scales.</p>
+            <div class="x-item-footer">
+              <span class="x-item-tag">Brand Playbook</span>
+              <div class="x-item-link-arrow">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Performance Websites -->
+        <div class="x-showcase-item" data-category="website">
+          <div class="x-item-media">
+            <img src="assets/images/performance_website.png" alt="Aether Engine Web V4" loading="lazy">
+            <div class="x-item-overlay"></div>
+            <div class="x-item-hud-overlay">
+              <span class="x-hud-spec">[ FPS: 120 ]</span>
+              <span class="x-hud-spec">[ SHADER: WEBGL ]</span>
+            </div>
+          </div>
+          <div class="x-item-details">
+            <div class="x-item-meta">
+              <span class="x-item-num">02 / WEBSITE</span>
+              <span class="x-item-tech">CYAN & VIOLET LIGHTRIG</span>
+            </div>
+            <h3 class="x-item-title">Aether Engine <em>Web</em></h3>
+            <p class="x-item-desc">An immersive application website featuring highly responsive layout containers, custom WebGL pixel shaders, and real-time kinetic typography.</p>
+            <div class="x-item-footer">
+              <span class="x-item-tag">Performance Website</span>
+              <div class="x-item-link-arrow">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Market Campaigns -->
+        <div class="x-showcase-item" data-category="campaign">
+          <div class="x-item-media">
+            <img src="assets/images/market_campaign.png" alt="Apex Velocity Digital Campaign" loading="lazy">
+            <div class="x-item-overlay"></div>
+            <div class="x-item-hud-overlay">
+              <span class="x-hud-spec">[ CTR: +284% ]</span>
+              <span class="x-hud-spec">[ ARCH: MODULAR ]</span>
+            </div>
+          </div>
+          <div class="x-item-details">
+            <div class="x-item-meta">
+              <span class="x-item-num">03 / CAMPAIGN</span>
+              <span class="x-item-tech">IMPR: 12.8M</span>
+            </div>
+            <h3 class="x-item-title">Apex Velocity <em>Digital</em></h3>
+            <p class="x-item-desc">A premium high-fashion digital acquisition campaign. Synthesizes dramatic studio lighting overlays with high-converting modular landing grid variants.</p>
+            <div class="x-item-footer">
+              <span class="x-item-tag">Market Campaign</span>
+              <div class="x-item-link-arrow">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Menu Designs -->
+        <div class="x-showcase-item" data-category="menu">
+          <div class="x-item-media">
+            <img src="assets/images/menu_design.png" alt="Le Mirage Fine Dining Menu Design" loading="lazy">
+            <div class="x-item-overlay"></div>
+            <div class="x-item-hud-overlay">
+              <span class="x-hud-spec">[ DEBOSSED ]</span>
+              <span class="x-hud-spec">[ PAPER: 400GSM ]</span>
+            </div>
+          </div>
+          <div class="x-item-details">
+            <div class="x-item-meta">
+              <span class="x-item-num">04 / MENU SUITE</span>
+              <span class="x-item-tech">24K GOLD HOT FOIL</span>
+            </div>
+            <h3 class="x-item-title">Le Mirage <em>Menu</em></h3>
+            <p class="x-item-desc">An elegant physical menu design suite crafted for a Michelin-starred Parisian bistro. Clean typography on high-textured heavyweight matte carbon stock.</p>
+            <div class="x-item-footer">
+              <span class="x-item-tag">Menu Design</span>
+              <div class="x-item-link-arrow">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: Brand Logos -->
+        <div class="x-showcase-item" data-category="logo">
+          <div class="x-item-media">
+            <img src="assets/images/brand_logo.png" alt="Syndicate Mark V Brand Logo Design" loading="lazy">
+            <div class="x-item-overlay"></div>
+            <div class="x-item-hud-overlay">
+              <span class="x-hud-spec">[ RATIO: 1.618 ]</span>
+              <span class="x-hud-spec">[ VECTOR BEZIER ]</span>
+            </div>
+          </div>
+          <div class="x-item-details">
+            <div class="x-item-meta">
+              <span class="x-item-num">05 / IDENTITIES</span>
+              <span class="x-item-tech">STRUCTURAL MARKS</span>
+            </div>
+            <h3 class="x-item-title">Syndicate <em>Mark V</em></h3>
+            <p class="x-item-desc">A premium portfolio of mathematical and geometric logomarks constructed for modern stealth ventures using golden ratio layout principles.</p>
+            <div class="x-item-footer">
+              <span class="x-item-tag">Brand Logos</span>
+              <div class="x-item-link-arrow">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION 2: THE GRAVITATIONAL PLANETARIUM (How We Create Plans) -->
+    <div class="x-section-card x-anim x-planetarium-card">
+      <div class="x-section-head">
+        <span class="x-section-num">02 / Strategic Planetarium</span>
         <h2 class="x-section-title">How We Create Plans</h2>
         <p class="x-section-desc">Strategy is orbit. Select a floating tactical body to pull it into our orbital diagnostics deck and morph calculation waves dynamically.</p>
       </div>
@@ -1189,7 +1657,7 @@
     <!-- SECTION 2: CHROMATIC ALCHEMIST (How We Choose Colors) -->
     <div class="x-section-card x-anim" id="x-color-card">
       <div class="x-section-head">
-        <span class="x-section-num">02 / Chromatic Synesthesia</span>
+        <span class="x-section-num">03 / Chromatic Synesthesia</span>
         <h2 class="x-section-title">How We Choose Colors</h2>
         <p class="x-section-desc">Colors speak to the sub-conscious. Interact with our crafted coordinate palettes to watch the central hologram UI and generative vector artwork mutate dynamically.</p>
       </div>
@@ -1345,7 +1813,7 @@
     <!-- SECTION 3: THE X-RAY CROSSHAIR PIPELINE (How We Do Things) -->
     <div class="x-section-card x-anim" style="margin-bottom: 0;">
       <div class="x-section-head">
-        <span class="x-section-num">03 / Holographic Scanner</span>
+        <span class="x-section-num">04 / Holographic Scanner</span>
         <h2 class="x-section-title">How We Do Things</h2>
         <p class="x-section-desc">Trace the lifecycle of a Skoll digital asset. Move your cursor over the rendering grid to activate the custom target X-Ray scope, exposure coordinates, and industrial schematics underneath.</p>
       </div>
@@ -1500,13 +1968,15 @@
       </div>
     </div>
 
+
+
   </div>
 
   <script>
     (function () {
       var root = document.currentScript && document.currentScript.closest('.skoll-creative-experience');
       if (!root) {
-        var nodes = document.querySelectorAll('.skoll-creative-experience[data-section="test-creative"]');
+        var nodes = document.querySelectorAll('.skoll-creative-experience[data-section="proof-of-work"]');
         root = nodes[nodes.length - 1];
       }
       if (!root || root.__skollXInit) return;
@@ -2073,6 +2543,65 @@
           }
         }, 100);
       }
+
+      // 10. SHOWCASE ARTIFACTS FILTERING SYSTEM
+      var filterBtns = root.querySelectorAll('.x-filter-btn');
+      var showcaseItems = root.querySelectorAll('.x-showcase-item');
+      var gsapObj = window.gsap;
+
+      filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          filterBtns.forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+
+          var filterValue = btn.getAttribute('data-filter');
+
+          if (gsapObj) {
+            // GSAP Animated transitions for filtering
+            gsapObj.to(showcaseItems, {
+              opacity: 0,
+              scale: 0.9,
+              duration: 0.3,
+              ease: 'power2.in',
+              onComplete: function () {
+                showcaseItems.forEach(function (item) {
+                  var category = item.getAttribute('data-category');
+                  if (filterValue === 'all' || category === filterValue) {
+                    item.style.display = 'flex';
+                  } else {
+                    item.style.display = 'none';
+                  }
+                });
+
+                // Animate filtered items back in
+                var visibleItems = Array.prototype.filter.call(showcaseItems, function (item) {
+                  return item.style.display === 'flex';
+                });
+                
+                gsapObj.to(visibleItems, {
+                  opacity: 1,
+                  scale: 1,
+                  duration: 0.5,
+                  stagger: 0.08,
+                  ease: 'power2.out'
+                });
+              }
+            });
+          } else {
+            // Fallback if GSAP is not loaded
+            showcaseItems.forEach(function (item) {
+              var category = item.getAttribute('data-category');
+              if (filterValue === 'all' || category === filterValue) {
+                item.style.display = 'flex';
+                item.style.opacity = '1';
+                item.style.transform = 'none';
+              } else {
+                item.style.display = 'none';
+              }
+            });
+          }
+        });
+      });
 
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function () { whenReady(runGSAP); });

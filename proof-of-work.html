@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Creative Lab — Design Showcase | Skoll Digital</title>
+  <title>Proof of Work — Design Showcase | Skoll Digital</title>
   <meta name="description" content="An interactive design workspace demonstrating our creative pipeline, plan architecture, and color-matching methodologies.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Creative Lab — Design Showcase | Skoll Digital">
+  <meta property="og:title" content="Proof of Work — Design Showcase | Skoll Digital">
   <meta property="og:description" content="Explore how we construct campaigns, craft color moodboards, and execute creative brand directions.">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/images/favicon.png" type="image/png">
@@ -31,7 +31,7 @@
     <div id="preloader-matrix-canvas" style="position: absolute; inset: 0; opacity: 0.12; pointer-events: none; font-family: monospace; font-size: 11px; color: #C9A84C; overflow: hidden; line-height: 1.2; word-break: break-all; white-space: pre-wrap; user-select: none;"></div>
     <div class="skoll-preloader-word" id="skoll-preloader-word" style="position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 16px;">
       <div id="preloader-terminal" style="font-family: monospace; font-size: 0.75rem; letter-spacing: 0.25em; color: #C9A84C; text-transform: uppercase; opacity: 0.8; height: 16px;">[SECURE DECRYPT BOOT]</div>
-      <h2 id="preloader-scrambler" style="font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: clamp(1.25rem, 4vw, 1.75rem); letter-spacing: 0.4em; text-transform: uppercase; color: #FAFAFA; margin: 0; min-height: 30px; text-align: center;">CREATIVE SYNDICATE</h2>
+      <h2 id="preloader-scrambler" style="font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: clamp(1.25rem, 4vw, 1.75rem); letter-spacing: 0.4em; text-transform: uppercase; color: #FAFAFA; margin: 0; min-height: 30px; text-align: center;">PROOF OF WORK</h2>
     </div>
     <div class="skoll-preloader-bar-wrap" style="position: relative; z-index: 2; margin-top: 12px;">
       <div class="skoll-preloader-bar" id="skoll-preloader-bar"></div>
@@ -43,13 +43,12 @@
       var canvas = document.getElementById('preloader-matrix-canvas');
       if (canvas) {
         var chars = '01010101XYZSKOLLSYSTEMBLUEPRINTCORE';
-        var cols = Math.floor(window.innerWidth / 12);
-        var drops = [];
-        for (var i = 0; i < cols; i++) drops[i] = 1;
+        var cols = Math.floor(window.innerWidth / 5.5);
+        var rows = Math.floor(window.innerHeight / 10);
         
         var matrixInterval = setInterval(function() {
           var text = '';
-          for (var r = 0; r < 25; r++) {
+          for (var r = 0; r < rows; r++) {
             var line = '';
             for (var c = 0; c < cols; c++) {
               if (Math.random() > 0.96) {
@@ -63,7 +62,8 @@
           canvas.textContent = text;
         }, 80);
         window.addEventListener('resize', function() {
-          cols = Math.floor(window.innerWidth / 12);
+          cols = Math.floor(window.innerWidth / 5.5);
+          rows = Math.floor(window.innerHeight / 10);
         });
       }
 
@@ -71,33 +71,19 @@
       var scrambler = document.getElementById('preloader-scrambler');
       var terminal = document.getElementById('preloader-terminal');
       if (scrambler) {
-        var originalText = "CREATIVE STRATEGY LAB";
-        var scrambledText = originalText.split('');
-        var letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#$@';
-        var iteration = 0;
-        
-        var scrambleInterval = setInterval(function() {
-          scrambler.textContent = originalText.split('').map(function(char, idx) {
-            if (char === ' ') return ' ';
-            if (idx < iteration) return originalText[idx];
-            return letters[Math.floor(Math.random() * letters.length)];
-          }).join('');
-          
-          if (iteration >= originalText.length) {
-            clearInterval(scrambleInterval);
-            if (terminal) terminal.textContent = "[DECRYPTION SECURE]";
-            if (matrixInterval) {
-              setTimeout(function() { clearInterval(matrixInterval); }, 500);
-            }
+        scrambler.textContent = "PROOF OF WORK";
+        setTimeout(function() {
+          if (terminal) terminal.textContent = "[DECRYPTION SECURE]";
+          if (matrixInterval) {
+            setTimeout(function() { clearInterval(matrixInterval); }, 500);
           }
-          iteration += 1/3;
-        }, 30);
+        }, 1200);
       }
     })();
   </script>
   <main id="skoll-main">
     <div id="navbar-container"></div>
-    <div id="test-creative-container"></div>
+    <div id="proof-of-work-container"></div>
     <div id="footer-container"></div>
   </main>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -106,7 +92,7 @@
   <script>
     window.SKOLL_SECTIONS = [
       { id: 'navbar-container', path: 'sections/navbar.html' },
-      { id: 'test-creative-container', path: 'sections/test-creative.html' },
+      { id: 'proof-of-work-container', path: 'sections/proof-of-work.html' },
       { id: 'footer-container', path: 'sections/footer.html' }
     ];
   </script>
