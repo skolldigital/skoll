@@ -1182,212 +1182,225 @@
       border-radius: 10px !important;
     }
 
-    /* ===== CURATED DELIVERABLES SHOWCASE CARD ===== */
-    .x-showcase-filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: center;
+    /* ===== CLIENT CAMPAIGN SPOTLIGHTS ===== */
+    .x-campaign-spotlight {
+      margin-bottom: 80px;
+      padding-bottom: 80px;
+      border-bottom: 1px solid var(--x-divider);
+    }
+    .x-campaign-spotlight:last-of-type {
+      border-bottom: none;
       margin-bottom: 48px;
-      position: relative;
-      z-index: 5;
+      padding-bottom: 0;
     }
-    
-    .x-filter-btn {
-      background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.04);
-      color: var(--x-muted);
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
-      padding: 10px 18px;
-      border-radius: 99px;
-      cursor: pointer;
-      text-transform: uppercase;
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    
-    .x-filter-btn:hover {
-      border-color: rgba(255, 255, 255, 0.15);
-      color: var(--x-text);
-      background: rgba(255, 255, 255, 0.01);
-    }
-    
-    .x-filter-btn.active {
-      border-color: var(--x-gold);
-      color: var(--x-gold);
-      background: rgba(201, 168, 76, 0.05);
-      box-shadow: 0 0 20px rgba(201, 168, 76, 0.08);
-    }
-    
-    .x-showcase-grid {
+    .x-campaign-header {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 32px;
-      position: relative;
-      z-index: 5;
-    }
-    
-    .x-showcase-item {
-      background: rgba(8, 8, 12, 0.65);
-      border: 1px solid rgba(255, 255, 255, 0.03);
-      border-radius: 24px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: transform, opacity;
-    }
-    
-    .x-showcase-item:hover {
-      border-color: rgba(255, 255, 255, 0.07);
-      background: rgba(12, 12, 18, 0.85);
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.04);
-      transform: translateY(-8px);
-    }
-    
-    .x-item-media {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 1.5;
-      overflow: hidden;
-      background: #000;
-    }
-    
-    .x-item-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    
-    .x-showcase-item:hover .x-item-media img {
-      transform: scale(1.08);
-    }
-    
-    .x-item-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(5, 5, 8, 0.9) 0%, rgba(5, 5, 8, 0) 50%);
-      opacity: 0.85;
-      transition: opacity 0.6s ease;
-    }
-    
-    .x-showcase-item:hover .x-item-overlay {
-      opacity: 0.95;
-    }
-    
-    .x-item-hud-overlay {
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      right: 16px;
-      display: flex;
-      justify-content: space-between;
-      pointer-events: none;
-      z-index: 2;
-    }
-    
-    .x-hud-spec {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 0.625rem;
-      letter-spacing: 0.1em;
-      color: rgba(201, 168, 76, 0.85);
-      background: rgba(8, 8, 12, 0.8);
-      padding: 4px 8px;
-      border-radius: 4px;
-      border: 1px solid rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-    }
-    
-    .x-item-details {
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-    
-    .x-item-meta {
-      display: flex;
-      justify-content: space-between;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
       align-items: center;
-      margin-bottom: 12px;
+      margin-bottom: 48px;
     }
-    
-    .x-item-num {
+    @media (max-width: 900px) {
+      .x-campaign-header { grid-template-columns: 1fr; gap: 32px; }
+    }
+    .x-campaign-client {
       font-family: 'Share Tech Mono', monospace;
       font-size: 0.6875rem;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
       color: var(--x-gold);
-    }
-    
-    .x-item-tech {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 0.625rem;
-      letter-spacing: 0.1em;
-      color: var(--x-muted);
-    }
-    
-    .x-item-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.5rem;
-      font-weight: 400;
       margin: 0 0 12px;
-      color: var(--x-text);
-      letter-spacing: -0.01em;
-      line-height: 1.2;
     }
-    
-    .x-item-title em {
-      font-style: italic;
-      color: var(--x-gold);
+    .x-campaign-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      margin: 0 0 16px;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
     }
-    
-    .x-item-desc {
-      font-size: 0.875rem;
-      line-height: 1.6;
+    .x-campaign-name em { font-style: italic; color: var(--x-gold); }
+    .x-campaign-summary {
+      font-size: 1rem;
+      line-height: 1.65;
       color: var(--x-muted);
       margin: 0 0 24px;
       font-weight: 300;
-      flex-grow: 1;
     }
-    
-    .x-item-footer {
-      border-top: 1px solid rgba(255, 255, 255, 0.04);
-      padding-top: 18px;
+    .x-campaign-tags {
       display: flex;
-      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .x-campaign-pdf-link {
+      display: inline-flex;
       align-items: center;
+      gap: 10px;
+      margin-top: 8px;
+      padding: 12px 20px;
+      border-radius: 99px;
+      border: 1px solid rgba(201, 168, 76, 0.35);
+      background: rgba(201, 168, 76, 0.06);
+      color: var(--x-gold);
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.6875rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.3s ease, border-color 0.3s ease;
     }
-    
-    .x-item-tag {
-      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: var(--x-text);
-      opacity: 0.85;
+    .x-campaign-pdf-link:hover {
+      background: rgba(201, 168, 76, 0.12);
+      border-color: var(--x-gold);
     }
-    
-    .x-item-link-arrow {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      background: rgba(255, 255, 255, 0.01);
+    .x-campaign-feature {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: #08080c;
+      min-height: 320px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--x-muted);
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
     }
-    
-    .x-showcase-item:hover .x-item-link-arrow {
+    .x-campaign-feature img,
+    .x-campaign-feature video {
+      width: 100%;
+      height: auto;
+      max-height: 480px;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+    }
+    .x-campaign-masonry {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+    }
+    .x-masonry-item {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      background: #08080c;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 220px;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+    }
+    .x-masonry-item:hover {
+      transform: translateY(-6px);
+      border-color: rgba(201, 168, 76, 0.25);
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
+    }
+    .x-masonry-item img {
+      width: 100%;
+      height: auto;
+      max-height: 520px;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .x-masonry-item:hover img { transform: scale(1.02); }
+    .x-masonry-item--wide { grid-column: span 7; }
+    .x-masonry-item--tall { grid-column: span 5; }
+    .x-masonry-item--half { grid-column: span 6; }
+    .x-masonry-item--third { grid-column: span 4; }
+    .x-masonry-item--full { grid-column: span 12; }
+    @media (max-width: 768px) {
+      .x-masonry-item--wide,
+      .x-masonry-item--tall,
+      .x-masonry-item--half,
+      .x-masonry-item--third,
+      .x-masonry-item--full { grid-column: span 12; }
+    }
+    .x-masonry-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      background: linear-gradient(to top, rgba(5, 5, 8, 0.95), transparent);
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.625rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.85);
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+    .x-masonry-item:hover .x-masonry-caption {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .x-masonry-item img.x-media-contain { object-fit: contain; background: transparent; }
+
+    /* Lightbox */
+    .x-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: rgba(5, 5, 8, 0.92);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.35s ease, visibility 0.35s ease;
+    }
+    .x-lightbox.is-open { opacity: 1; visibility: visible; }
+    .x-lightbox-inner {
+      position: relative;
+      max-width: min(1100px, 96vw);
+      max-height: 90vh;
+    }
+    .x-lightbox-inner img {
+      max-width: 100%;
+      max-height: 90vh;
+      width: auto;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+    }
+    .x-lightbox-close {
+      position: absolute;
+      top: -48px;
+      right: 0;
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--x-text);
+      font-size: 1.25rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.25s ease, border-color 0.25s ease;
+    }
+    .x-lightbox-close:hover {
       background: var(--x-gold);
       border-color: var(--x-gold);
       color: #050508;
-      transform: rotate(-45deg);
-      box-shadow: 0 0 15px rgba(201, 168, 76, 0.4);
+    }
+    .x-lightbox-caption {
+      text-align: center;
+      margin-top: 16px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--x-muted);
     }
 
   </style>
@@ -1403,163 +1416,134 @@
 
   <div class="x-experience-inner">
     
-    <!-- HEADER (3D EDITORIAL INTERACTIVE STYLE) -->
+    <!-- HEADER -->
     <header class="x-hero lab-anim" id="experience-hero">
-      <h1 class="x-title x-anim">Where Imagination Meets <em>Precision</em></h1>
-      <p class="x-desc x-anim">An immersive environment exploring the physical math behind planning, dynamic color synesthesia, and skeletal concept scanning.</p>
+      <p class="x-eyebrow x-anim">Proof of Work</p>
+      <h1 class="x-title x-anim">Real brands. Real <em>deliverables</em>.</h1>
+      <p class="x-desc x-anim">Campaign systems, print suites, and digital assets built for hospitality and premium salon brands — from Oktoberfest activations to pop-culture newspaper drops.</p>
     </header>
 
-    <!-- SECTION 1: THE CURATED DELIVERABLES SHOWCASE (Proof of Work Showcase) -->
+    <!-- SECTION 1: CLIENT CAMPAIGNS & DELIVERABLES -->
     <div class="x-section-card x-anim" id="x-showcase-card">
       <div class="x-section-head">
-        <span class="x-section-num">01 / Physical Deliverables</span>
+        <span class="x-section-num">01 / Client Deliverables</span>
         <h2 class="x-section-title">The Curated Showcase</h2>
-        <p class="x-section-desc">Explore a selection of our premium artifacts. Filter through our design playbooks, interactive high-performance web products, luxury dining suites, and geometric brand marks.</p>
+        <p class="x-section-desc">Two full campaign suites — 7° Brauhaus Oktoberfest and NEU Salonz Game of Tones — spanning print, digital, in-venue, and experiential touchpoints.</p>
       </div>
 
-      <!-- Filter Controls -->
-      <div class="x-showcase-filters">
-        <button class="x-filter-btn active" data-filter="all">[ ALL ]</button>
-        <button class="x-filter-btn" data-filter="playbook">[ BRAND PLAYBOOKS ]</button>
-        <button class="x-filter-btn" data-filter="website">[ PERFORMANCE WEBSITES ]</button>
-        <button class="x-filter-btn" data-filter="campaign">[ MARKET CAMPAIGNS ]</button>
-        <button class="x-filter-btn" data-filter="menu">[ MENU DESIGNS ]</button>
-        <button class="x-filter-btn" data-filter="logo">[ BRAND LOGOS ]</button>
+      <!-- 7° Brauhaus Campaign -->
+      <div class="x-campaign-spotlight x-campaign-brauhaus">
+        <div class="x-campaign-header">
+          <div class="x-campaign-copy">
+            <p class="x-campaign-client">Hospitality / F&amp;B</p>
+            <h3 class="x-campaign-name">7° Brauhaus — <em>Oktoberfest</em></h3>
+            <p class="x-campaign-summary">A 360° Oktoberfest campaign for India's premier German microbrewery — posters, WhatsApp creatives, emailers, vouchers, table mats, and animated logo lockups built for high-energy in-venue and digital rollout.</p>
+            <div class="x-campaign-tags">
+              <span class="x-campaign-tag">Print</span>
+              <span class="x-campaign-tag">Digital</span>
+              <span class="x-campaign-tag">In-Venue</span>
+              <span class="x-campaign-tag">Motion</span>
+            </div>
+          </div>
+          <div class="x-campaign-feature">
+            <img src="assets/proof of works/7brauhaus/OktoberFest_Logo_Animation.gif" alt="7 Degrees Brauhaus Oktoberfest logo animation" loading="lazy">
+          </div>
+        </div>
+        <div class="x-campaign-masonry">
+          <div class="x-masonry-item x-masonry-item--wide" data-lightbox="assets/proof of works/7brauhaus/OktoberFest_Poster_1_Extra.jpg" data-caption="Oktoberfest hero poster">
+            <img src="assets/proof of works/7brauhaus/OktoberFest_Poster_1_Extra.jpg" alt="Oktoberfest hero poster" loading="lazy">
+            <span class="x-masonry-caption">Hero Poster</span>
+          </div>
+          <div class="x-masonry-item x-masonry-item--tall" data-lightbox="assets/proof of works/7brauhaus/OktoberFest_Whatsapp_Poster.jpg" data-caption="WhatsApp campaign poster">
+            <img src="assets/proof of works/7brauhaus/OktoberFest_Whatsapp_Poster.jpg" alt="WhatsApp campaign poster" loading="lazy">
+            <span class="x-masonry-caption">WhatsApp Creative</span>
+          </div>
+          <div class="x-masonry-item x-masonry-item--third" data-lightbox="assets/proof of works/7brauhaus/Oktoberfest_Emailer.jpg" data-caption="Email campaign creative">
+            <img src="assets/proof of works/7brauhaus/Oktoberfest_Emailer.jpg" alt="Email campaign creative" loading="lazy">
+            <span class="x-masonry-caption">Emailer</span>
+          </div>
+          <div class="x-masonry-item x-masonry-item--third" data-lightbox="assets/proof of works/7brauhaus/Oktoberfest_Voucher_AllinOne.jpg" data-caption="Voucher suite">
+            <img src="assets/proof of works/7brauhaus/Oktoberfest_Voucher_AllinOne.jpg" alt="Voucher suite" loading="lazy">
+            <span class="x-masonry-caption">Voucher Suite</span>
+          </div>
+          <div class="x-masonry-item x-masonry-item--third" data-lightbox="assets/proof of works/7brauhaus/Oktoberfest_Logo.png" data-caption="Oktoberfest logo lockup">
+            <img src="assets/proof of works/7brauhaus/Oktoberfest_Logo.png" alt="Oktoberfest logo lockup" loading="lazy" class="x-media-contain">
+            <span class="x-masonry-caption">Logo Lockup</span>
+          </div>
+          <div class="x-masonry-item x-masonry-item--full" data-lightbox="assets/proof of works/7brauhaus/OktoberFest_Infographic_TableMat.jpg" data-caption="Infographic table mat — in-venue">
+            <img src="assets/proof of works/7brauhaus/OktoberFest_Infographic_TableMat.jpg" alt="Infographic table mat" loading="lazy">
+            <span class="x-masonry-caption">Infographic Table Mat — In-Venue</span>
+          </div>
+        </div>
       </div>
 
-      <!-- Showcase Cards Grid -->
-      <div class="x-showcase-grid">
-        
-        <!-- Card 1: Brand Playbooks -->
-        <div class="x-showcase-item" data-category="playbook">
-          <div class="x-item-media">
-            <img src="assets/images/brand_playbook.png" alt="The Obsidian Codex Brand Playbook" loading="lazy">
-            <div class="x-item-overlay"></div>
-            <div class="x-item-hud-overlay">
-              <span class="x-hud-spec">[ GRID: 12-COL ]</span>
-              <span class="x-hud-spec">[ WEIGHT: EDITORIAL ]</span>
+      <!-- NEU Salonz Campaign -->
+      <div class="x-campaign-spotlight x-campaign-salonz">
+        <div class="x-campaign-header">
+          <div class="x-campaign-copy">
+            <p class="x-campaign-client">Premium Salon / Brand</p>
+            <h3 class="x-campaign-name">NEU Salonz — <em>Game of Tones</em></h3>
+            <p class="x-campaign-summary">A pop-culture driven salon campaign inspired by epic fantasy — cover photo, social posts, character album art, newspaper advertising, and a full artwork deck extracted from the original PDF deliverable.</p>
+            <div class="x-campaign-tags">
+              <span class="x-campaign-tag">Newspaper Ad</span>
+              <span class="x-campaign-tag">Social Posts</span>
+              <span class="x-campaign-tag">Album Art</span>
+              <span class="x-campaign-tag">Brand Campaign</span>
             </div>
+            <a href="assets/proof of works/NEU salonz/Game Of Tones - Artworks.pdf" class="x-campaign-pdf-link" target="_blank" rel="noopener">View full artwork PDF →</a>
           </div>
-          <div class="x-item-details">
-            <div class="x-item-meta">
-              <span class="x-item-num">01 / PLAYBOOK</span>
-              <span class="x-item-tech">COAL & MATTE GOLD</span>
-            </div>
-            <h3 class="x-item-title">The Obsidian <em>Codex</em></h3>
-            <p class="x-item-desc">A 140-page master identity and design system playbook crafted for high-end boutique hospitality. Establishes core typographic rules and alignment scales.</p>
-            <div class="x-item-footer">
-              <span class="x-item-tag">Brand Playbook</span>
-              <div class="x-item-link-arrow">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-              </div>
-            </div>
+          <div class="x-campaign-feature">
+            <img src="assets/proof of works/NEU salonz/got-cover-change-is-coming.jpg" alt="NEU Salonz Game of Tones cover — Change is Coming" loading="lazy">
           </div>
         </div>
-
-        <!-- Card 2: Performance Websites -->
-        <div class="x-showcase-item" data-category="website">
-          <div class="x-item-media">
-            <img src="assets/images/performance_website.png" alt="Aether Engine Web V4" loading="lazy">
-            <div class="x-item-overlay"></div>
-            <div class="x-item-hud-overlay">
-              <span class="x-hud-spec">[ FPS: 120 ]</span>
-              <span class="x-hud-spec">[ SHADER: WEBGL ]</span>
-            </div>
+        <div class="x-campaign-masonry">
+          <div class="x-masonry-item x-masonry-item--full" data-lightbox="assets/proof of works/NEU salonz/New Salonz Games of Throne Front Side Newspaper Ad-01.jpg" data-caption="Game of Tones — newspaper front page">
+            <img src="assets/proof of works/NEU salonz/New Salonz Games of Throne Front Side Newspaper Ad-01.jpg" alt="Game of Tones newspaper ad" loading="lazy">
+            <span class="x-masonry-caption">Newspaper Front Page</span>
           </div>
-          <div class="x-item-details">
-            <div class="x-item-meta">
-              <span class="x-item-num">02 / WEBSITE</span>
-              <span class="x-item-tech">CYAN & VIOLET LIGHTRIG</span>
-            </div>
-            <h3 class="x-item-title">Aether Engine <em>Web</em></h3>
-            <p class="x-item-desc">An immersive application website featuring highly responsive layout containers, custom WebGL pixel shaders, and real-time kinetic typography.</p>
-            <div class="x-item-footer">
-              <span class="x-item-tag">Performance Website</span>
-              <div class="x-item-link-arrow">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-              </div>
-            </div>
+          <div class="x-masonry-item x-masonry-item--half" data-lightbox="assets/proof of works/NEU salonz/got-social-post-light.jpg" data-caption="Social post — light variant">
+            <img src="assets/proof of works/NEU salonz/got-social-post-light.jpg" alt="Game of Tones social post light" loading="lazy">
+            <span class="x-masonry-caption">Social Post — Light</span>
           </div>
-        </div>
-
-        <!-- Card 3: Market Campaigns -->
-        <div class="x-showcase-item" data-category="campaign">
-          <div class="x-item-media">
-            <img src="assets/images/market_campaign.png" alt="Apex Velocity Digital Campaign" loading="lazy">
-            <div class="x-item-overlay"></div>
-            <div class="x-item-hud-overlay">
-              <span class="x-hud-spec">[ CTR: +284% ]</span>
-              <span class="x-hud-spec">[ ARCH: MODULAR ]</span>
-            </div>
+          <div class="x-masonry-item x-masonry-item--half" data-lightbox="assets/proof of works/NEU salonz/got-social-post-dark.jpg" data-caption="Social post — dark variant">
+            <img src="assets/proof of works/NEU salonz/got-social-post-dark.jpg" alt="Game of Tones social post dark" loading="lazy">
+            <span class="x-masonry-caption">Social Post — Dark</span>
           </div>
-          <div class="x-item-details">
-            <div class="x-item-meta">
-              <span class="x-item-num">03 / CAMPAIGN</span>
-              <span class="x-item-tech">IMPR: 12.8M</span>
-            </div>
-            <h3 class="x-item-title">Apex Velocity <em>Digital</em></h3>
-            <p class="x-item-desc">A premium high-fashion digital acquisition campaign. Synthesizes dramatic studio lighting overlays with high-converting modular landing grid variants.</p>
-            <div class="x-item-footer">
-              <span class="x-item-tag">Market Campaign</span>
-              <div class="x-item-link-arrow">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-              </div>
-            </div>
+          <div class="x-masonry-item x-masonry-item--third" data-lightbox="assets/proof of works/NEU salonz/got-album-melisandre.jpg" data-caption="Album art — The war against humidity">
+            <img src="assets/proof of works/NEU salonz/got-album-melisandre.jpg" alt="Melisandre album art" loading="lazy">
+            <span class="x-masonry-caption">Album — Melisandre</span>
+          </div>
+          <div class="x-masonry-item x-masonry-item--third" data-lightbox="assets/proof of works/NEU salonz/got-album-cersei-tones.jpg" data-caption="Album art — Game of Tones">
+            <img src="assets/proof of works/NEU salonz/got-album-cersei-tones.jpg" alt="Cersei album art" loading="lazy">
+            <span class="x-masonry-caption">Album — Cersei</span>
+          </div>
+          <div class="x-masonry-item x-masonry-item--third" data-lightbox="assets/proof of works/NEU salonz/got-album-tyrion-curls.jpg" data-caption="Album art — Curls in your hair">
+            <img src="assets/proof of works/NEU salonz/got-album-tyrion-curls.jpg" alt="Tyrion album art" loading="lazy">
+            <span class="x-masonry-caption">Album — Tyrion</span>
+          </div>
+          <div class="x-masonry-item x-masonry-item--third" data-lightbox="assets/proof of works/NEU salonz/got-album-07.jpg" data-caption="Album art — God of cuts and style">
+            <img src="assets/proof of works/NEU salonz/got-album-07.jpg" alt="Tyrion cuts album art" loading="lazy">
+            <span class="x-masonry-caption">Album — Cuts &amp; Style</span>
+          </div>
+          <div class="x-masonry-item x-masonry-item--third" data-lightbox="assets/proof of works/NEU salonz/got-album-09.jpg" data-caption="Album art — You know how to blow-dry">
+            <img src="assets/proof of works/NEU salonz/got-album-09.jpg" alt="Jon Snow album art" loading="lazy">
+            <span class="x-masonry-caption">Album — Jon Snow</span>
+          </div>
+          <div class="x-masonry-item x-masonry-item--third" data-lightbox="assets/proof of works/NEU salonz/got-album-10.jpg" data-caption="Album art — Hodor">
+            <img src="assets/proof of works/NEU salonz/got-album-10.jpg" alt="Hodor album art" loading="lazy">
+            <span class="x-masonry-caption">Album — Hodor</span>
           </div>
         </div>
+      </div>
 
-        <!-- Card 4: Menu Designs -->
-        <div class="x-showcase-item" data-category="menu">
-          <div class="x-item-media">
-            <img src="assets/images/menu_design.png" alt="Le Mirage Fine Dining Menu Design" loading="lazy">
-            <div class="x-item-overlay"></div>
-            <div class="x-item-hud-overlay">
-              <span class="x-hud-spec">[ DEBOSSED ]</span>
-              <span class="x-hud-spec">[ PAPER: 400GSM ]</span>
-            </div>
-          </div>
-          <div class="x-item-details">
-            <div class="x-item-meta">
-              <span class="x-item-num">04 / MENU SUITE</span>
-              <span class="x-item-tech">24K GOLD HOT FOIL</span>
-            </div>
-            <h3 class="x-item-title">Le Mirage <em>Menu</em></h3>
-            <p class="x-item-desc">An elegant physical menu design suite crafted for a Michelin-starred Parisian bistro. Clean typography on high-textured heavyweight matte carbon stock.</p>
-            <div class="x-item-footer">
-              <span class="x-item-tag">Menu Design</span>
-              <div class="x-item-link-arrow">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-              </div>
-            </div>
-          </div>
-        </div>
+    </div>
 
-        <!-- Card 5: Brand Logos -->
-        <div class="x-showcase-item" data-category="logo">
-          <div class="x-item-media">
-            <img src="assets/images/brand_logo.png" alt="Syndicate Mark V Brand Logo Design" loading="lazy">
-            <div class="x-item-overlay"></div>
-            <div class="x-item-hud-overlay">
-              <span class="x-hud-spec">[ RATIO: 1.618 ]</span>
-              <span class="x-hud-spec">[ VECTOR BEZIER ]</span>
-            </div>
-          </div>
-          <div class="x-item-details">
-            <div class="x-item-meta">
-              <span class="x-item-num">05 / IDENTITIES</span>
-              <span class="x-item-tech">STRUCTURAL MARKS</span>
-            </div>
-            <h3 class="x-item-title">Syndicate <em>Mark V</em></h3>
-            <p class="x-item-desc">A premium portfolio of mathematical and geometric logomarks constructed for modern stealth ventures using golden ratio layout principles.</p>
-            <div class="x-item-footer">
-              <span class="x-item-tag">Brand Logos</span>
-              <div class="x-item-link-arrow">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-              </div>
-            </div>
-          </div>
-        </div>
-
+    <!-- Lightbox -->
+    <div class="x-lightbox" id="x-pow-lightbox" aria-hidden="true">
+      <div class="x-lightbox-inner">
+        <button type="button" class="x-lightbox-close" id="x-lightbox-close" aria-label="Close">&times;</button>
+        <img src="" alt="" id="x-lightbox-img">
+        <p class="x-lightbox-caption" id="x-lightbox-caption"></p>
       </div>
     </div>
 
@@ -2544,63 +2528,44 @@
         }, 100);
       }
 
-      // 10. SHOWCASE ARTIFACTS FILTERING SYSTEM
-      var filterBtns = root.querySelectorAll('.x-filter-btn');
-      var showcaseItems = root.querySelectorAll('.x-showcase-item');
-      var gsapObj = window.gsap;
+      // 10. MASONRY LIGHTBOX
+      var lightbox = root.querySelector('#x-pow-lightbox');
+      var lightboxImg = root.querySelector('#x-lightbox-img');
+      var lightboxCaption = root.querySelector('#x-lightbox-caption');
+      var lightboxClose = root.querySelector('#x-lightbox-close');
+      var masonryItems = root.querySelectorAll('.x-masonry-item[data-lightbox]');
 
-      filterBtns.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          filterBtns.forEach(function (b) { b.classList.remove('active'); });
-          btn.classList.add('active');
+      function openLightbox(src, caption) {
+        if (!lightbox || !lightboxImg) return;
+        lightboxImg.src = src;
+        lightboxImg.alt = caption || '';
+        if (lightboxCaption) lightboxCaption.textContent = caption || '';
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
 
-          var filterValue = btn.getAttribute('data-filter');
+      function closeLightbox() {
+        if (!lightbox) return;
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
 
-          if (gsapObj) {
-            // GSAP Animated transitions for filtering
-            gsapObj.to(showcaseItems, {
-              opacity: 0,
-              scale: 0.9,
-              duration: 0.3,
-              ease: 'power2.in',
-              onComplete: function () {
-                showcaseItems.forEach(function (item) {
-                  var category = item.getAttribute('data-category');
-                  if (filterValue === 'all' || category === filterValue) {
-                    item.style.display = 'flex';
-                  } else {
-                    item.style.display = 'none';
-                  }
-                });
-
-                // Animate filtered items back in
-                var visibleItems = Array.prototype.filter.call(showcaseItems, function (item) {
-                  return item.style.display === 'flex';
-                });
-                
-                gsapObj.to(visibleItems, {
-                  opacity: 1,
-                  scale: 1,
-                  duration: 0.5,
-                  stagger: 0.08,
-                  ease: 'power2.out'
-                });
-              }
-            });
-          } else {
-            // Fallback if GSAP is not loaded
-            showcaseItems.forEach(function (item) {
-              var category = item.getAttribute('data-category');
-              if (filterValue === 'all' || category === filterValue) {
-                item.style.display = 'flex';
-                item.style.opacity = '1';
-                item.style.transform = 'none';
-              } else {
-                item.style.display = 'none';
-              }
-            });
-          }
+      masonryItems.forEach(function (item) {
+        item.addEventListener('click', function () {
+          openLightbox(item.getAttribute('data-lightbox'), item.getAttribute('data-caption'));
         });
+      });
+
+      if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+      if (lightbox) {
+        lightbox.addEventListener('click', function (e) {
+          if (e.target === lightbox) closeLightbox();
+        });
+      }
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && lightbox && lightbox.classList.contains('is-open')) closeLightbox();
       });
 
       if (document.readyState === 'loading') {
