@@ -166,87 +166,11 @@
       border-left: 1px solid var(--cli-gold);
     }
 
-    /* What clients have in common */
-    .skoll-clientele-values-head {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 56px;
-    }
-    .skoll-clientele-values-eyebrow {
-      font-family: var(--cli-mono);
-      font-size: 0.75rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--cli-gold);
-      margin: 0 0 20px;
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    .skoll-clientele-values-title {
-      font-family: var(--cli-serif);
-      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
-      font-weight: 400;
-      line-height: 1.1;
-      color: var(--cli-text);
-      margin: 0;
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    .skoll-clientele-values-title em {
-      font-style: italic;
-      color: var(--cli-gold);
-    }
-    .skoll-clientele-values {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-    .skoll-clientele-value {
-      background: var(--cli-glass);
-      border: 1px solid var(--cli-border);
-      border-radius: 24px;
-      padding: 40px 32px;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      opacity: 0;
-      transform: translateY(30px);
-      transition: border-color 0.4s ease;
-    }
-    .skoll-clientele-value:hover {
-      border-color: rgba(201, 168, 76, 0.25);
-    }
-    .skoll-clientele-value-num {
-      font-family: var(--cli-mono);
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      color: var(--cli-gold);
-      margin: 0 0 20px;
-    }
-    .skoll-clientele-value-title {
-      font-family: var(--cli-serif);
-      font-style: italic;
-      font-size: 1.5rem;
-      font-weight: 400;
-      line-height: 1.25;
-      color: var(--cli-gold);
-      margin: 0 0 18px;
-    }
-    .skoll-clientele-value-desc {
-      font-family: var(--cli-sans);
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: var(--cli-muted);
-      margin: 0;
-    }
-
     @media (max-width: 900px) {
       .skoll-clientele-wrapper {
         padding: 96px 20px;
       }
-      .skoll-clientele-grid,
-      .skoll-clientele-values {
+      .skoll-clientele-grid {
         grid-template-columns: 1fr;
       }
       .skoll-clientele-card {
@@ -393,39 +317,6 @@
       </div>
     </div>
 
-    <!-- What our clients have in common -->
-    <header class="skoll-clientele-values-head">
-      <p class="skoll-clientele-values-eyebrow" data-cli-anim="values-head">The common thread</p>
-      <h3 class="skoll-clientele-values-title" data-cli-anim="values-head">What our clients <em>have in common.</em></h3>
-    </header>
-
-    <div class="skoll-clientele-values">
-      <article class="skoll-clientele-value" data-cli-anim="value">
-        <p class="skoll-clientele-value-num">01</p>
-        <h4 class="skoll-clientele-value-title">They think long-term.</h4>
-        <p class="skoll-clientele-value-desc">"We're not the agency for someone trying to hack a viral moment."</p>
-      </article>
-      <article class="skoll-clientele-value" data-cli-anim="value">
-        <p class="skoll-clientele-value-num">02</p>
-        <h4 class="skoll-clientele-value-title">They want a partner, not a vendor.</h4>
-        <p class="skoll-clientele-value-desc">"Every client gets direct access to the founder. No layers, no account managers translating between you and the work."</p>
-      </article>
-      <article class="skoll-clientele-value" data-cli-anim="value">
-        <p class="skoll-clientele-value-num">03</p>
-        <h4 class="skoll-clientele-value-title">They respect the diagnosis.</h4>
-        <p class="skoll-clientele-value-desc">"The clients we do our best work for are the ones who let us tell them what we actually think — even when it's not what they wanted to hear."</p>
-      </article>
-    </div>
-
-    <!-- —— Page CTA —— -->
-    <aside class="skoll-page-cta">
-      <div class="skoll-page-cta-inner">
-        <h3 class="skoll-page-cta-title">Want to be on this <em>list</em>?</h3>
-        <p class="skoll-page-cta-text">We&rsquo;re selective about who we take on. Tell us about your business and we&rsquo;ll be honest about whether we&rsquo;re the right partner.</p>
-        <a href="contact.html" class="skoll-page-cta-btn">Start a Conversation</a>
-      </div>
-    </aside>
-
   </div>
 
   <script>
@@ -445,8 +336,6 @@
         var heroEls = wrapper.querySelectorAll('[data-cli-anim="hero"]');
         var cardEls = wrapper.querySelectorAll('[data-cli-anim="card"]');
         var stripEls = wrapper.querySelectorAll('[data-cli-anim="strip"]');
-        var valueHeadEls = wrapper.querySelectorAll('[data-cli-anim="values-head"]');
-        var valueEls = wrapper.querySelectorAll('[data-cli-anim="value"]');
 
         gsap.to(heroEls, {
           opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', stagger: 0.12,
@@ -461,16 +350,6 @@
         gsap.to(stripEls, {
           opacity: 1, y: 0, duration: 0.7, ease: 'power3.out',
           scrollTrigger: { trigger: stripEls[0] || wrapper, start: 'top 85%', toggleActions: 'play none none none' }
-        });
-
-        gsap.to(valueHeadEls, {
-          opacity: 1, y: 0, duration: 0.7, ease: 'power3.out', stagger: 0.1,
-          scrollTrigger: { trigger: valueHeadEls[0] || wrapper, start: 'top 85%', toggleActions: 'play none none none' }
-        });
-
-        gsap.to(valueEls, {
-          opacity: 1, y: 0, duration: 0.7, ease: 'power3.out', stagger: 0.1,
-          scrollTrigger: { trigger: valueEls[0] || wrapper, start: 'top 85%', toggleActions: 'play none none none' }
         });
       }
 

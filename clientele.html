@@ -25,6 +25,18 @@
     .skoll-preloader-bar-wrap { width: 200px; height: 2px; background: rgba(240, 238, 233,0.1); border-radius: 2px; overflow: hidden; }
     .skoll-preloader-bar { height: 100%; width: 0; background: #C9A84C; border-radius: 2px; transition: width 0.2s ease-out; }
     #skoll-scroll-progress { position: fixed; top: 0; left: 0; height: 2px; background: #C9A84C; z-index: 99998; width: 0%; transform-origin: left; }
+    .skoll-clientele-cta-wrap {
+      background: #111111;
+      padding: 64px 24px 100px;
+    }
+    .skoll-clientele-cta-wrap .skoll-page-cta {
+      margin: 0 auto;
+    }
+    @media (max-width: 768px) {
+      .skoll-clientele-cta-wrap {
+        padding: 48px 20px 80px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -38,6 +50,16 @@
   <main id="skoll-main">
     <div id="navbar-container"></div>
     <div id="clientele-container"></div>
+    <div id="preview-testimonials-container"></div>
+    <section class="skoll-clientele-cta-wrap" aria-label="Contact call to action">
+      <aside class="skoll-page-cta">
+        <div class="skoll-page-cta-inner">
+          <h3 class="skoll-page-cta-title">Want to be on this <em>list</em>?</h3>
+          <p class="skoll-page-cta-text">We&rsquo;re selective about who we take on. Tell us about your business and we&rsquo;ll be honest about whether we&rsquo;re the right partner.</p>
+          <a href="contact.html" class="skoll-page-cta-btn">Start a Conversation</a>
+        </div>
+      </aside>
+    </section>
     <div id="footer-container"></div>
   </main>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -47,6 +69,7 @@
     window.SKOLL_SECTIONS = [
       { id: 'navbar-container', path: 'sections/navbar.html' },
       { id: 'clientele-container', path: 'sections/clientele.html' },
+      { id: 'preview-testimonials-container', path: 'sections/preview-testimonials.html' },
       { id: 'footer-container', path: 'sections/footer.html' }
     ];
   </script>
