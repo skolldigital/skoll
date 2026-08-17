@@ -1,5 +1,6 @@
 # Local backups
 *.bak
+assets/videos/hero-pc-og.mp4
 
 # Source archives kept outside the repo
 sohne-font-family.zip
