@@ -273,7 +273,6 @@
     <a href="services.html" class="skoll-nav-overlay-link">Services</a>
     <a href="clientele.html" class="skoll-nav-overlay-link">Clientele</a>
     <a href="case-studies.html" class="skoll-nav-overlay-link">Case Studies</a>
-    <a href="testimonials.html" class="skoll-nav-overlay-link">Testimonials</a>
     <a href="contact.html" class="skoll-nav-cta skoll-nav-cta-mobile">Let's Talk</a>
   </div>
 
@@ -338,7 +337,7 @@
         window.addEventListener('scroll', onScroll, { passive: true });
 
         // Anchor scroll: map #home, #about etc. to section container ids and scroll (Lenis or native)
-        var hashToId = { home: 'hero-container', about: 'about-container', founder: 'founder-container', services: 'services-container', clientele: 'clientele-container', work: 'work-container', testimonials: 'testimonials-container', contact: 'footer-container' };
+        var hashToId = { home: 'hero-container', about: 'about-container', founder: 'founder-container', services: 'services-container', clientele: 'clientele-container', work: 'work-container', contact: 'footer-container' };
         wrapper.addEventListener('click', function (e) {
           var a = e.target.closest('a[href^="#"]');
           if (!a) return;

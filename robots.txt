@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Hide pages that are not part of the public nav
+Disallow: /testimonials.html
+
+Sitemap: https://skolldigital.com/sitemap.xml
+Host: https://skolldigital.com

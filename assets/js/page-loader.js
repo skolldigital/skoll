@@ -17,7 +17,6 @@
     services: 'services-container',
     clientele: 'clientele-container',
     work: 'work-container',
-    testimonials: 'testimonials-container',
     pillars: 'pillars-container',
     explore: 'previews-container',
     contact: 'footer-container'

@@ -1,0 +1,12 @@
+# Netlify: point the secondary domain at the primary brand domain
+# Add skolldigitalmarketing.com as a domain alias, then these rules apply.
+
+https://skolldigitalmarketing.com/*  https://skolldigital.com/:splat  301!
+http://skolldigitalmarketing.com/*   https://skolldigital.com/:splat  301!
+https://www.skolldigitalmarketing.com/*  https://skolldigital.com/:splat  301!
+http://www.skolldigitalmarketing.com/*   https://skolldigital.com/:splat  301!
+
+# Prefer apex + https on the primary domain
+https://www.skolldigital.com/*  https://skolldigital.com/:splat  301!
+http://www.skolldigital.com/*   https://skolldigital.com/:splat  301!
+http://skolldigital.com/*       https://skolldigital.com/:splat  301!

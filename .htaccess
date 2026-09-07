@@ -1,0 +1,14 @@
+RewriteEngine On
+
+# Force HTTPS on primary domain
+RewriteCond %{HTTP_HOST} ^(www\.)?skolldigital\.com$ [NC]
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://skolldigital.com%{REQUEST_URI} [L,R=301]
+
+# www → apex on primary
+RewriteCond %{HTTP_HOST} ^www\.skolldigital\.com$ [NC]
+RewriteRule ^ https://skolldigital.com%{REQUEST_URI} [L,R=301]
+
+# Secondary domain → primary (preserve path)
+RewriteCond %{HTTP_HOST} ^(www\.)?skolldigitalmarketing\.com$ [NC]
+RewriteRule ^ https://skolldigital.com%{REQUEST_URI} [L,R=301]

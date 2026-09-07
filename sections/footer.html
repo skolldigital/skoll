@@ -224,6 +224,29 @@
       transform: translate(2px, -2px);
     }
 
+    .skoll-foot-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px 28px;
+      padding: 0 24px 8px;
+      position: relative;
+      z-index: 2;
+    }
+    .skoll-foot-nav a {
+      font-family: 'Söhne', 'Sohne', 'Inter', system-ui, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--foot-muted);
+      text-decoration: none;
+      padding: 6px 0;
+      transition: color 0.3s ease;
+    }
+    .skoll-foot-nav a:hover { color: var(--foot-gold); }
+
     .skoll-foot-bottom {
       max-width: 1400px;
       margin: 0 auto;
@@ -319,9 +342,17 @@
       <a href="https://www.linkedin.com/company/skol-digital-media/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://www.instagram.com/skolldigital" target="_blank" rel="noopener">Instagram</a>
     </div>
+    <nav class="skoll-foot-nav" aria-label="Footer">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="founder.html">Founder</a>
+      <a href="clientele.html">Clientele</a>
+      <a href="contact.html">Contact</a>
+    </nav>
     <div class="skoll-foot-bottom" id="skoll-foot-bottom">
       <span>© 2026 Skoll Digital</span>
-      <span>Grow with intent.</span>
+      <span>Grow with intent. · skolldigital.com</span>
     </div>
   </div>
 
