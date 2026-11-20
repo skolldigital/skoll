@@ -7,12 +7,12 @@
   <meta name="description" content="Skoll Digital brand and campaign case study for NEU Salonz: Game of Tones, South Point Mall, imNEU Membership — the salon marketing playbook others tried to copy.">
   <meta name="author" content="Skoll Digital">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <link rel="canonical" href="https://skolldigital.com/case-neu-salonz.html">
+  <link rel="canonical" href="https://skolldigital.com/case-neu-salonz">
   <meta name="theme-color" content="#0A0A0A">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Skoll Digital">
   <meta property="og:locale" content="en_IN">
-  <meta property="og:url" content="https://skolldigital.com/case-neu-salonz.html">
+  <meta property="og:url" content="https://skolldigital.com/case-neu-salonz">
   <meta property="og:title" content="NEU Salonz Case Study | Salon Brand Marketing — Skoll Digital">
   <meta property="og:description" content="A category playbook other salon brands tried to copy.">
   <meta property="og:image" content="https://skolldigital.com/assets/images/logo_mark_main.png">
@@ -51,11 +51,13 @@
       "name": "Skoll Digital",
       "logo": { "@type": "ImageObject", "url": "https://skolldigital.com/assets/images/logo_mark_main.png" }
     },
-    "mainEntityOfPage": "https://skolldigital.com/case-neu-salonz.html",
+    "mainEntityOfPage": "https://skolldigital.com/case-neu-salonz",
     "about": ["Digital Marketing", "Performance Marketing", "Growth Strategy"],
     "isPartOf": { "@id": "https://skolldigital.com/#website" }
   }
-  </script></head>
+  </script>
+  <noscript><link rel="stylesheet" href="/assets/css/no-script.css"></noscript>
+</head>
 <body>
   <div id="skoll-scroll-progress" aria-hidden="true"></div>
   <div id="skoll-preloader">
@@ -66,7 +68,816 @@
   </div>
   <main id="skoll-main">
     <div id="navbar-container"></div>
-    <div id="case-neu-salonz-container"></div>
+    <div id="case-neu-salonz-container" data-static-section>
+<!-- include: sections/case-neu-salonz.html -->
+<!-- Skoll Digital – Case Study 03 / 06 — NEU Salonz (HTML + scoped CSS + JS) -->
+<section class="skoll-cs-wrapper" data-section="case-neu-salonz" id="case-neu-salonz">
+  <style>
+    .skoll-cs-wrapper {
+      --cs-bg: #0A0A0A;
+      --cs-text: #FAFAFA;
+      --cs-muted: #888888;
+      --cs-gold: #C9A84C;
+      --cs-glass-bg: rgba(240, 238, 233, 0.03);
+      --cs-glass-border: rgba(240, 238, 233, 0.06);
+      --cs-divider: rgba(240, 238, 233, 0.08);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: var(--cs-bg);
+      color: var(--cs-text);
+      padding: 140px 24px 120px;
+      position: relative;
+      overflow: hidden;
+    }
+    .skoll-cs-wrapper::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 60vw;
+      height: 60vw;
+      max-width: 900px;
+      max-height: 900px;
+      background: radial-gradient(circle at center, rgba(201, 168, 76, 0.07) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(20px);
+    }
+    .skoll-cs-wrapper::after {
+      content: '';
+      position: absolute;
+      bottom: -10%;
+      left: -10%;
+      width: 50vw;
+      height: 50vw;
+      max-width: 700px;
+      max-height: 700px;
+      background: radial-gradient(circle at center, rgba(201, 168, 76, 0.05) 0%, transparent 65%);
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(20px);
+    }
+    .skoll-cs-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ===== ANIM BASE ===== */
+    .skoll-cs-wrapper .skoll-cs-anim {
+      opacity: 0;
+      transform: translateY(30px);
+      will-change: transform, opacity;
+    }
+
+    /* ===== HERO ===== */
+    .skoll-cs-hero {
+      text-align: center;
+      margin-bottom: 96px;
+    }
+    .skoll-cs-eyebrow {
+      font-family: 'Söhne', 'Sohne', 'Inter', system-ui, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--cs-gold);
+      margin: 0 0 28px;
+      font-weight: 500;
+    }
+    .skoll-cs-title {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 1;
+      color: var(--cs-text);
+      margin: 0;
+      letter-spacing: -0.01em;
+    }
+    .skoll-cs-title em {
+      font-style: italic;
+      color: var(--cs-gold);
+    }
+    .skoll-cs-tagline {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-style: italic;
+      color: var(--cs-gold);
+      font-size: clamp(1.25rem, 2vw, 1.625rem);
+      margin: 20px auto 0;
+      line-height: 1.4;
+      max-width: 760px;
+    }
+    .skoll-cs-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 40px;
+    }
+    .skoll-cs-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 20px;
+      background: var(--cs-glass-bg);
+      border: 1px solid var(--cs-glass-border);
+      border-radius: 999px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    .skoll-cs-pill-label {
+      font-family: 'Söhne', 'Sohne', 'Inter', system-ui, sans-serif;
+      font-size: 0.6875rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--cs-muted);
+    }
+    .skoll-cs-pill-value {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-size: 0.875rem;
+      color: var(--cs-text);
+      font-weight: 500;
+    }
+    .skoll-cs-pill-sep {
+      width: 1px;
+      height: 14px;
+      background: var(--cs-glass-border);
+    }
+
+    /* ===== STATS ===== */
+    .skoll-cs-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 120px;
+    }
+    @media (max-width: 1024px) {
+      .skoll-cs-stats { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .skoll-cs-stats { grid-template-columns: 1fr; }
+    }
+    .skoll-cs-stat {
+      position: relative;
+      overflow: hidden;
+      padding: 40px 28px;
+      min-height: 220px;
+      background: var(--cs-glass-bg);
+      border: 1px solid var(--cs-glass-border);
+      border-radius: 20px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+    }
+    .skoll-cs-stat::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 44px;
+      height: 44px;
+      background-color: var(--cs-gold);
+      -webkit-mask: url('assets/images/claw.png') no-repeat center / contain;
+              mask: url('assets/images/claw.png') no-repeat center / contain;
+      opacity: 0.12;
+      pointer-events: none;
+      transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .skoll-cs-stat:hover {
+      transform: translateY(-4px);
+      border-color: rgba(201, 168, 76, 0.6);
+      background: rgba(201, 168, 76, 0.04);
+    }
+    .skoll-cs-stat:hover::after {
+      opacity: 0.35;
+      transform: scale(1.1) rotate(6deg);
+    }
+    .skoll-cs-stat-number {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(3rem, 5.5vw, 4.5rem);
+      line-height: 1;
+      color: var(--cs-gold);
+      margin: 0;
+      letter-spacing: -0.02em;
+    }
+    .skoll-cs-stat-label {
+      font-family: 'Söhne', 'Sohne', 'Inter', system-ui, sans-serif;
+      font-size: 0.6875rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--cs-muted);
+      margin: 28px 0 0;
+      line-height: 1.5;
+    }
+
+    /* ===== THE BRIEF ===== */
+    .skoll-cs-brief {
+      background: var(--cs-glass-bg);
+      border: 1px solid var(--cs-glass-border);
+      border-left: 3px solid var(--cs-gold);
+      border-radius: 24px;
+      padding: 48px 40px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      margin-bottom: 80px;
+    }
+    .skoll-cs-section-label {
+      display: block;
+      text-align: center;
+      margin-bottom: 40px;
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-style: italic;
+      color: var(--cs-gold);
+      font-size: clamp(1.25rem, 2vw, 1.625rem);
+      text-transform: none;
+      letter-spacing: normal;
+      font-weight: 400;
+    }
+    .skoll-cs-brief-body {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(1.25rem, 1.6vw, 1.5rem);
+      line-height: 1.5;
+      color: var(--cs-text);
+      margin: 0;
+      font-weight: 400;
+    }
+    @media (max-width: 640px) {
+      .skoll-cs-brief { padding: 36px 28px; }
+    }
+
+    /* ===== WHAT WE DID ===== */
+    .skoll-cs-wwd {
+      text-align: center;
+      margin-bottom: 100px;
+    }
+    .skoll-cs-wwd-label {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    .skoll-cs-wwd-quote {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(1.5rem, 2.4vw, 2rem);
+      line-height: 1.4;
+      color: var(--cs-text);
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* ===== CAMPAIGNS ===== */
+    .skoll-cs-campaigns {
+      margin-bottom: 120px;
+    }
+    .skoll-cs-campaigns-head {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .skoll-cs-campaign-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .skoll-cs-campaign {
+      display: grid;
+      grid-template-columns: minmax(180px, 280px) 1fr;
+      gap: 48px;
+      padding: 40px;
+      background: var(--cs-glass-bg);
+      border: 1px solid var(--cs-glass-border);
+      border-radius: 24px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      align-items: center;
+      transition: border-color 0.45s ease, transform 0.45s ease, background 0.45s ease;
+    }
+    .skoll-cs-campaign:hover {
+      border-color: rgba(201, 168, 76, 0.4);
+      transform: translateY(-3px);
+      background: rgba(240, 238, 233, 0.045);
+    }
+    .skoll-cs-campaign-num {
+      display: block;
+      width: clamp(4rem, 8vw, 6.5rem);
+      height: clamp(4rem, 8vw, 6.5rem);
+      margin: 0;
+      font-size: 0;
+      color: transparent;
+      background-color: var(--cs-gold);
+      -webkit-mask: url('assets/images/paw.png') no-repeat center / contain;
+              mask: url('assets/images/paw.png') no-repeat center / contain;
+    }
+    .skoll-cs-campaign-content {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .skoll-cs-campaign-name {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      line-height: 1.1;
+      color: var(--cs-text);
+      margin: 0;
+      letter-spacing: -0.01em;
+    }
+    .skoll-cs-campaign-name em {
+      font-style: italic;
+      color: var(--cs-gold);
+    }
+    .skoll-cs-campaign-body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-size: 1rem;
+      line-height: 1.65;
+      color: var(--cs-muted);
+      margin: 0;
+    }
+    .skoll-cs-campaign-outcome {
+      font-family: 'Söhne', 'Sohne', 'Inter', system-ui, sans-serif;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--cs-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin: 8px 0 0;
+      padding-top: 18px;
+      border-top: 1px solid var(--cs-glass-border);
+      line-height: 1.5;
+    }
+    @media (max-width: 768px) {
+      .skoll-cs-campaign {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 32px 28px;
+      }
+      .skoll-cs-campaign-num { text-align: left; }
+    }
+
+    /* ===== CLOSING PULL-QUOTE ===== */
+    .skoll-cs-closing {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 100px;
+    }
+    .skoll-cs-closing-quote {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+      line-height: 1.4;
+      color: var(--cs-gold);
+      margin: 0;
+    }
+
+    /* ===== CROSS-NAV ===== */
+    .skoll-cs-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 36px 0;
+      border-top: 1px solid var(--cs-divider);
+      gap: 24px;
+    }
+    .skoll-cs-nav a {
+      text-decoration: none;
+      font-family: 'Söhne', 'Sohne', 'Inter', system-ui, sans-serif;
+      font-size: 0.8125rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .skoll-cs-nav-back {
+      color: var(--cs-muted);
+    }
+    .skoll-cs-nav-back:hover {
+      color: var(--cs-gold);
+    }
+    .skoll-cs-nav-next {
+      color: var(--cs-gold);
+    }
+    .skoll-cs-nav-next .skoll-cs-arrow {
+      display: inline-block;
+      transition: transform 0.35s ease;
+    }
+    .skoll-cs-nav-next:hover .skoll-cs-arrow {
+      transform: translateX(6px);
+    }
+    @media (max-width: 640px) {
+      .skoll-cs-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+    }
+
+    /* ===== GALLERY / CREATIVES (What We Put Into The Wild) ===== */
+    .skoll-cs-wrapper .skoll-cs-gallery-section {
+      margin-bottom: 100px;
+    }
+    .skoll-cs-wrapper .skoll-cs-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .skoll-cs-wrapper .skoll-cs-gallery-item {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      background: rgba(240, 238, 233, 0.02);
+      border: 1px solid rgba(240, 238, 233, 0.05);
+      aspect-ratio: 1 / 1.55;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.4s ease, transform 0.4s ease;
+    }
+    .skoll-cs-wrapper .skoll-cs-gallery-item:hover {
+      border-color: rgba(201, 168, 76, 0.4);
+      transform: translateY(-4px);
+    }
+    .skoll-cs-wrapper .skoll-cs-gallery-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #0A0A0A;
+      transition: transform 0.6s ease;
+    }
+    .skoll-cs-wrapper .skoll-cs-gallery-item:hover .skoll-cs-gallery-img {
+      transform: scale(1.04);
+    }
+    .skoll-cs-wrapper .skoll-cs-gallery-placeholder {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-size: 0.8125rem;
+      color: #888888;
+      text-align: center;
+      padding: 24px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @media (max-width: 1024px) {
+      .skoll-cs-wrapper .skoll-cs-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .skoll-cs-wrapper .skoll-cs-gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <div class="skoll-cs-inner">
+
+    <!-- 1. HERO -->
+    <header class="skoll-cs-hero">
+      <p class="skoll-cs-eyebrow skoll-cs-anim">Case Study 03 / 06</p>
+      <h1 class="skoll-cs-title skoll-cs-anim">NEU <em>Salonz</em></h1>
+      <p class="skoll-cs-tagline skoll-cs-anim">&ldquo;A category playbook other brands tried to copy.&rdquo;</p>
+      <div class="skoll-cs-meta skoll-cs-anim">
+        <div class="skoll-cs-pill">
+          <span class="skoll-cs-pill-label">Vertical</span>
+          <span class="skoll-cs-pill-sep"></span>
+          <span class="skoll-cs-pill-value">Beauty &amp; Salons</span>
+        </div>
+        <div class="skoll-cs-pill">
+          <span class="skoll-cs-pill-label">Engagement</span>
+          <span class="skoll-cs-pill-sep"></span>
+          <span class="skoll-cs-pill-value">2 years as in-house Marketing Head</span>
+        </div>
+        <div class="skoll-cs-pill">
+          <span class="skoll-cs-pill-label">Outcome</span>
+          <span class="skoll-cs-pill-sep"></span>
+          <span class="skoll-cs-pill-value">Category playbook others copied</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. STATS -->
+    <div class="skoll-cs-stats">
+      <div class="skoll-cs-stat skoll-cs-anim">
+        <p class="skoll-cs-stat-number">1 YEAR</p>
+        <p class="skoll-cs-stat-label">Of hair colour sold in 2 months</p>
+      </div>
+      <div class="skoll-cs-stat skoll-cs-anim">
+        <p class="skoll-cs-stat-number">Rs.21L</p>
+        <p class="skoll-cs-stat-label">In 3 days at South Point Mall</p>
+      </div>
+      <div class="skoll-cs-stat skoll-cs-anim">
+        <p class="skoll-cs-stat-number">2x</p>
+        <p class="skoll-cs-stat-label">Memberships in 30 days (imNEU)</p>
+      </div>
+      <div class="skoll-cs-stat skoll-cs-anim">
+        <p class="skoll-cs-stat-number">500K+</p>
+        <p class="skoll-cs-stat-label">Views on NEUresolution films</p>
+      </div>
+    </div>
+
+    <!-- 3. THE BRIEF -->
+    <div class="skoll-cs-brief skoll-cs-anim">
+      <span class="skoll-cs-label">The Brief</span>
+      <p class="skoll-cs-brief-body">NEU Salonz ran six branches across Gurgaon. We started as their agency. After one Valentine&rsquo;s campaign, they poached us in-house as Marketing Head. Then we built campaigns that became legends &mdash; and templates other salon brands tried to replicate.</p>
+    </div>
+
+    <!-- 4. WHAT WE DID -->
+    <div class="skoll-cs-wwd">
+      <p class="skoll-cs-section-label skoll-cs-wwd-label skoll-cs-anim">What We Did</p>
+      <p class="skoll-cs-wwd-quote skoll-cs-anim">&ldquo;We treated salons like brands &mdash; not service businesses. Every campaign was a launch. Every artist was a creator. Every branch was a flagship.&rdquo;</p>
+    </div>
+
+    <!-- 5. THE CAMPAIGNS -->
+    <div class="skoll-cs-campaigns">
+      <div class="skoll-cs-campaigns-head">
+        <p class="skoll-cs-section-label skoll-cs-anim">The Campaigns</p>
+      </div>
+      <div class="skoll-cs-campaign-list">
+
+        <article class="skoll-cs-campaign skoll-cs-anim skoll-cs-campaign-item">
+          <p class="skoll-cs-campaign-num">01</p>
+          <div class="skoll-cs-campaign-content">
+            <h3 class="skoll-cs-campaign-name">Game of <em>Tones</em></h3>
+            <p class="skoll-cs-campaign-body">Hair colour campaign timed to a Game of Thrones season launch. Themed F&amp;B (DothraTEA, HODORITOS), GOT soundtrack in-salon, iron throne photo cutout and Joffrey dartboard.</p>
+            <p class="skoll-cs-campaign-outcome">Outcome: Sold a year&rsquo;s worth of hair colour in ~2 months &middot; Nykaa later copied the name</p>
+          </div>
+        </article>
+
+        <article class="skoll-cs-campaign skoll-cs-anim skoll-cs-campaign-item">
+          <p class="skoll-cs-campaign-num">02</p>
+          <div class="skoll-cs-campaign-content">
+            <h3 class="skoll-cs-campaign-name">South Point Mall <em>6th Anniversary</em></h3>
+            <p class="skoll-cs-campaign-body">Member-exclusive event. Grand decor, premium F&amp;B, curated goodies, a 7-foot selfie wall and hired photographers.</p>
+            <p class="skoll-cs-campaign-outcome">Outcome: Rs.21 Lakh in sales in 3 days</p>
+          </div>
+        </article>
+
+        <article class="skoll-cs-campaign skoll-cs-anim skoll-cs-campaign-item">
+          <p class="skoll-cs-campaign-num">03</p>
+          <div class="skoll-cs-campaign-content">
+            <h3 class="skoll-cs-campaign-name">imNEU <em>Membership</em></h3>
+            <p class="skoll-cs-campaign-body">Repositioned the salon membership as a lifestyle membership. PVC cards in White, Silver, Gold and Black tiers, with cross-brand partnerships.</p>
+            <p class="skoll-cs-campaign-outcome">Outcome: 2x memberships in 30 days</p>
+          </div>
+        </article>
+
+        <article class="skoll-cs-campaign skoll-cs-anim skoll-cs-campaign-item">
+          <p class="skoll-cs-campaign-num">04</p>
+          <div class="skoll-cs-campaign-content">
+            <h3 class="skoll-cs-campaign-name">NEU<em>resolution</em></h3>
+            <p class="skoll-cs-campaign-body">Annual purpose campaign &mdash; makeovers for underprivileged children and homeless transformation films.</p>
+            <p class="skoll-cs-campaign-outcome">Outcome: 500K+ views on Facebook &middot; Positioned NEU as a brand with a soul</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- 5b. CREATIVES (What We Put Into The Wild) -->
+    <div class="skoll-cs-gallery-section">
+      <span class="skoll-cs-section-label skoll-cs-anim">What We Put Into The Wild</span>
+      <div class="skoll-cs-gallery-grid skoll-cs-anim">
+        <div class="skoll-cs-gallery-item">
+          <img class="skoll-cs-gallery-img" src="assets/casestudy/neu-salonz/Screenshot%202026-05-21%20185217.png" alt="Game of Tones Campaign"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="skoll-cs-gallery-placeholder" style="display: none;">
+            <span>Game of Tones</span>
+          </div>
+        </div>
+        <div class="skoll-cs-gallery-item" style="background-color: #2B2A2B;">
+          <img class="skoll-cs-gallery-img" style="background-color: #2B2A2B;" src="assets/casestudy/neu-salonz/ChatGPT%20Image%20May%2022,%202026,%2006_05_13%20PM.png" alt="Game of Tones Menu"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="skoll-cs-gallery-placeholder" style="display: none;">
+            <span>Game of Tones Menu</span>
+          </div>
+        </div>
+        <div class="skoll-cs-gallery-item">
+          <img class="skoll-cs-gallery-img" src="assets/casestudy/neu-salonz/Screenshot%202026-05-21%20185156.png" alt="15 Years of Artistry"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="skoll-cs-gallery-placeholder" style="display: none;">
+            <span>15 Years of Artistry</span>
+          </div>
+        </div>
+        <div class="skoll-cs-gallery-item">
+          <img class="skoll-cs-gallery-img" src="assets/casestudy/neu-salonz/Screenshot%202026-05-21%20182343.png" alt="imNEU Membership Card"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="skoll-cs-gallery-placeholder" style="display: none;">
+            <span>imNEU Membership</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. CLOSING PULL-QUOTE -->
+    <div class="skoll-cs-closing">
+      <p class="skoll-cs-closing-quote skoll-cs-anim">&ldquo;After NEU, every major salon brand in Gurgaon came calling &mdash; Looks, Geetanjali, Marco Aldany, Headmasters, Dessange Paris, Toni &amp; Guy. We didn&rsquo;t pitch any of them. They came to us.&rdquo;</p>
+    </div>
+
+    <!-- 7. CROSS-NAV -->
+    <p class="skoll-cs-related-service"><a href="/branding-and-content">Explore campaign creative and brand identity services</a></p>
+    <nav class="skoll-cs-nav skoll-cs-anim" aria-label="Case study navigation">
+      <a href="/case-studies" class="skoll-cs-nav-back">&larr; Back to all case studies</a>
+      <a href="/case-lakme-academy" class="skoll-cs-nav-next">Next: Lakme Academy <span class="skoll-cs-arrow">&rarr;</span></a>
+    </nav>
+
+  </div>
+
+  <script>
+    (function () {
+      var root = document.currentScript && document.currentScript.closest('.skoll-cs-wrapper');
+      if (!root) {
+        var nodes = document.querySelectorAll('.skoll-cs-wrapper[data-section="case-neu-salonz"]');
+        root = nodes[nodes.length - 1];
+      }
+      if (!root || root.__skollCsInit) return;
+      root.__skollCsInit = true;
+
+      function runAnim() {
+        if (typeof window.gsap === 'undefined') {
+          // Fallback: reveal immediately if GSAP is not present
+          root.querySelectorAll('.skoll-cs-anim').forEach(function (el) {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+          });
+          return;
+        }
+        var gsap = window.gsap;
+        if (window.ScrollTrigger && gsap.registerPlugin) {
+          gsap.registerPlugin(window.ScrollTrigger);
+        }
+
+        // Hero elements
+        var heroEls = root.querySelectorAll('.skoll-cs-hero .skoll-cs-anim');
+        gsap.to(heroEls, {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: 'power3.out',
+          stagger: 0.12,
+          scrollTrigger: {
+            trigger: root.querySelector('.skoll-cs-hero'),
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          }
+        });
+
+        // Stats
+        var statEls = root.querySelectorAll('.skoll-cs-stats .skoll-cs-anim');
+        gsap.to(statEls, {
+          opacity: 1,
+          y: 0,
+          duration: 0.9,
+          ease: 'power3.out',
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: root.querySelector('.skoll-cs-stats'),
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          }
+        });
+
+        // Brief
+        var brief = root.querySelector('.skoll-cs-brief');
+        if (brief) {
+          gsap.to(brief, {
+            opacity: 1,
+            y: 0,
+            duration: 0.9,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: brief,
+              start: 'top 85%',
+              toggleActions: 'play none none none'
+            }
+          });
+        }
+
+        // What We Did
+        var wwdEls = root.querySelectorAll('.skoll-cs-wwd .skoll-cs-anim');
+        gsap.to(wwdEls, {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: 'power3.out',
+          stagger: 0.15,
+          scrollTrigger: {
+            trigger: root.querySelector('.skoll-cs-wwd'),
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          }
+        });
+
+        // Campaigns header
+        var campHead = root.querySelector('.skoll-cs-campaigns-head .skoll-cs-anim');
+        if (campHead) {
+          gsap.to(campHead, {
+            opacity: 1,
+            y: 0,
+            duration: 0.9,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: root.querySelector('.skoll-cs-campaigns'),
+              start: 'top 85%',
+              toggleActions: 'play none none none'
+            }
+          });
+        }
+
+        // Campaign cards — heavier stagger
+        var campCards = root.querySelectorAll('.skoll-cs-campaign-item');
+        campCards.forEach(function (card, i) {
+          gsap.to(card, {
+            opacity: 1,
+            y: 0,
+            duration: 1.05,
+            ease: 'power3.out',
+            delay: i * 0.05,
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 88%',
+              toggleActions: 'play none none none'
+            }
+          });
+        });
+
+        // Gallery/creatives section
+        var galleryEls = root.querySelectorAll('.skoll-cs-gallery-section .skoll-cs-anim');
+        if (galleryEls.length > 0) {
+          gsap.to(galleryEls, {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: 'power3.out',
+            stagger: 0.15,
+            scrollTrigger: {
+              trigger: root.querySelector('.skoll-cs-gallery-section'),
+              start: 'top 85%',
+              toggleActions: 'play none none none'
+            }
+          });
+        }
+
+        // Closing quote
+        var closing = root.querySelector('.skoll-cs-closing .skoll-cs-anim');
+        if (closing) {
+          gsap.to(closing, {
+            opacity: 1,
+            y: 0,
+            duration: 1.1,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: closing,
+              start: 'top 85%',
+              toggleActions: 'play none none none'
+            }
+          });
+        }
+
+        // Nav
+        var nav = root.querySelector('.skoll-cs-nav');
+        if (nav) {
+          gsap.to(nav, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: nav,
+              start: 'top 95%',
+              toggleActions: 'play none none none'
+            }
+          });
+        }
+      }
+
+      function whenReady(fn) {
+        if (typeof window.gsap !== 'undefined') return fn();
+        var tries = 0;
+        var iv = setInterval(function () {
+          tries++;
+          if (typeof window.gsap !== 'undefined' || tries > 40) {
+            clearInterval(iv);
+            fn();
+          }
+        }, 100);
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function () { whenReady(runAnim); });
+      } else {
+        whenReady(runAnim);
+      }
+    })();
+  </script>
+</section>
+<!-- /include -->
+    </div>
     <div id="footer-container"></div>
   </main>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>

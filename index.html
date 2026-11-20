@@ -3,18 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Skoll Digital | Digital Marketing &amp; Growth Agency — India</title>
-  <meta name="description" content="Skoll Digital is a full-stack digital marketing and growth agency. Strategy, websites, Google Ads, Meta Ads, SEO, branding and content — one system that compounds. Hyderabad &amp; Gurgaon.">
-  <meta name="keywords" content="Skoll Digital, Skoll Digital Marketing, digital marketing agency India, growth agency, performance marketing, Google Ads agency, Meta Ads, SEO agency Hyderabad, branding agency Gurgaon, website development">
+  <title>Digital Marketing &amp; Growth Agency | Skoll Digital</title>
+  <meta name="description" content="Skoll Digital is an India-based agency offering SEO, Google and Meta Ads, website development, branding and growth strategy to businesses internationally.">
   <meta name="author" content="Skoll Digital">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="googlebot" content="index, follow">
   <link rel="canonical" href="https://skolldigital.com/">
-  <link rel="alternate" href="https://skolldigital.com/" hreflang="en-IN">
-  <link rel="alternate" href="https://skolldigital.com/" hreflang="x-default">
   <meta name="theme-color" content="#0A0A0A">
-  <meta name="geo.region" content="IN">
-  <meta name="geo.placename" content="Hyderabad, Gurgaon">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Skoll Digital">
@@ -79,8 +74,7 @@
         ],
         "sameAs": [
           "https://www.linkedin.com/company/skol-digital-media/",
-          "https://www.instagram.com/skolldigital",
-          "https://skolldigitalmarketing.com"
+          "https://www.instagram.com/skolldigital"
         ],
         "knowsAbout": [
           "Digital Marketing",
@@ -93,8 +87,8 @@
           "Content Marketing",
           "Growth Strategy"
         ],
-        "priceRange": "$$",
-        "slogan": "Grow with intent."
+        "slogan": "Grow with intent.",
+        "hasOfferCatalog": { "@id": "https://skolldigital.com/services#catalog" }
       },
       {
         "@type": "WebSite",
@@ -104,13 +98,13 @@
         "alternateName": "Skoll Digital Marketing",
         "description": "Digital marketing and growth agency — strategy, product, performance and brand.",
         "publisher": { "@id": "https://skolldigital.com/#organization" },
-        "inLanguage": "en-IN"
+        "inLanguage": "en"
       },
       {
         "@type": "WebPage",
         "@id": "https://skolldigital.com/#webpage",
         "url": "https://skolldigital.com/",
-        "name": "Skoll Digital | Digital Marketing & Growth Agency — India",
+        "name": "Digital Marketing & Growth Agency | Skoll Digital",
         "isPartOf": { "@id": "https://skolldigital.com/#website" },
         "about": { "@id": "https://skolldigital.com/#organization" },
         "description": "Skoll Digital is a full-stack digital marketing and growth agency serving brands from Hyderabad and Gurgaon worldwide."
@@ -128,6 +122,8 @@
     .skoll-preloader-bar { height: 100%; width: 0; background: #C9A84C; border-radius: 2px; transition: width 0.2s ease-out; }
     #skoll-scroll-progress { position: fixed; top: 0; left: 0; height: 2px; background: #C9A84C; z-index: 99998; width: 0%; transform-origin: left; }
   </style>
+
+  <noscript><link rel="stylesheet" href="/assets/css/no-script.css"></noscript>
 </head>
 <body>
   <div id="skoll-scroll-progress" aria-hidden="true"></div>
@@ -141,10 +137,1057 @@
 
   <main id="skoll-main">
     <div id="navbar-container"></div>
-    <div id="hero-container"></div>
+    <div id="hero-container" data-static-section>
+<!-- include: sections/hero.html -->
+<!-- Skoll Digital – Standalone Hero (HTML + scoped CSS + JS) -->
+<section class="skoll-hero-wrapper" data-section="hero">
+  <style>
+    /* —— Scoped Hero Styles (ultra-dark, premium) —— */
+    .skoll-hero-wrapper {
+      --hero-bg: #0A0A0A;
+      --hero-gold: #C9A84C;
+      --hero-text: #F0EEE9;
+      --hero-muted: rgba(240, 238, 233, 0.75);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      position: relative;
+      min-height: 100vh;
+      width: 100%;
+      background: var(--hero-bg);
+      display: flex;
+      align-items: center; /* True vertical centering */
+      justify-content: center;
+      overflow: hidden;
+      isolation: isolate;
+      padding: 100px 0 80px 0; /* Fallback padding to ensure navbar space */
+    }
+    .skoll-hero-wrapper * { box-sizing: border-box; }
+
+    /* Backgrounds */
+    .skoll-hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.45;
+      filter: saturate(0.75) contrast(1.08);
+      z-index: 0;
+    }
+    .skoll-hero-bg { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
+    .skoll-hero-grid {
+      position: absolute; inset: 0; opacity: 0.05;
+      background-image: linear-gradient(rgba(240, 238, 233,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(240, 238, 233,0.08) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .skoll-hero-blob {
+      position: absolute; top: -20%; right: -10%; width: 80vmin; height: 80vmin;
+      background: radial-gradient(ellipse 80% 80% at 50% 50%, rgba(201, 168, 76, 0.18) 0%, rgba(201, 168, 76, 0.06) 40%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    /* —— Content Layout —— */
+    .skoll-hero-inner {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+      width: 85%;
+      max-width: 1200px; /* Reduced width for tight, editorial alignment */
+      margin: 0 auto;
+    }
+
+    .skoll-hero-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--hero-gold);
+      opacity: 0;
+      transform: translateY(20px);
+      mix-blend-mode: difference;
+    }
+
+    .skoll-hero-headline {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(3rem, 7vw, 5.5rem); /* Clamped gracefully so it never breaks layout */
+      font-weight: 400;
+      line-height: 1.05;
+      color: var(--hero-text);
+      margin: 0;
+      opacity: 0;
+      transform: translateY(20px);
+      mix-blend-mode: difference;
+    }
+    .skoll-hero-headline .skoll-hero-gold {
+      font-style: italic;
+      color: var(--hero-gold);
+    }
+    .skoll-hero-headline .skoll-hero-nowrap {
+      white-space: nowrap;
+    }
+
+    .skoll-hero-subtext {
+      font-size: clamp(1rem, 1.5vw, 1.25rem);
+      line-height: 1.6;
+      color: var(--hero-muted);
+      max-width: 600px;
+      margin: 0;
+      opacity: 0;
+      transform: translateY(20px);
+      mix-blend-mode: difference;
+    }
+
+    /* —— CTA buttons —— */
+    .skoll-hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      margin-top: 16px;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .skoll-hero-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      font-family: 'Söhne', 'Sohne', 'Inter', system-ui, sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+      white-space: nowrap;
+    }
+    .skoll-hero-btn-primary {
+      background: var(--hero-gold);
+      color: #0A0A0A;
+      border: 1px solid var(--hero-gold);
+    }
+    .skoll-hero-btn-primary:hover {
+      box-shadow: 0 0 32px rgba(201, 168, 76, 0.4);
+      transform: translateY(-2px);
+    }
+    .skoll-hero-btn-ghost {
+      background: rgba(240, 238, 233, 0.04);
+      color: var(--hero-text);
+      border: 1px solid rgba(240, 238, 233, 0.15);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .skoll-hero-btn-ghost:hover {
+      border-color: var(--hero-gold);
+      color: var(--hero-gold);
+      transform: translateY(-2px);
+    }
+    .skoll-hero-btn-arrow {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+    .skoll-hero-btn:hover .skoll-hero-btn-arrow {
+      transform: translateX(4px);
+    }
+
+    .skoll-hero-footer {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 48px; /* Extra spacing to push it down */
+      align-self: flex-end; /* Shifts to the right side */
+      opacity: 0;
+      transform: translateY(20px);
+      mix-blend-mode: difference;
+    }
+    .skoll-hero-line {
+      width: 40px;
+      height: 1px;
+      background: var(--hero-gold);
+      flex-shrink: 0;
+    }
+    .skoll-hero-footer p {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+      font-style: italic;
+      color: var(--hero-gold);
+      margin: 0;
+      white-space: nowrap;
+      padding-right: 8px; /* Fixes italic tail clipping */
+      padding-bottom: 4px; /* Fixes descender clipping */
+    }
+
+    /* Extremely graceful mobile adaptation */
+    @media (max-width: 768px) {
+      .skoll-hero-inner {
+        gap: 20px;
+        width: 85%;
+      }
+      .skoll-hero-headline {
+        font-size: clamp(1.75rem, 8vw, 4rem); /* Beautiful mobile fit — scales down so single-line headline fits */
+      }
+      .skoll-hero-subtext {
+        font-size: 1rem;
+        max-width: 100%;
+      }
+      .skoll-hero-footer p {
+        font-size: 1.25rem;
+      }
+      /* Lock text-button height to 48px so it matches the circular play button exactly */
+      .skoll-hero-btn {
+        height: 48px;
+        padding: 0 24px;
+        line-height: 1;
+      }
+    }
+
+    /* —— Video play/pause toggle —— */
+    /* Mobile-first: sits inline in the CTA row at an explicit 48x48 circle, matching the text-button height enforced in the mobile media query below. Desktop overrides to a centered overlay. */
+    .skoll-hero-playbtn {
+      width: 48px;
+      height: 48px;
+      flex: 0 0 48px;
+      border-radius: 999px;
+      border: 1px solid rgba(240, 238, 233, 0.28);
+      background: rgba(10, 10, 10, 0.45);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: var(--hero-text);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.25s ease, background 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+      padding: 0;
+    }
+    .skoll-hero-playbtn:hover {
+      border-color: var(--hero-gold);
+      color: var(--hero-gold);
+      transform: scale(1.05);
+      box-shadow: 0 0 32px rgba(201, 168, 76, 0.3);
+    }
+    .skoll-hero-playbtn:focus-visible {
+      outline: 2px solid var(--hero-gold);
+      outline-offset: 4px;
+    }
+    .skoll-hero-playbtn svg {
+      width: 18px;
+      height: 18px;
+      display: block;
+    }
+    .skoll-hero-playbtn .skoll-hero-icon-pause { display: none; }
+    .skoll-hero-playbtn[data-playing="true"] .skoll-hero-icon-play { display: none; }
+    .skoll-hero-playbtn[data-playing="true"] .skoll-hero-icon-pause { display: block; }
+    @media (min-width: 769px) {
+      .skoll-hero-playbtn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        width: 72px;
+        height: 72px;
+      }
+      .skoll-hero-playbtn:hover {
+        transform: translate(-50%, -50%) scale(1.05);
+      }
+      .skoll-hero-playbtn svg { width: 24px; height: 24px; }
+    }
+
+    /* —— Scroll hint —— */
+    .skoll-hero-scroll {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      pointer-events: none;
+      text-align: center;
+    }
+    .skoll-hero-scroll-text {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(240, 238, 233, 0.5);
+      animation: skoll-hero-scroll-breathe 2.5s ease-in-out infinite;
+    }
+    @keyframes skoll-hero-scroll-breathe {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+  </style>
+
+  <!-- Background video: hero-pc.mp4 on desktop, hero-mobile.mp4 on mobile (set by JS). User-controlled via play/pause button. -->
+  <video class="skoll-hero-video" muted playsinline loop preload="metadata" aria-hidden="true"></video>
+
+  <!-- Background stack -->
+  <div class="skoll-hero-bg">
+    <div class="skoll-hero-grid" aria-hidden="true"></div>
+    <div class="skoll-hero-blob" id="skoll-hero-blob" aria-hidden="true"></div>
+  </div>
+
+  <!-- Main content -->
+  <div class="skoll-hero-inner">
+    <p class="skoll-hero-tag skoll-hero-anim">Skoll Digital — Digital Marketing &amp; Growth Agency</p>
+    <h1 class="skoll-hero-headline skoll-hero-anim">
+      <span class="skoll-hero-nowrap">We don't chase growth.</span><br>
+      We <span class="skoll-hero-gold">engineer</span> it.
+    </h1>
+
+    <p class="skoll-hero-subtext skoll-hero-anim">
+      SEO, paid ads, websites and branding for businesses in India and internationally.
+    </p>
+
+    <div class="skoll-hero-cta-row skoll-hero-anim">
+      <a href="/contact" class="skoll-hero-btn skoll-hero-btn-primary">
+        Book a strategy call
+        <span class="skoll-hero-btn-arrow" aria-hidden="true">→</span>
+      </a>
+      <a href="/case-studies" class="skoll-hero-btn skoll-hero-btn-ghost">
+        See our work
+      </a>
+      <button type="button" class="skoll-hero-playbtn" id="skoll-hero-playbtn" aria-label="Play background video" data-playing="false">
+        <svg class="skoll-hero-icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13L19 12 8 5.5z"/></svg>
+        <svg class="skoll-hero-icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>
+      </button>
+    </div>
+
+    <div class="skoll-hero-footer skoll-hero-anim">
+      <div class="skoll-hero-line"></div>
+      <p>Grow with intent.</p>
+    </div>
+  </div>
+
+  <!-- Scroll hint -->
+  <div class="skoll-hero-scroll" aria-hidden="true">
+    <span class="skoll-hero-scroll-text">Scroll</span>
+  </div>
+
+  <script>
+    (function () {
+      var wrapper = document.querySelector('.skoll-hero-wrapper');
+      if (!wrapper) return;
+      var video = wrapper.querySelector('.skoll-hero-video');
+      var MOBILE_BREAKPOINT = 768;
+      var currentHeroSource = null;
+      var resizeTimeout;
+
+      function isMobile() { return window.innerWidth <= MOBILE_BREAKPOINT; }
+      function setHeroVideoSource() {
+        if (!video) return;
+        var src = isMobile() ? 'assets/videos/hero-mobile.mp4' : 'assets/videos/hero-pc.mp4';
+        if (currentHeroSource === src) return;
+        currentHeroSource = src;
+        var wasPlaying = !video.paused;
+        video.src = src;
+        video.load();
+        video.muted = true;
+        if (wasPlaying) {
+          video.play().catch(function () {});
+        }
+      }
+      setHeroVideoSource();
+
+      // —— Play/pause toggle ——
+      var playBtn = document.getElementById('skoll-hero-playbtn');
+      var ctaRow = wrapper.querySelector('.skoll-hero-cta-row');
+
+      // Desktop: button must live outside .skoll-hero-cta-row, because the row has a transform applied
+      // (for the fade-up animation) which would make it the containing block for absolute children
+      // and break the centered positioning. Mobile: keep it inline next to the "See our work" CTA.
+      function placePlayBtn() {
+        if (!playBtn) return;
+        if (isMobile()) {
+          if (ctaRow && playBtn.parentNode !== ctaRow) ctaRow.appendChild(playBtn);
+        } else {
+          if (playBtn.parentNode !== wrapper) wrapper.appendChild(playBtn);
+        }
+      }
+      placePlayBtn();
+
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function () {
+          setHeroVideoSource();
+          placePlayBtn();
+        }, 250);
+      });
+      function setPlayingState(playing) {
+        if (!playBtn) return;
+        playBtn.setAttribute('data-playing', playing ? 'true' : 'false');
+        playBtn.setAttribute('aria-label', playing ? 'Pause background video' : 'Play background video');
+      }
+      if (playBtn && video) {
+        playBtn.addEventListener('click', function () {
+          if (video.paused) {
+            video.muted = true;
+            var p = video.play();
+            if (p && typeof p.then === 'function') {
+              p.catch(function () { setPlayingState(false); });
+            }
+          } else {
+            video.pause();
+          }
+        });
+        video.addEventListener('play', function () { setPlayingState(true); });
+        video.addEventListener('pause', function () { setPlayingState(false); });
+        video.addEventListener('ended', function () { setPlayingState(false); });
+      }
+
+      function runHeroJS() {
+        var gsap = window.gsap;
+        if (!gsap) {
+          setTimeout(runHeroJS, 50);
+          return;
+        }
+
+        var animElements = document.querySelectorAll('.skoll-hero-anim');
+        var blob = document.getElementById('skoll-hero-blob');
+
+        // Custom staggered fade-up timeline
+        var tl = gsap.timeline({
+          defaults: { ease: 'power3.out' },
+          paused: true
+        });
+
+        tl.to(animElements, {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          stagger: 0.15
+        });
+
+        // —— Gold blob breathing (8s loop) ——
+        if (blob) {
+          gsap.to(blob, {
+            scale: 1.15,
+            duration: 4,
+            ease: 'sine.inOut',
+            repeat: -1,
+            yoyo: true
+          });
+        }
+
+        // —— Parallax zoom on hero video tied to scroll ——
+        if (video && window.ScrollTrigger) {
+          gsap.set(video, { transformOrigin: '50% 50%', willChange: 'transform' });
+          gsap.fromTo(video,
+            { scale: 1, yPercent: 0 },
+            {
+              scale: 1.25,
+              yPercent: -8,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: wrapper,
+                start: 'top top',
+                end: 'bottom top',
+                scrub: true,
+                invalidateOnRefresh: true
+              }
+            }
+          );
+        }
+
+        function startHeroAnimation() {
+          tl.play(0);
+        }
+
+        if (window.__skollPreloaderDone) {
+          startHeroAnimation();
+        } else if (window.addEventListener) {
+          window.addEventListener('skoll:preloader:done', function () {
+            startHeroAnimation();
+          }, { once: true });
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', runHeroJS);
+      } else {
+        runHeroJS();
+      }
+    })();
+  </script>
+</section>
+<!-- /include -->
+    </div>
     <div id="preview-about-container"></div>
     <div id="preview-founder-container"></div>
-    <div id="preview-services-container"></div>
+    <div id="preview-services-container" data-static-section>
+<!-- include: sections/preview-services.html -->
+<section class="skoll-prev-svc-wrapper" data-section="preview-services" id="preview-services">
+  <div class="skoll-prev-svc-inner">
+    <header class="skoll-prev-svc-header">
+      <div class="skoll-prev-svc-eyebrow skoll-prev-svc-anim">SERVICES</div>
+      <h2 class="skoll-prev-svc-title skoll-prev-svc-anim">Digital marketing <em>services</em>.</h2>
+      <p class="skoll-prev-svc-sub skoll-prev-svc-anim">Explore growth strategy, website development, paid advertising, SEO and brand services.</p>
+    </header>
+
+    <div class="skoll-prev-svc-grid" id="skoll-prev-svc-grid">
+      <article class="skoll-prev-svc-tile skoll-prev-svc-anim skoll-prev-svc-tile-item" data-tile="1">
+        <button type="button" class="skoll-prev-svc-tile-header" aria-expanded="false" aria-controls="skoll-prev-svc-content-1">
+          <span class="skoll-prev-svc-tile-label" aria-hidden="true"></span>
+          <h3 class="skoll-prev-svc-tile-name">Strategy</h3>
+          <p class="skoll-prev-svc-tile-tag"><em>The foundation. Everything starts here.</em></p>
+          <span class="skoll-prev-svc-tile-toggle" aria-hidden="true">
+            <span class="skoll-prev-svc-tile-toggle-icon">+</span>
+          </span>
+        </button>
+        <div class="skoll-prev-svc-tile-content" id="skoll-prev-svc-content-1" role="region">
+          <div class="skoll-prev-svc-tile-content-inner">
+            <div class="skoll-prev-svc-pills">
+              <span class="skoll-prev-svc-pill">Brand and category positioning</span>
+              <span class="skoll-prev-svc-pill">Competitive intelligence and market mapping</span>
+              <span class="skoll-prev-svc-pill">Growth strategy and GTM frameworks</span>
+              <span class="skoll-prev-svc-pill">Funnel architecture and revenue modelling</span>
+              <span class="skoll-prev-svc-pill">Strategic narrative and messaging hierarchies</span>
+              <span class="skoll-prev-svc-pill">Naming, brand foundations and brand books</span>
+              <span class="skoll-prev-svc-pill">Audits: brand, digital, performance, content</span>
+              <span class="skoll-prev-svc-pill">Pitch decks, investor decks, sales decks</span>
+              <span class="skoll-prev-svc-pill">White papers and thought-leadership documents</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="skoll-prev-svc-tile skoll-prev-svc-anim skoll-prev-svc-tile-item" data-tile="2">
+        <button type="button" class="skoll-prev-svc-tile-header" aria-expanded="false" aria-controls="skoll-prev-svc-content-2">
+          <span class="skoll-prev-svc-tile-label" aria-hidden="true"></span>
+          <h3 class="skoll-prev-svc-tile-name">Product</h3>
+          <p class="skoll-prev-svc-tile-tag"><em>Built to convert. Engineered for longevity.</em></p>
+          <span class="skoll-prev-svc-tile-toggle" aria-hidden="true">
+            <span class="skoll-prev-svc-tile-toggle-icon">+</span>
+          </span>
+        </button>
+        <div class="skoll-prev-svc-tile-content" id="skoll-prev-svc-content-2" role="region">
+          <div class="skoll-prev-svc-tile-content-inner">
+            <div class="skoll-prev-svc-pills">
+              <span class="skoll-prev-svc-pill">Brand websites and editorial platforms</span>
+              <span class="skoll-prev-svc-pill">E-commerce stores (Shopify, WooCommerce, custom)</span>
+              <span class="skoll-prev-svc-pill">Mobile and web applications</span>
+              <span class="skoll-prev-svc-pill">Landing pages and campaign microsites</span>
+              <span class="skoll-prev-svc-pill">UX audits and conversion architecture</span>
+              <span class="skoll-prev-svc-pill">Website migrations and re-platforming</span>
+              <span class="skoll-prev-svc-pill">CMS setup and team enablement</span>
+              <span class="skoll-prev-svc-pill">Web hosting, maintenance, optimisation</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="skoll-prev-svc-tile skoll-prev-svc-anim skoll-prev-svc-tile-item" data-tile="3">
+        <button type="button" class="skoll-prev-svc-tile-header" aria-expanded="false" aria-controls="skoll-prev-svc-content-3">
+          <span class="skoll-prev-svc-tile-label" aria-hidden="true"></span>
+          <h3 class="skoll-prev-svc-tile-name">Performance</h3>
+          <p class="skoll-prev-svc-tile-tag"><em>Every rupee accountable.</em></p>
+          <span class="skoll-prev-svc-tile-toggle" aria-hidden="true">
+            <span class="skoll-prev-svc-tile-toggle-icon">+</span>
+          </span>
+        </button>
+        <div class="skoll-prev-svc-tile-content" id="skoll-prev-svc-content-3" role="region">
+          <div class="skoll-prev-svc-tile-content-inner">
+            <div class="skoll-prev-svc-pills">
+              <span class="skoll-prev-svc-pill">Google Ads (Search, Display, PMax, Demand Gen, YouTube)</span>
+              <span class="skoll-prev-svc-pill">Meta Ads (Facebook, Instagram, app install, lead gen, retargeting)</span>
+              <span class="skoll-prev-svc-pill">LinkedIn Ads (B2B lead gen, brand campaigns)</span>
+              <span class="skoll-prev-svc-pill">App Store &amp; Play Store install campaigns</span>
+              <span class="skoll-prev-svc-pill">SEO: technical, on-page, content, link strategy</span>
+              <span class="skoll-prev-svc-pill">Local SEO and Google Business Profile</span>
+              <span class="skoll-prev-svc-pill">Marketing automation (HubSpot, Klaviyo, ActiveCampaign)</span>
+              <span class="skoll-prev-svc-pill">CRM workflows and lead nurture</span>
+              <span class="skoll-prev-svc-pill">Analytics &amp; dashboarding (GA4, Looker, Meta CAPI, server-side)</span>
+              <span class="skoll-prev-svc-pill">Conversion rate optimisation (CRO)</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="skoll-prev-svc-tile skoll-prev-svc-anim skoll-prev-svc-tile-item" data-tile="4">
+        <button type="button" class="skoll-prev-svc-tile-header" aria-expanded="false" aria-controls="skoll-prev-svc-content-4">
+          <span class="skoll-prev-svc-tile-label" aria-hidden="true"></span>
+          <h3 class="skoll-prev-svc-tile-name">Brand</h3>
+          <p class="skoll-prev-svc-tile-tag"><em>Not decoration. Differentiation.</em></p>
+          <span class="skoll-prev-svc-tile-toggle" aria-hidden="true">
+            <span class="skoll-prev-svc-tile-toggle-icon">+</span>
+          </span>
+        </button>
+        <div class="skoll-prev-svc-tile-content" id="skoll-prev-svc-content-4" role="region">
+          <div class="skoll-prev-svc-tile-content-inner">
+            <div class="skoll-prev-svc-pills">
+              <span class="skoll-prev-svc-pill">Brand identity: logos, marks, identity systems</span>
+              <span class="skoll-prev-svc-pill">Brand guidelines and brand books</span>
+              <span class="skoll-prev-svc-pill">Creative direction for campaigns</span>
+              <span class="skoll-prev-svc-pill">Content strategy and editorial planning</span>
+              <span class="skoll-prev-svc-pill">Social media strategy and production</span>
+              <span class="skoll-prev-svc-pill">Instagram, LinkedIn, YouTube content systems</span>
+              <span class="skoll-prev-svc-pill">Reel scripting, shooting, editing</span>
+              <span class="skoll-prev-svc-pill">Cinematic content (in-house Sony FX3A)</span>
+              <span class="skoll-prev-svc-pill">Photography direction and shoot management</span>
+              <span class="skoll-prev-svc-pill">Podcast strategy and production</span>
+              <span class="skoll-prev-svc-pill">Newsletter and email content systems</span>
+              <span class="skoll-prev-svc-pill">PR positioning and media narratives</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="skoll-prev-svc-cta-wrap skoll-prev-svc-anim">
+      <a href="/services" class="skoll-prev-svc-cta">
+        <span class="skoll-prev-svc-cta-text">See the full service catalogue</span>
+        <span class="skoll-prev-svc-cta-arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .skoll-prev-svc-wrapper {
+    background: #0A0A0A;
+    color: #FAFAFA;
+    padding: 100px 24px;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skoll-prev-svc-wrapper * {
+    box-sizing: border-box;
+  }
+
+  .skoll-prev-svc-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .skoll-prev-svc-header {
+    max-width: 800px;
+    margin: 0 auto 64px;
+    text-align: center;
+  }
+
+  .skoll-prev-svc-eyebrow {
+    font-family: 'Söhne', 'Sohne', 'Inter', system-ui, sans-serif;
+    font-size: 0.75rem;
+    color: #C9A84C;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-weight: 500;
+    margin-bottom: 24px;
+    opacity: 0;
+    transform: translateY(30px);
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+  }
+  .skoll-prev-svc-eyebrow::before {
+    content: '';
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    background-color: #C9A84C;
+    -webkit-mask: url('assets/images/paw.png') no-repeat center / contain;
+            mask: url('assets/images/paw.png') no-repeat center / contain;
+    opacity: 0.85;
+  }
+
+  .skoll-prev-svc-title {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: clamp(2.5rem, 4.5vw, 4rem);
+    line-height: 1;
+    color: #FAFAFA;
+    font-weight: 400;
+    margin: 0 0 24px;
+    letter-spacing: -0.01em;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .skoll-prev-svc-title em {
+    font-style: italic;
+    color: #C9A84C;
+  }
+
+  .skoll-prev-svc-sub {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #888888;
+    max-width: 640px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .skoll-prev-svc-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 0;
+    align-items: start;
+  }
+
+  .skoll-prev-svc-tile {
+    background: rgba(240, 238, 233, 0.03);
+    border: 1px solid rgba(240, 238, 233, 0.06);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: border-color 0.4s ease, background 0.4s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .skoll-prev-svc-tile:hover {
+    border-color: rgba(201, 168, 76, 0.3);
+    background: rgba(240, 238, 233, 0.05);
+  }
+
+  .skoll-prev-svc-tile.is-open {
+    border-color: rgba(201, 168, 76, 0.4);
+    background: rgba(240, 238, 233, 0.05);
+  }
+
+  .skoll-prev-svc-tile-header {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    margin: 0;
+    padding: 32px 28px;
+    width: 100%;
+    text-align: left;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .skoll-prev-svc-tile-header:focus-visible {
+    outline: 1px solid #C9A84C;
+    outline-offset: -4px;
+    border-radius: 16px;
+  }
+
+  .skoll-prev-svc-tile-label {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background-color: #C9A84C;
+    -webkit-mask: url('assets/images/paw.png') no-repeat center / contain;
+            mask: url('assets/images/paw.png') no-repeat center / contain;
+    transition: filter 0.35s ease, transform 0.35s ease;
+  }
+
+  .skoll-prev-svc-tile-header:hover .skoll-prev-svc-tile-label,
+  .skoll-prev-svc-tile.is-open .skoll-prev-svc-tile-label {
+    filter: drop-shadow(0 0 8px rgba(201, 168, 76, 0.5));
+    transform: scale(1.08);
+  }
+
+  .skoll-prev-svc-tile-name {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 1.625rem;
+    line-height: 1.1;
+    color: #FAFAFA;
+    font-weight: 400;
+    margin: 12px 0 8px;
+    letter-spacing: -0.01em;
+  }
+
+  .skoll-prev-svc-tile-tag {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    color: #C9A84C;
+    font-size: 0.9375rem;
+    line-height: 1.3;
+    margin: 0 0 20px;
+  }
+
+  .skoll-prev-svc-tile-tag em {
+    font-style: italic;
+  }
+
+  .skoll-prev-svc-tile-toggle {
+    align-self: flex-end;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(240, 238, 233, 0.08);
+    border-radius: 50%;
+    color: #FAFAFA;
+    font-size: 1.125rem;
+    font-weight: 300;
+    transition: border-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    margin-top: auto;
+  }
+
+  .skoll-prev-svc-tile-toggle-icon {
+    display: block;
+    line-height: 1;
+  }
+
+  .skoll-prev-svc-tile.is-open .skoll-prev-svc-tile-toggle {
+    border-color: rgba(201, 168, 76, 0.5);
+    color: #C9A84C;
+  }
+
+  .skoll-prev-svc-tile-content {
+    overflow: hidden;
+    height: 0;
+  }
+
+  .skoll-prev-svc-tile-content-inner {
+    padding: 0 28px 28px;
+  }
+
+  .skoll-prev-svc-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .skoll-prev-svc-pill {
+    display: inline-block;
+    padding: 8px 14px;
+    background: rgba(240, 238, 233, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(240, 238, 233, 0.06);
+    border-radius: 999px;
+    font-size: 0.8125rem;
+    line-height: 1.3;
+    color: #888888;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: color 0.3s ease, border-color 0.3s ease;
+  }
+
+  .skoll-prev-svc-pill:hover {
+    color: #FAFAFA;
+    border-color: rgba(240, 238, 233, 0.12);
+  }
+
+  .skoll-prev-svc-cta-wrap {
+    text-align: center;
+    margin-top: 56px;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .skoll-prev-svc-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 32px;
+    border: 1px solid rgba(201, 168, 76, 0.4);
+    border-radius: 999px;
+    background: transparent;
+    color: #C9A84C;
+    font-family: 'Söhne', 'Sohne', 'Inter', system-ui, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+  }
+
+  .skoll-prev-svc-cta:hover {
+    background: rgba(201, 168, 76, 0.1);
+    box-shadow: 0 0 24px rgba(201, 168, 76, 0.2);
+    border-color: rgba(201, 168, 76, 0.6);
+  }
+
+  .skoll-prev-svc-cta-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  .skoll-prev-svc-cta:hover .skoll-prev-svc-cta-arrow {
+    transform: translateX(6px);
+  }
+
+  @media (max-width: 960px) {
+    .skoll-prev-svc-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .skoll-prev-svc-wrapper {
+      padding: 80px 20px;
+    }
+    .skoll-prev-svc-header {
+      margin-bottom: 48px;
+    }
+    .skoll-prev-svc-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .skoll-prev-svc-tile-header {
+      display: grid;
+      grid-template-columns: 1fr 32px;
+      grid-template-areas:
+        "label label"
+        "name toggle"
+        "tag tag";
+      align-items: center;
+      column-gap: 12px;
+      padding: 18px 18px;
+    }
+    .skoll-prev-svc-tile-label {
+      grid-area: label;
+    }
+    .skoll-prev-svc-tile-name {
+      grid-area: name;
+      font-size: 1.375rem;
+      margin: 8px 0 4px;
+    }
+    .skoll-prev-svc-tile-tag {
+      grid-area: tag;
+      font-size: 0.875rem;
+      margin: 0;
+      line-height: 1.35;
+    }
+    .skoll-prev-svc-tile-toggle {
+      grid-area: toggle;
+      align-self: center;
+      margin-top: 0;
+      width: 32px;
+      height: 32px;
+      font-size: 1rem;
+    }
+    .skoll-prev-svc-tile-content-inner {
+      padding: 0 18px 18px;
+    }
+    .skoll-prev-svc-cta-wrap {
+      margin-top: 40px;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    function initPrevSvc() {
+      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+        return setTimeout(initPrevSvc, 100);
+      }
+      gsap.registerPlugin(ScrollTrigger);
+
+      var root = document.querySelector('.skoll-prev-svc-wrapper');
+      if (!root || root.dataset.prevSvcInit === '1') return;
+      root.dataset.prevSvcInit = '1';
+
+      var headerEls = root.querySelectorAll('.skoll-prev-svc-header .skoll-prev-svc-anim');
+      var tileEls = root.querySelectorAll('.skoll-prev-svc-tile-item');
+      var ctaEls = root.querySelectorAll('.skoll-prev-svc-cta-wrap');
+
+      gsap.to(headerEls, {
+        opacity: 1,
+        y: 0,
+        duration: 0.9,
+        stagger: 0.1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: root,
+          start: 'top 85%'
+        }
+      });
+
+      gsap.to(tileEls, {
+        opacity: 1,
+        y: 0,
+        duration: 0.9,
+        stagger: 0.12,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.skoll-prev-svc-grid',
+          start: 'top 85%'
+        }
+      });
+
+      gsap.to(ctaEls, {
+        opacity: 1,
+        y: 0,
+        duration: 0.9,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.skoll-prev-svc-cta-wrap',
+          start: 'top 90%'
+        }
+      });
+
+      // —— Accordion: one tile open at a time ——
+      var tiles = root.querySelectorAll('.skoll-prev-svc-tile');
+
+      function closeTile(tile) {
+        var content = tile.querySelector('.skoll-prev-svc-tile-content');
+        var header = tile.querySelector('.skoll-prev-svc-tile-header');
+        var iconWrap = tile.querySelector('.skoll-prev-svc-tile-toggle');
+        var pills = content ? content.querySelectorAll('.skoll-prev-svc-pill') : [];
+        if (!content || !header) return;
+        tile.classList.remove('is-open');
+        header.setAttribute('aria-expanded', 'false');
+        gsap.to(content, { height: 0, duration: 0.45, ease: 'power3.inOut' });
+        gsap.to(iconWrap, { rotation: 0, duration: 0.3, ease: 'power2.out' });
+        gsap.set(pills, { x: -20, opacity: 0 });
+      }
+
+      function openTile(tile) {
+        var content = tile.querySelector('.skoll-prev-svc-tile-content');
+        var inner = content ? content.querySelector('.skoll-prev-svc-tile-content-inner') : null;
+        var header = tile.querySelector('.skoll-prev-svc-tile-header');
+        var iconWrap = tile.querySelector('.skoll-prev-svc-tile-toggle');
+        var pills = content ? content.querySelectorAll('.skoll-prev-svc-pill') : [];
+        if (!content || !inner) return;
+
+        tile.classList.add('is-open');
+        header.setAttribute('aria-expanded', 'true');
+
+        var h = inner.scrollHeight;
+        gsap.fromTo(content, { height: 0 }, { height: h, duration: 0.5, ease: 'power3.inOut' });
+
+        gsap.to(iconWrap, { rotation: 45, duration: 0.3, ease: 'power2.out' });
+
+        gsap.set(pills, { x: -20, opacity: 0 });
+        gsap.to(pills, { x: 0, opacity: 1, duration: 0.4, stagger: 0.05, ease: 'power2.out', delay: 0.12 });
+      }
+
+      tiles.forEach(function (tile) {
+        var header = tile.querySelector('.skoll-prev-svc-tile-header');
+        if (!header) return;
+        header.addEventListener('click', function () {
+          var isOpen = tile.classList.contains('is-open');
+          tiles.forEach(function (t) { if (t !== tile) closeTile(t); });
+          if (isOpen) closeTile(tile);
+          else openTile(tile);
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initPrevSvc);
+    } else {
+      initPrevSvc();
+    }
+  })();
+</script>
+<!-- /include -->
+    </div>
     <div id="preview-clientele-container"></div>
     <div id="preview-work-container"></div>
     <div id="footer-container"></div>

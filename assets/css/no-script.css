@@ -1,0 +1,18 @@
+#skoll-preloader,
+.skoll-hero-playbtn,
+.skoll-services-row-toggle,
+.skoll-prev-svc-tile-toggle {
+  display: none !important;
+}
+
+:is(.skoll-hero-anim, .skoll-prev-svc-anim, .skoll-prev-svc-pill,
+  .skoll-services-row, .skoll-services-pill, .skoll-services-engagement-card,
+  .skoll-work-anim, .skoll-work-card, .skoll-cs-anim) {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.skoll-services-row-content,
+.skoll-prev-svc-tile-content {
+  height: auto !important;
+}

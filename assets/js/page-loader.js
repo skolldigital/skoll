@@ -42,7 +42,8 @@
   function loadSection(containerId, path, basePath) {
     var container = document.getElementById(containerId);
     if (!container) return Promise.resolve(false);
-    var url = basePath + path + '?t=' + Date.now();
+    if (container.hasAttribute('data-static-section')) return Promise.resolve(true);
+    var url = basePath + path;
     return fetch(url)
       .then(function (res) { if (res.ok) return res.text(); throw new Error(path); })
       .then(function (html) { container.innerHTML = html; runScriptsInContainer(container); return true; })
@@ -188,17 +189,7 @@
         hidePreloader();
       }
 
-      setTimeout(function () {
-        var heroVideo = document.querySelector('.skoll-hero-video');
-        if (!heroVideo || heroVideo.readyState >= 3) {
-          finishPreloader();
-          return;
-        }
-        var timeoutId = setTimeout(finishPreloader, 5000);
-        ['canplaythrough', 'loadeddata', 'error', 'stalled'].forEach(function (evt) {
-          heroVideo.addEventListener(evt, function () { clearTimeout(timeoutId); finishPreloader(); }, { once: true });
-        });
-      }, 600);
+      setTimeout(finishPreloader, 600);
     }).catch(function () {
       setBar(1);
       showLoadErrorMessage();

@@ -86,6 +86,17 @@
   --transition-default: 0.3s ease;
 }
 
+.skoll-cs-related-service {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.skoll-cs-related-service a {
+  color: #dfc678;
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
+
 /* --------------------------------------------------------------------------
    3. CSS Reset (minimal, modern)
    -------------------------------------------------------------------------- */
